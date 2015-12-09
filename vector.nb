@@ -1,0 +1,99 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      2407,         89]
+NotebookOptionsPosition[      1920,         68]
+NotebookOutlinePosition[      2364,         86]
+CellTagsIndexPosition[      2321,         83]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{"F", "=", "0.6"}], "\[IndentingNewLine]", 
+ RowBox[{"vect", "=", 
+  RowBox[{"{", 
+   RowBox[{
+   "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", 
+    "0"}], "}"}]}], "\[IndentingNewLine]", 
+ RowBox[{"For", "[", 
+  RowBox[{
+   RowBox[{"i", "=", "1"}], ",", 
+   RowBox[{"i", "\[LessEqual]", "8"}], ",", 
+   RowBox[{"i", "++"}], ",", 
+   RowBox[{
+    RowBox[{"d", "=", 
+     RowBox[{"IntegerPart", "[", 
+      RowBox[{"2", "*", "F"}], "]"}]}], ";", 
+    RowBox[{"F", "=", 
+     RowBox[{
+      RowBox[{"2", "*", "F"}], "-", "d"}]}], ";", 
+    RowBox[{
+     RowBox[{"vect", "[", 
+      RowBox[{"[", "i", "]"}], "]"}], "=", "d"}]}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", 
+  RowBox[{"\"\< EL RESULTADO ES  \>\"", ",", "vect"}], 
+  "]"}], "\[IndentingNewLine]"}], "Input"],
+
+Cell[BoxData["0.6`"], "Output"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0"}],
+   "}"}]], "Output"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\" EL RESULTADO ES  \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "1", ",", "0", ",", "0", ",", "1", ",", "1", ",", "0", ",", "0", ",", 
+     "1"}], "}"}]}],
+  SequenceForm[" EL RESULTADO ES  ", {1, 0, 0, 1, 1, 0, 0, 1}],
+  Editable->False]], "Print"]
+}, Open  ]]
+},
+WindowSize->{1006, 605},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+DockedCells->FEPrivate`FrontEndResource[
+ "FEExpressions", "CompatibilityToolbar"],
+Magnification->2,
+FrontEndVersion->"8.0 for Microsoft Windows (64-bit) (October 6, 2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 831, 25, 228, "Input"],
+Cell[1413, 49, 31, 0, 57, "Output"],
+Cell[1447, 51, 139, 4, 57, "Output"],
+Cell[1589, 57, 315, 8, 43, "Print"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

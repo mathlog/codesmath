@@ -1,0 +1,242 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      7868,        233]
+NotebookOptionsPosition[      7405,        212]
+NotebookOutlinePosition[      7747,        227]
+CellTagsIndexPosition[      7704,        224]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"F", "=", 
+   RowBox[{"Input", "[", "\"\<Introduzca su funcion\>\"", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Intervalo", " ", "=", 
+   RowBox[{"Input", "[", "\"\<Introduzca su Intervalo {a,b}\>\"", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"tol", " ", "=", " ", 
+    RowBox[{"Input", "[", "\"\<Introduzca tolerancia\>\"", "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"i", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Xa", " ", "=", " ", 
+   RowBox[{"Intervalo", "[", 
+    RowBox[{"[", "1", "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Xb", " ", "=", " ", 
+   RowBox[{"Intervalo", "[", 
+    RowBox[{"[", "2", "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"epsilon", " ", "=", " ", 
+   RowBox[{
+    RowBox[{"Log", "[", 
+     RowBox[{"0.618", ",", 
+      RowBox[{"tol", "/", "L"}]}], "]"}], "+", "1"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"n", " ", "=", " ", 
+   RowBox[{
+    RowBox[{"IntegerPart", "[", "epsilon", "]"}], "+", "1"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"v", " ", "=", " ", 
+    RowBox[{"{", "x", "}"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"evaluaFuncion", "[", 
+     RowBox[{"variable_", ",", "Funcion_", ",", "punto_"}], "]"}], ":=", " ", 
+    RowBox[{
+     RowBox[{"Function", "[", 
+      RowBox[{"variable", ",", "Funcion"}], "]"}], "[", "punto", "]"}]}], 
+   ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Xo", " ", "=", " ", 
+   RowBox[{
+    RowBox[{"0.618", "*", "L"}], " ", "+", " ", "Xa"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Xt", " ", "=", " ", 
+    RowBox[{
+     RowBox[{"0.382", "*", "L"}], " ", "+", " ", "Xa"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"While", "[", 
+   RowBox[{
+    RowBox[{"i", "<", "n"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"L", " ", "=", " ", 
+      RowBox[{"Xb", "-", "Xa"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"Xo", " ", "=", " ", 
+      RowBox[{
+       RowBox[{"0.618", "*", "L"}], " ", "+", " ", "Xa"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Xt", " ", "=", " ", 
+      RowBox[{
+       RowBox[{"0.382", "*", "L"}], " ", "+", " ", "Xa"}]}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", "  ", 
+     RowBox[{
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"evaluaFuncion", "[", 
+          RowBox[{"v", ",", "F", ",", "Xo"}], "]"}], "\[GreaterEqual]", 
+         RowBox[{"evaluaFuncion", "[", 
+          RowBox[{"v", ",", "F", ",", "Xt"}], "]"}]}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"Xb", " ", "=", " ", "Xo"}], ";"}]}], "]"}], 
+      "\[IndentingNewLine]", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"evaluaFuncion", "[", 
+          RowBox[{"v", ",", "F", ",", "Xt"}], "]"}], "\[GreaterEqual]", 
+         RowBox[{"evaluaFuncion", "[", 
+          RowBox[{"v", ",", "F", ",", "Xo"}], "]"}]}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"Xa", " ", "=", " ", "Xt"}], ";"}]}], "]"}], 
+      "\[IndentingNewLine]", 
+      RowBox[{"i", "++"}]}], ";"}]}], "\[IndentingNewLine]", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Xopt", " ", "=", " ", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"Xa", "+", "Xb"}], ")"}], "/", "2"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<La funci\[OAcute]n a minimizar es:\>\"", ",", "F"}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<X donde alcana f(x) su minimo:\>\"", ",", "Xopt"}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<Valor minimimo de f(x) en el intervalo dado: \>\"", ",", 
+    RowBox[{"evaluaFuncion", "[", 
+     RowBox[{"v", ",", "F", ",", "Xopt"}], "]"}]}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<No Interaciones:\>\"", " ", ",", " ", "n"}], "]"}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.6067493715765*^9, 3.606749376426507*^9}, {
+   3.6067496720249233`*^9, 3.606749723102995*^9}, {3.6067498362201543`*^9, 
+   3.6067498498821735`*^9}, {3.6067500696864834`*^9, 3.6067501352565756`*^9}, 
+   3.6067502043756733`*^9, {3.606750327621847*^9, 3.606750398651947*^9}, 
+   3.60675046214404*^9, {3.606750532566139*^9, 3.606750577953203*^9}, {
+   3.606753871096654*^9, 3.6067538749866595`*^9}, {3.606754014467856*^9, 
+   3.6067540572349167`*^9}, {3.6067545243155737`*^9, 
+   3.6067546125616984`*^9}, {3.6067547590449047`*^9, 3.606754793149953*^9}, {
+   3.606755203089531*^9, 3.6067552256035624`*^9}, {3.6067552622896137`*^9, 
+   3.6067553382877216`*^9}, {3.60675542917085*^9, 3.6067554680679045`*^9}, {
+   3.606755558021031*^9, 3.6067555941920834`*^9}, {3.6085066775665874`*^9, 
+   3.608506681326194*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"La funci\[OAcute]n a minimizar es:\"\>", "\[InvisibleSpace]", 
+   RowBox[{"x", "+", 
+    SuperscriptBox["x", "2"]}]}],
+  SequenceForm[
+  "La funci\[OAcute]n a minimizar es:", $CellContext`x + $CellContext`x^2],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.606753942076754*^9, 3.6067554981319466`*^9, 3.606755646490157*^9, {
+   3.6085066855538015`*^9, 3.6085067082578416`*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"X donde alcana f(x) su minimo:\"\>", "\[InvisibleSpace]", 
+   FractionBox["3", "2"]}],
+  SequenceForm["X donde alcana f(x) su minimo:", 
+   Rational[3, 2]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.606753942076754*^9, 3.6067554981319466`*^9, 3.606755646490157*^9, {
+   3.6085066855538015`*^9, 3.6085067082578416`*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Valor minimimo de f(x) en el intervalo dado: \"\>", 
+   "\[InvisibleSpace]", 
+   FractionBox["15", "4"]}],
+  SequenceForm["Valor minimimo de f(x) en el intervalo dado: ", 
+   Rational[15, 4]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.606753942076754*^9, 3.6067554981319466`*^9, 3.606755646490157*^9, {
+   3.6085066855538015`*^9, 3.6085067082578416`*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"No Interaciones:\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "8"}], ",", "2"}], "}"}]}],
+  SequenceForm["No Interaciones:", {-8, 2}],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.606753942076754*^9, 3.6067554981319466`*^9, 3.606755646490157*^9, {
+   3.6085066855538015`*^9, 3.6085067082578416`*^9}}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1350, 633},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"8.0 for Microsoft Windows (64-bit) (October 6, 2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 5145, 137, 672, "Input"],
+Cell[CellGroupData[{
+Cell[5749, 163, 434, 10, 23, "Print"],
+Cell[6186, 175, 380, 9, 40, "Print"],
+Cell[6569, 186, 416, 10, 40, "Print"],
+Cell[6988, 198, 389, 10, 23, "Print"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

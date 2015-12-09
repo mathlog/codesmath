@@ -1,0 +1,195 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      6778,        186]
+NotebookOptionsPosition[      6318,        165]
+NotebookOutlinePosition[      6660,        180]
+CellTagsIndexPosition[      6617,        177]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"F", "=", 
+   RowBox[{"Input", "[", "\"\<Introduzca su funcion\>\"", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"p", " ", "=", 
+   RowBox[{"Input", "[", "\"\<Introduzca su punto inicial\>\"", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"tol", " ", "=", " ", 
+   RowBox[{"Input", "[", "\"\<Introduzca tolerancia\>\"", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"G", " ", "=", " ", 
+   RowBox[{"D", "[", 
+    RowBox[{"F", ",", "x"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"i", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"v", " ", "=", " ", 
+    RowBox[{"{", "x", "}"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"evaluaFuncion", "[", 
+     RowBox[{"variable_", ",", "Funcion_", ",", "punto_"}], "]"}], ":=", " ", 
+    RowBox[{
+     RowBox[{"Function", "[", 
+      RowBox[{"variable", ",", "Funcion"}], "]"}], "[", "punto", "]"}]}], 
+   ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"While", "[", 
+    RowBox[{
+     RowBox[{"tol", "<", 
+      RowBox[{"Abs", "[", 
+       RowBox[{"evaluaFuncion", "[", 
+        RowBox[{"v", ",", "G", ",", "Xopt"}], "]"}], "]"}]}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"Xopt", " ", "=", " ", 
+       RowBox[{"p", "-", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"evaluaFuncion", "[", 
+           RowBox[{"v", ",", "G", ",", "p"}], "]"}], "/", 
+          RowBox[{"evaluaFuncion", "[", 
+           RowBox[{"v", ",", 
+            RowBox[{"D", "[", 
+             RowBox[{"G", ",", "x"}], "]"}], ",", "p"}], "]"}]}], ")"}]}]}], 
+      ";", "\[IndentingNewLine]", 
+      RowBox[{"p", " ", "=", " ", "Xopt"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"i", "++"}], ";"}]}], "\[IndentingNewLine]", "]"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<La Funcion a minimizar es:\>\"", ",", "F"}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<X donde alcana f(x) su minimo:\>\"", ",", "Xopt"}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<Valor minimimo de f(x) en el intervalo dado: \>\"", ",", 
+    RowBox[{"evaluaFuncion", "[", 
+     RowBox[{"v", ",", "F", ",", "Xopt"}], "]"}]}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<No Interaciones:\>\"", " ", ",", " ", "i"}], "]"}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.606756586976482*^9, 3.606756639514556*^9}, {
+   3.6067567214886713`*^9, 3.60675674928271*^9}, {3.6067567945607743`*^9, 
+   3.6067568344858303`*^9}, {3.6067568675908775`*^9, 3.606756870521881*^9}, {
+   3.6067576083379207`*^9, 3.6067576278209476`*^9}, {3.606757680369022*^9, 
+   3.6067576879100327`*^9}, {3.6067579074153423`*^9, 
+   3.6067579086553435`*^9}, {3.606758069761571*^9, 3.6067581669857073`*^9}, {
+   3.6067847774016705`*^9, 3.6067848137067223`*^9}, {3.6067850311820326`*^9, 
+   3.6067851210001593`*^9}, {3.606785161018216*^9, 3.606785171300231*^9}, {
+   3.606785224231305*^9, 3.6067852324133167`*^9}, {3.606785654836915*^9, 
+   3.606785670959938*^9}, {3.6067858881732445`*^9, 3.6067858950752544`*^9}, {
+   3.60678594117632*^9, 3.606785951777335*^9}, {3.606786123739607*^9, 
+   3.6067861284731135`*^9}, {3.606786224603758*^9, 3.6067862259237595`*^9}, 
+   3.6067863893761034`*^9, {3.606786489430316*^9, 3.6067865654824247`*^9}, {
+   3.606786606363983*^9, 3.6067866324370193`*^9}, {3.6067868971485624`*^9, 
+   3.6067868977685633`*^9}, {3.6067869476441345`*^9, 3.606786967312163*^9}, {
+   3.606787081812171*^9, 3.606787094104188*^9}, {3.606787137788251*^9, 
+   3.6067871403702545`*^9}, {3.6067872434787374`*^9, 3.606787275875433*^9}, {
+   3.6067873609488964`*^9, 3.606787390430637*^9}, {3.606787436094702*^9, 
+   3.606787438404705*^9}, {3.6067876163311195`*^9, 3.6067876185611224`*^9}, {
+   3.6067876497961664`*^9, 3.6067877317482815`*^9}, {3.608508640504035*^9, 
+   3.6085086610336714`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"La Funcion a minimizar es:\"\>", "\[InvisibleSpace]", 
+   RowBox[{"x", "+", 
+    SuperscriptBox["x", "2"]}]}],
+  SequenceForm[
+  "La Funcion a minimizar es:", $CellContext`x + $CellContext`x^2],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6067874131171694`*^9, 3.606787453518727*^9, 
+  3.6067876971432333`*^9, 3.606787751083309*^9, 3.608508672827292*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"X donde alcana f(x) su minimo:\"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", 
+    FractionBox["1", "2"]}]}],
+  SequenceForm["X donde alcana f(x) su minimo:", 
+   Rational[-1, 2]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6067874131171694`*^9, 3.606787453518727*^9, 
+  3.6067876971432333`*^9, 3.606787751083309*^9, 3.608508672827292*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Valor minimimo de f(x) en el intervalo dado: \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"-", 
+    FractionBox["1", "4"]}]}],
+  SequenceForm["Valor minimimo de f(x) en el intervalo dado: ", 
+   Rational[-1, 4]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6067874131171694`*^9, 3.606787453518727*^9, 
+  3.6067876971432333`*^9, 3.606787751083309*^9, 3.608508672827292*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"No Interaciones:\"\>", "\[InvisibleSpace]", "2"}],
+  SequenceForm["No Interaciones:", 2],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6067874131171694`*^9, 3.606787453518727*^9, 
+  3.6067876971432333`*^9, 3.606787751083309*^9, 3.608508672827292*^9}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1350, 633},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"8.0 for Microsoft Windows (64-bit) (October 6, 2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 4142, 95, 392, "Input"],
+Cell[CellGroupData[{
+Cell[4746, 121, 410, 9, 23, "Print"],
+Cell[5159, 132, 393, 9, 40, "Print"],
+Cell[5555, 143, 427, 10, 40, "Print"],
+Cell[5985, 155, 305, 6, 23, "Print"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

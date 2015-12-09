@@ -1,0 +1,360 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     12951,        351]
+NotebookOptionsPosition[     12562,        332]
+NotebookOutlinePosition[     12905,        347]
+CellTagsIndexPosition[     12862,        344]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{Cell[""], "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+     "Este", " ", "es", " ", "un", " ", "programa", " ", "para", " ", 
+      "encontrar", " ", "la", " ", "raiz", " ", "de", " ", "una", " ", 
+      "funcion", " ", "con", " ", "el", " ", "metodo", " ", "de", " ", "la", 
+      " ", 
+      RowBox[{"secante", ".", "Es"}], " ", "una", " ", "variaci\[OAcute]n", 
+      " ", "del", " ", "m\[EAcute]todo", " ", "de", " ", "Newton"}], "-", 
+     RowBox[{
+     "Raphson", " ", "donde", " ", "en", " ", "vez", " ", "de", " ", 
+      "calcular", " ", "la", " ", "derivada", " ", "de", " ", "la", " ", 
+      "funci\[OAcute]n", " ", "en", " ", "el", " ", "punto", " ", "de", " ", 
+      "estudio"}]}], ",", 
+    RowBox[{
+    "teniendo", " ", "en", " ", "mente", " ", "la", " ", "definici\[OAcute]n",
+      " ", "de", " ", "derivada"}], ",", 
+    RowBox[{
+    "se", " ", "aproxima", " ", "la", " ", "pendiente", " ", "a", " ", "la", 
+     " ", "recta", " ", "que", " ", "une", " ", "la", " ", "funci\[OAcute]n", 
+     " ", "evaluada", " ", "en", " ", "el", " ", "punto", " ", "de", " ", 
+     "estudio", " ", "y", " ", "en", " ", "el", " ", "punto", " ", "de", " ", 
+     "la", " ", "iteraci\[OAcute]n", " ", 
+     RowBox[{"anterior", ".", "Este"}], " ", "m\[EAcute]todo", " ", "es", " ",
+      "de", " ", "especial", " ", "inter\[EAcute]s", " ", "cuando", " ", "el",
+      " ", "coste", " ", "computacional", " ", "de", " ", "derivar", " ", 
+     "la", " ", "funci\[OAcute]n", " ", "de", " ", "estudio", " ", "y", " ", 
+     "evaluarla", " ", "es", " ", "demasiado", " ", "elevado"}], ",", 
+    RowBox[{
+    "por", " ", "lo", " ", "que", " ", "el", " ", "m\[EAcute]todo", " ", "de",
+      " ", "Newton", " ", "no", " ", "resulta", " ", 
+     RowBox[{"atractivo", ".", "En"}], " ", "otras", " ", "palabras"}], ",", 
+    RowBox[{
+     RowBox[{
+     "el", " ", "m\[EAcute]todo", " ", "de", " ", "la", " ", "secante", " ", 
+      "es", " ", "un", " ", "algoritmo", " ", "de", " ", "la", " ", 
+      "ra\[IAcute]z", " ", "de", " ", "investigaci\[OAcute]n", " ", "que", 
+      " ", "utiliza", " ", "una", " ", "serie", " ", "de", " ", 
+      "ra\[IAcute]ces", " ", "de", " ", "las", " ", "l\[IAcute]neas", " ", 
+      "secantes", " ", "para", " ", "aproximar", " ", "mejor", " ", "la", " ",
+       "ra\[IAcute]z", " ", "de", " ", "una", " ", "funci\[OAcute]n", " ", 
+      RowBox[{"f", ".", "El"}], " ", "m\[EAcute]todo", " ", "de", " ", "la", 
+      " ", "secante", " ", "se", " ", "puede", " ", "considerar", " ", "como",
+       " ", "una", " ", "aproximaci\[OAcute]n", " ", "en", " ", "diferencias",
+       " ", "finitas", " ", "del", " ", "m\[EAcute]todo", " ", "de", " ", 
+      "Newton"}], "-", 
+     RowBox[{"Raphson", "."}]}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Clear", " ", 
+   RowBox[{
+    RowBox[{"All", "[", "]"}], "[", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", " ", "=", " ", 
+    RowBox[{
+     RowBox[{"x", "^", "2"}], "-", 
+     RowBox[{"1", "/", "4"}]}]}], ";"}], 
+  RowBox[{"(*", 
+   RowBox[{
+   "Damos", " ", "la", " ", "funcion", " ", "a", " ", "la", " ", "cual", " ", 
+    "le", " ", "queremos", " ", "encontrar", " ", "la", " ", "raiz", " ", 
+    "real"}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"x0", "=", "0"}], ";"}], 
+  RowBox[{"(*", 
+   RowBox[{"Damos", " ", "el", " ", "primer", " ", "punto"}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"x1", "=", "1"}], ";"}], 
+  RowBox[{"(*", 
+   RowBox[{"Damos", " ", "el", " ", "segundo", " ", "punto"}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"err", " ", "=", " ", "0.01"}], ";"}], 
+  RowBox[{"(*", 
+   RowBox[{
+   "Damos", " ", "el", " ", "error", " ", "que", " ", "va", " ", "a", " ", 
+    "permitir", " ", "el", " ", "programa", " ", "el", " ", "cual", " ", "la",
+     " ", "raiz", " ", "va", " ", "a", " ", "ser", " ", "menor", " ", "que", 
+    " ", "la", " ", "raiz"}], " ", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"n", "=", "9"}], ";"}], 
+  RowBox[{"(*", 
+   RowBox[{
+   "El", " ", "numerro", " ", "de", " ", "iteraciones", " ", "que", " ", "va",
+     " ", "hacer", " ", "el", " ", "programas", " ", "antes", " ", "de", " ", 
+    "encontrar", " ", "la", " ", "raiz"}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"f0", "=", 
+    RowBox[{"f", "/.", 
+     RowBox[{"x", "\[Rule]", "x0"}]}]}], ";", 
+   RowBox[{"(*", 
+    RowBox[{
+    "Evalueamos", " ", "el", " ", "primer", " ", "punto", " ", "en", " ", 
+     "la", " ", "funcion", " ", "y", " ", "lo", " ", "mandamos", " ", "a", 
+     " ", "f0"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"f1", "=", 
+    RowBox[{"f", "/.", 
+     RowBox[{"x", "\[Rule]", "x1"}]}]}], ";"}], 
+  RowBox[{"(*", 
+   RowBox[{
+   "Evalueamos", " ", "el", " ", "primer", " ", "punto", " ", "en", " ", "la",
+     " ", "funcion", " ", "y", " ", "lo", " ", "mandamos", " ", "a", " ", 
+    "f1"}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+     "Sean", " ", "x0", " ", "y", " ", "x1", " ", "dos", " ", "puntos", " ", 
+      RowBox[{"iniciales", ".", "La"}], " ", "pendiente", " ", "de", " ", 
+      "la", " ", "secante", " ", "que", " ", "pasa", " ", "por", " ", "los", 
+      " ", "puntos", " ", 
+      RowBox[{"(", 
+       RowBox[{"x0", ",", 
+        RowBox[{"f", 
+         RowBox[{"(", "x0", ")"}]}]}], ")"}], "y", " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"x", " ", "1"}], ",", 
+        RowBox[{"f", 
+         RowBox[{"(", "x1", ")"}]}]}], ")"}], " ", "es", " ", "dada", " ", 
+      "por", " ", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"f", 
+          RowBox[{"(", "x1", ")"}]}], "-", 
+         RowBox[{"f", 
+          RowBox[{"(", "x0", ")"}]}]}], ")"}], "/", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"x1", "-", "x0"}], ")"}], ".", "La"}]}], " ", 
+      "ecuaci\[OAcute]n", " ", "la", " ", "la", " ", "l\[IAcute]nea", " ", 
+      "secante", " ", "es", " ", "dada", " ", 
+      RowBox[{"por", ":", 
+       RowBox[{"y", "-", 
+        RowBox[{"f", 
+         RowBox[{"(", "x1", ")"}]}]}]}]}], "=", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"f", 
+         RowBox[{"(", "x1", ")"}]}], "-", 
+        RowBox[{"f", 
+         RowBox[{"(", "x0", ")"}]}]}], ")"}], 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"x", "-", "x1"}], ")"}], "/", 
+       RowBox[{"(", 
+        RowBox[{"x1", "-", "x0"}], ")"}]}], "La", " ", "primera", " ", 
+      "aproximaci\[OAcute]n", " ", "x2", " ", "es", " ", "obtenida", " ", 
+      "como", " ", "la", " ", "ra\[IAcute]z", " ", "de", " ", "la", " ", 
+      "ecuacion", " ", "de", " ", 
+      RowBox[{"arriba", ".", "Esto"}], " ", "es", " ", 
+      RowBox[{"(", 
+       RowBox[{"x2", ",", "0"}], ")"}], " ", "es", " ", "un", " ", "punto", 
+      " ", "sobre", " ", "la", " ", "ecuaci\[OAcute]n", " ", "de", " ", 
+      RowBox[{"arriba", ".", "\[IndentingNewLine]", "De"}], " ", 
+      "aqu\[IAcute]"}]}], ",", 
+    RowBox[{
+     RowBox[{"0", "-", 
+      RowBox[{"f", 
+       RowBox[{"(", "x1", ")"}]}]}], "=", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"f", 
+         RowBox[{"(", "x1", ")"}]}], "-", 
+        RowBox[{"f", 
+         RowBox[{"(", "x0", ")"}]}]}], ")"}], 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"x2", "-", "x1"}], ")"}], "/", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"x1", "-", "x0"}], ")"}], ".", "Esto"}]}], " ", "es"}]}], 
+    ",", 
+    RowBox[{
+     RowBox[{"x2", "-", "x1"}], "=", 
+     RowBox[{
+      RowBox[{"-", "f"}], 
+      RowBox[{"(", "x1", ")"}], 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"x1", "-", "x0"}], ")"}], "/", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"f", 
+          RowBox[{"(", "x1", ")"}]}], "-", 
+         RowBox[{"f", 
+          RowBox[{"(", "x0", ")"}]}]}], ")"}]}], "de", " ", "donde"}]}], ",", 
+    RowBox[{"x2", "=", 
+     RowBox[{
+      RowBox[{"x1", "-", 
+       RowBox[{"f", 
+        RowBox[{"(", "x1", ")"}], 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"x1", "-", "x0"}], ")"}], "/", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"f", 
+            RowBox[{"(", "x1", ")"}]}], "-", 
+           RowBox[{"f", 
+            RowBox[{"(", "x0", ")"}]}]}], ")"}]}], "\n", "Mediante", " ", 
+        "una", " ", "construcci\[OAcute]n", " ", "similar", " ", 
+        RowBox[{"obtenemos", ":", 
+         RowBox[{"xn", "+", "1"}]}]}]}], "=", 
+      RowBox[{"xn", "-", 
+       RowBox[{"f", 
+        RowBox[{"(", "xn", ")"}], " ", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"xn", "-", "xn", "-", "1"}], ")"}], "/", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"f", 
+            RowBox[{"(", "xn", ")"}]}], "-", 
+           RowBox[{"f", 
+            RowBox[{"(", 
+             RowBox[{"xn", "-", "1"}], ")"}]}]}], ")"}]}]}]}]}]}]}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{"For", "[", 
+  RowBox[{
+   RowBox[{"i", "=", "1"}], ",", " ", 
+   RowBox[{"i", "<=", "n"}], ",", 
+   RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"p", "=", 
+     RowBox[{"x1", "-", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"x1", "-", "x0"}], ")"}], "*", "f1"}], ")"}], "/", 
+       RowBox[{"(", 
+        RowBox[{"f1", "-", "f0"}], ")"}]}]}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Abs", "[", 
+         RowBox[{"p", "-", "x1"}], "]"}], "\[LessEqual]", "err"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"Print", "[", 
+         RowBox[{"p", ",", " ", "\"\< es la aproximacion a la raiz\>\""}], 
+         "]"}], ";", "\[IndentingNewLine]", 
+        RowBox[{"Print", "[", 
+         RowBox[{"\"\<Finalizado en: \>\"", ",", 
+          RowBox[{"(", "i", ")"}], ",", " ", "\"\< iteraciones\>\""}], "]"}], 
+        ";", "\[IndentingNewLine]", 
+        RowBox[{"Break", "[", "]"}]}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"x0", "=", "x1"}], ";", "\[IndentingNewLine]", 
+        RowBox[{"x1", "=", "p"}], ";", "\[IndentingNewLine]", 
+        RowBox[{"f0", "=", "f1"}], ";", "\[IndentingNewLine]", 
+        RowBox[{"f1", "=", 
+         RowBox[{"f", "/.", 
+          RowBox[{"x", "\[Rule]", "p"}]}]}], ";"}]}], "\[IndentingNewLine]", 
+      "]"}], "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"n", "\[Equal]", "i"}], ",", 
+       RowBox[{"Print", "[", 
+        RowBox[{
+        "\"\<El programa falla para \>\"", ",", " ", "n", ",", " ", 
+         "\"\< iteraciones\>\""}], "]"}]}], "]"}]}]}]}], 
+  "\[IndentingNewLine]", "]"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.5431464663896*^9, 3.5431464750996*^9}, {
+  3.5431465158656*^9, 3.5431467237796*^9}, {3.5431468242416*^9, 
+  3.5431469801956*^9}, {3.5431470193576*^9, 3.5431470210676003`*^9}, {
+  3.5449096717832003`*^9, 3.5449096808972*^9}, {3.5449097630182*^9, 
+  3.5449098299892*^9}, {3.5449098706212*^9, 3.5449101133052*^9}, {
+  3.5449103386082*^9, 3.5449104462651997`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   FractionBox["1640", "3281"], 
+   "\[InvisibleSpace]", "\<\" es la aproximacion a la raiz\"\>"}],
+  SequenceForm[
+   Rational[1640, 3281], " es la aproximacion a la raiz"],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.5431469896376*^9, 3.5431470259076*^9, {3.5449096756572*^9, 
+   3.5449096830972*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Finalizado en: \"\>", "\[InvisibleSpace]", "5", 
+   "\[InvisibleSpace]", "\<\" iteraciones\"\>"}],
+  SequenceForm["Finalizado en: ", 5, " iteraciones"],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.5431469896376*^9, 3.5431470259076*^9, {3.5449096756572*^9, 
+   3.5449096830972*^9}}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1264, 665},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"8.0 for Microsoft Windows (32-bit) (November 7, 2010)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 11229, 282, 712, "Input"],
+Cell[CellGroupData[{
+Cell[11833, 308, 358, 10, 40, "Print"],
+Cell[12194, 320, 340, 8, 23, "Print"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

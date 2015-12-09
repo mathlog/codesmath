@@ -1,0 +1,126 @@
+#include <conio.h>
+#include <stdio.h>
+#include <iostream.h>
+#include <math.h>
+
+float x[4],y[4],z[3], fx[3];
+float mat11,mat12,mat13,mat14,mat15,mat21,mat22,mat23,mat24,mat25;
+float mat31,mat32,mat33,mat34,mat35,mat41,mat42,mat43,mat44,mat45;
+float x2[4],x3[4],x4[4],x5[4],x6[4],xy[4],x2y[4],x3y[4];
+float kx,ky,kx2,kx3,kx4,kx5,kx6,kxy,kx2y,kx3y;
+int i,j;
+
+void main()
+{
+	kx=0;ky=0;kx2=0;kx3=0;kx4=0;kx5=0;
+	kx6=0;kxy=0;kx2y=0;kx3y=0;
+	clrscr();
+	cout<<"\n"<<"EJE DE LAS X: ";
+	cout<<"\n";
+	cin>>x[1];
+	cin>>x[2];
+	cin>>x[3];
+	cin>>x[4];
+	cout<<"\n"<<"EJE DE LAS Y: ";
+	cout<<"\n";
+	cin>>y[1];
+	cin>>y[2];
+	cin>>y[3];
+	cin>>y[4];
+	cout<<"\n";
+	cout<<"\n"<<"CUANDO X ES: ";
+	cout<<"\n";
+	cin>>z[1];
+	cin>>z[2];
+	//cin>>z[3];
+	j=4;
+	clrscr();
+	for (i=0;i<=j;i++){
+		x2[i]=(x[i]*x[i]);
+		x3[i]=(x[i]*x[i]*x[i]);
+		x4[i]=(x[i]*x[i]*x[i]*x[i]);
+		x5[i]=(x[i]*x[i]*x[i]*x[i]*x[i]);
+		x6[i]=(x[i]*x[i]*x[i]*x[i]*x[i]*x[i]);
+		xy[i]=(x[i]*y[i]);
+		x2y[i]=(x2[i]*y[i]);
+		kx3y= kx3y+ (x3[i]*y[i]);
+	}
+	kx=x[1]+x[2]+x[3]+x[4];
+	kx2=x2[1]+x2[2]+x2[3]+x2[4];
+	kx3=x3[1]+x3[2]+x3[3]+x3[4];
+	kx4=x4[1]+x4[2]+x4[3]+x4[4];
+	kx5=x5[1]+x5[2]+x5[3]+x5[4];
+	kx6=x6[1]+x6[2]+x6[3]+x6[4];
+	ky=y[1]+y[2]+y[3]+y[4];
+	kxy=xy[1]+xy[2]+xy[3]+xy[4];
+	kx2y=x2y[1]+x2y[2]+x2y[3]+x2y[4];
+	gotoxy(8,10);cout<<"| "<<j<<"    "<<kx<<"   "<<kx2<<"   "<<kx3<<"  |"<<ky<<" |";
+	gotoxy(8,12);cout<<"| "<<kx<<"   "<<kx2<<"   "<<kx3<<"   "<<kx4<<"  |"<<kxy<<" |";
+	gotoxy(8,14);cout<<"|"<<kx2<<"   "<<kx3<<"  "<<kx4<<"   "<<kx5<<"  |"<<kx2y<<" |";
+	gotoxy(8,16);cout<<"|"<<kx3<<"   "<<kx4<<"  "<<kx5<<"  "<<kx6<<"  |"<<kx3y<<" |";
+	getch();
+	mat41=kx3/kx6; mat42=kx4/kx6;  mat43=kx5/kx6;  mat44=kx6/kx6; mat45=kx3y/kx6;
+	kx5=kx5*-1; mat31=(mat41*kx5)+kx2; mat32=(mat42*kx5)+kx3; mat33=(mat43*kx5)+kx4;
+	mat34=(mat44*kx5)-kx5; mat35=(mat45*kx5)+kx2y;
+	kx4=kx4*-1; mat21=(mat41*kx4)+kx; mat22=(mat42*kx4)+kx2; mat23=(mat43*kx4)+kx3; mat24=(mat44*kx4)-kx4;
+	mat25=(mat45*kx4)+kxy; kx3=kx3*-1;
+	mat11=(mat41*kx3)+j; mat12=(mat42*kx3)+kx; mat13=(mat43*kx3)+kx2; mat14=(mat44*kx3)-kx3;
+	mat15=(mat45*kx3)+ky;
+	clrscr();
+	gotoxy(8,10);cout<<"|"<<mat11<<"     "<<mat12<<"    "<<mat13<<"    "<<mat14<<"   |"<<mat15<<"  |";
+	gotoxy(8,12);cout<<"|"<<mat21<<"     "<<mat22<<"    "<<mat23<<"    "<<mat24<<"   |"<<mat25<<"  |";
+	gotoxy(8,14);cout<<"|"<<mat31<<"     "<<mat32<<"    "<<mat33<<"    "<<mat34<<"   |"<<mat35<<"  |";
+	gotoxy(8,16);cout<<"|"<<mat41<<"     "<<mat42<<"    "<<mat43<<"    "<<mat44<<"   |"<<mat45<<"  |";
+	getch();
+	mat12=mat12/mat11;  mat13=mat13/mat11;  mat14=mat14/mat11; mat15=mat15/mat11; mat11=mat11/mat11;
+	mat21=mat21*-1; mat22=(mat12*mat21)+mat22; mat23=(mat13*mat21)+mat23;
+	mat24=(mat14*mat21)+mat24; mat25=(mat15*mat21)+mat25; mat21=(mat11*mat21)-mat21; mat31=mat31*-1;
+	mat32=(mat12*mat31)+ mat32; mat33=(mat13*mat31)+mat33; mat34=(mat14*mat31)+mat34;
+	mat35=(mat15*mat31)+mat35; mat31=(mat11*mat31)-mat31; mat41=mat41*-1;
+	mat42=(mat12*mat41)+mat42; mat43=(mat13*mat41)+mat43; mat44=(mat14*mat41)+mat44;
+	mat45=(mat15*mat41)+mat45; mat41=(mat11*mat41)-mat41;
+	clrscr();
+	gotoxy(8,10);cout<<"| "<<mat11<<"    "<<mat12<<"   "<<mat13<<"   "<<mat14<<"  |"<<mat15<<" |";
+	gotoxy(8,12);cout<<"| "<<mat21<<"    "<<mat22<<"   "<<mat23<<"   "<<mat24<<"  |"<<mat25<<" |";
+	gotoxy(8,14);cout<<"| "<<mat31<<"    "<<mat32<<"   "<<mat33<<"   "<<mat34<<"  |"<<mat35<<" |";
+	gotoxy(8,16);cout<<"| "<<mat41<<"    "<<mat42<<"   "<<mat43<<"   "<<mat44<<"  |"<<mat45<<" |";
+	getch();
+	mat31=mat31/mat33; mat32=mat32/mat33;  mat34=mat34/mat33;  mat35=mat35/mat33; mat33=mat33/mat33;
+	mat43=mat43*-1; mat41=(mat31*mat43)+mat41; mat42=(mat32*mat43)+mat42; mat44=(mat34*mat43)+mat44;
+	mat45=(mat35*mat43)+mat45; mat43=(mat33*mat43)-mat43;
+	mat23=mat23*-1; mat21=(mat31*mat23)+mat21; mat22=(mat32*mat23)+mat22; mat24=(mat34*mat23)+mat24;
+	mat25=(mat35*mat23)+mat25; mat23=(mat33*mat23)-mat23;
+	mat13=mat13*-1; mat11=(mat31*mat13)+mat11; mat12=(mat32*mat13)+mat12; mat14=(mat34*mat13)+mat14;
+	mat15=(mat35*mat13)+mat15; mat13=(mat33*mat13)-mat13;
+	clrscr();
+	gotoxy(8,10);cout<<"|"<<mat11<<"     "<<mat12<<"    "<<mat13<<"    "<<mat14<<"   |"<<mat15<<"  |";
+	gotoxy(8,12);cout<<"|"<<mat21<<"     "<<mat22<<"    "<<mat23<<"    "<<mat24<<"   |"<<mat25<<"  |";
+	gotoxy(8,14);cout<<"|"<<mat31<<"     "<<mat32<<"    "<<mat33<<"    "<<mat34<<"   |"<<mat35<<"  |";
+	gotoxy(8,16);cout<<"|"<<mat41<<"     "<<mat42<<"    "<<mat43<<"    "<<mat44<<"   |"<<mat45<<"  |";
+	getch();
+	mat21=mat21/mat22; mat23=mat23/mat22;  mat24=mat24/mat22;  mat25=mat25/mat22; mat22=mat22/mat22;
+	mat12=mat12*-1; mat11=(mat21*mat12)+mat11; mat13=(mat23*mat12)+mat13; mat14=(mat24*mat12)+mat14;
+	mat15=(mat25*mat12)+mat15; mat12=(mat22*mat12)-mat12;
+	mat32=mat32*-1; mat31=(mat21*mat32)+mat31; mat33=(mat23*mat32)+mat33; mat34=(mat24*mat32)+mat34;
+	mat35=(mat25*mat32)+mat35; mat32=(mat22*mat32)-mat32;
+	mat42=mat42*-1; mat41=(mat21*mat42)+mat41; mat43=(mat23*mat42)+mat43; mat44=(mat24*mat42)+mat44;
+	mat45=(mat25*mat42)+mat45; mat42=(mat22*mat42)-mat42;
+	clrscr();
+	gotoxy(8,10);cout<<"|"<<mat11<<"     "<<mat12<<"    "<<mat13<<"    "<<mat14<<"   |"<<mat15<<"  |";
+	gotoxy(8,12);cout<<"|"<<mat21<<"     "<<mat22<<"    "<<mat23<<"    "<<mat24<<"   |"<<mat25<<"  |";
+	gotoxy(8,14);cout<<"|"<<mat31<<"     "<<mat32<<"    "<<mat33<<"    "<<mat34<<"   |"<<mat35<<"  |";
+	gotoxy(8,16);cout<<"|"<<mat41<<"     "<<mat42<<"    "<<mat43<<"    "<<mat44<<"   |"<<mat45<<"  |";
+	getch();
+	clrscr();
+	cout<<"\n"<<"CUANDO X ES: ";
+	cout<<z[1];
+	fx[1]=mat15+(mat25*z[1])+(mat35*z[1]*z[1])+(mat45*z[1]*z[1]*z[1]);
+	cout<<"Fx="<<fx[1];
+	cout<<z[2];
+	fx[2]=mat15+(mat25*z[2])+(mat35*z[2]*z[2])+(mat45*z[2]*z[2]*z[2]);
+	cout<<"Fx="<<fx[2];
+	cout<<z[3];
+	//fx[3]=mat15+(mat25*z[3])+(mat35*z[3]*z[3])+(mat45*z[3]*z[3]*z[3]);
+	//cout<<"Fx="<<fx[3];
+	getch();
+}

@@ -1,0 +1,113 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[      3429,        103]
+NotebookOptionsPosition[      3070,         86]
+NotebookOutlinePosition[      3410,        101]
+CellTagsIndexPosition[      3367,         98]
+WindowFrame->Normal
+ContainsDynamic->False*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"EvalPol", "[", 
+    RowBox[{"pcoef_", ",", "a0_"}], "]"}], ":=", "\[IndentingNewLine]", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"k", ",", "c", ",", "a", ",", "b"}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"a", "=", "a0"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"c", "=", 
+       RowBox[{"Length", "[", "pcoef", "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"b", "=", 
+       RowBox[{"Table", "[", 
+        RowBox[{"0", ",", 
+         RowBox[{"{", "c", "}"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"For", "[", 
+       RowBox[{
+        RowBox[{"k", "=", "1"}], ",", 
+        RowBox[{"k", "\[LessEqual]", 
+         RowBox[{"c", "-", "1"}]}], ",", 
+        RowBox[{"k", "++"}], ",", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"b", "[", 
+          RowBox[{"[", "k", "]"}], "]"}], "=", 
+         RowBox[{
+          RowBox[{"a", "^", "k"}], "*", 
+          RowBox[{"b", "[", 
+           RowBox[{"[", "k", "]"}], "]"}]}]}]}], "]"}], ";", 
+      "\[IndentingNewLine]", "b"}]}], "]"}]}], 
+  "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.514557052828125*^9, 3.5145573420625*^9}, {
+   3.51455744753125*^9, 3.5145575341875*^9}, {3.5145575648125*^9, 
+   3.514557597265625*^9}, 3.51455763084375*^9, {3.51455769703125*^9, 
+   3.51455778465625*^9}, {3.514557856*^9, 3.5145579305625*^9}, {
+   3.51455798278125*^9, 3.51455801059375*^9}, {3.514558228046875*^9, 
+   3.514558229890625*^9}, {3.514558300359375*^9, 3.514558318609375*^9}, {
+   3.5145584218125*^9, 3.51455842921875*^9}, {3.5145584768125*^9, 
+   3.51455857603125*^9}, {3.514558654125*^9, 3.51455865528125*^9}, {
+   3.51455868878125*^9, 3.514558689375*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"EvalPol", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"5", ",", 
+     RowBox[{"-", "3"}], ",", "1"}], "}"}], ",", "2"}], "]"}]], "Input",
+ CellChangeTimes->{{3.514557791609375*^9, 3.514557839109375*^9}, {
+  3.514558054828125*^9, 3.51455806125*^9}, {3.51455819378125*^9, 
+  3.514558243734375*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"0", ",", "0", ",", "0"}], "}"}]], "Output",
+ CellChangeTimes->{{3.514557849703125*^9, 3.5145578626875*^9}, {
+   3.51455789321875*^9, 3.51455793659375*^9}, 3.51455801734375*^9, {
+   3.514558057796875*^9, 3.514558069921875*^9}, 3.514558197765625*^9, 
+   3.514558244875*^9, 3.51455858378125*^9, {3.5145586744375*^9, 
+   3.51455869525*^9}}]
+}, Open  ]]
+},
+WindowSize->{615, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"6.0 for Microsoft Windows (32-bit) (April 20, 2007)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[568, 21, 1760, 41, 192, "Input"],
+Cell[CellGroupData[{
+Cell[2353, 66, 322, 8, 31, "Input"],
+Cell[2678, 76, 376, 7, 30, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

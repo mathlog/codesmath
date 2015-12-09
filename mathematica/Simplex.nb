@@ -1,0 +1,509 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.2'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     15908,        443]*)
+(*NotebookOutlinePosition[     16551,        465]*)
+(*  CellTagsIndexPosition[     16507,        461]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+    RowBox[{\(ClearAll[]\), 
+      " "}], "\[IndentingNewLine]", \(MD = {{2, 1, 1}, {1, 1, 3}, {2, 2, 1}}; 
+    MatrixForm[
+      MD]\), "\[IndentingNewLine]", \(BI = {{1, 0, 0}, {0, 1, 0}, {0, 0, 1}}; 
+    MatrixForm[BI]\), "\[IndentingNewLine]", \(B = 
+      BI\), "\[IndentingNewLine]", \(b = {2, 5, 
+        6}\), "\[IndentingNewLine]", \(ye = {0, 0, 
+        0}\), "\[IndentingNewLine]", \(CDt = {\(-3\), \(-1\), \(-3\)}\), "\
+\[IndentingNewLine]", \(CBt = {0, 0, 0}\), "\[IndentingNewLine]", \(rd = 
+      CDt\), "\[IndentingNewLine]", \(xB = 
+      Inverse[BI] . b\), "\[IndentingNewLine]", \(m = 3; \ n = 3; 
+    cosct = 0\), "\[IndentingNewLine]", \(For[i = 1, 
+      i \[LessEqual] m, \(i++\), 
+      For[j = 1, 
+        j \[LessEqual] n, \(j++\), \(y\_i\)\_j = 
+          MD[\([i, j]\)]]]\), "\[IndentingNewLine]", \(r = 0; \ 
+    ap2 = 0;\), "\[IndentingNewLine]", 
+    RowBox[{
+      RowBox[{
+        StyleBox["For",
+          FontColor->RGBColor[1, 0, 0]], 
+        StyleBox["[",
+          FontColor->RGBColor[1, 0, 0]], 
+        RowBox[{
+          StyleBox[\(k = 1\),
+            FontColor->RGBColor[1, 0, 0]], 
+          StyleBox[",",
+            FontColor->RGBColor[1, 0, 0]], 
+          StyleBox[\(k \[LessEqual] m\),
+            FontColor->RGBColor[1, 0, 0]], 
+          StyleBox[",",
+            FontColor->RGBColor[1, 0, 0]], 
+          StyleBox[\(k++\),
+            FontColor->RGBColor[1, 0, 0]], 
+          StyleBox[",",
+            FontColor->RGBColor[1, 0, 0]], 
+          RowBox[{
+            RowBox[{
+              StyleBox["For",
+                FontColor->RGBColor[1, 0, 0]], 
+              StyleBox["[",
+                FontColor->RGBColor[1, 0, 0]], 
+              RowBox[{
+                StyleBox[\(j = 1\),
+                  FontColor->RGBColor[1, 0, 0]], 
+                StyleBox[",",
+                  FontColor->RGBColor[1, 0, 0]], 
+                StyleBox[\(j \[LessEqual] m\),
+                  FontColor->RGBColor[1, 0, 0]], 
+                StyleBox[",",
+                  FontColor->RGBColor[1, 0, 0]], 
+                StyleBox[\(j++\),
+                  FontColor->RGBColor[1, 0, 0]], 
+                StyleBox[",",
+                  FontColor->RGBColor[1, 0, 0]], 
+                StyleBox[\(If[rd[\([j]\)] <= r, r = rd[\([j]\)]; ap2 = j]\),
+                  FontColor->RGBColor[1, 0, 1]]}], 
+              StyleBox["]",
+                FontColor->RGBColor[1, 0, 1]]}], 
+            StyleBox[";",
+              FontColor->RGBColor[1, 0, 1]], 
+            RowBox[{
+              StyleBox["If",
+                FontColor->RGBColor[1, 0, 1]], 
+              StyleBox["[",
+                FontColor->RGBColor[1, 0, 1]], 
+              
+              StyleBox[\(r == 0, 
+                Print["\< DADO QUE TODOS LOS r SON POSITIVOS, POR TANTO xB ES \
+OPTIMAL\>"]; Print["\<  EL VALOR DEL OPTIMO ES : \>", \(-CBt . xB\)]; 
+                Break[]\),
+                FontColor->RGBColor[1, 0, 1]], 
+              StyleBox["]",
+                FontColor->RGBColor[1, 0, 0]]}], 
+            StyleBox[";",
+              FontColor->RGBColor[1, 0, 0]], 
+            StyleBox["\[IndentingNewLine]",
+              FontColor->RGBColor[1, 0, 0]], 
+            
+            StyleBox[\(Print["\< EL VALOR M\[CapitalAAcute]S NEGATIVO DE r ES \
+: \>", r, "\< EN LA COLUMNA a \>", ap2]\),
+              FontColor->RGBColor[1, 0, 0]], 
+            StyleBox[";",
+              FontColor->RGBColor[1, 0, 0]], 
+            StyleBox["\[IndentingNewLine]",
+              FontColor->RGBColor[1, 0, 0]], 
+            StyleBox[\(t = ap2\),
+              FontColor->RGBColor[1, 0, 0]], 
+            StyleBox[";",
+              FontColor->RGBColor[1, 0, 0]], 
+            StyleBox[\(r = 0\),
+              FontColor->RGBColor[1, 0, 0]], 
+            StyleBox[";",
+              FontColor->RGBColor[1, 0, 0]], 
+            StyleBox["\[IndentingNewLine]",
+              FontColor->RGBColor[1, 0, 0]], 
+            StyleBox[\(Print["\<  Entra a la Base:   a\>", t]\),
+              FontColor->RGBColor[1, 0, 0]], 
+            StyleBox[";",
+              FontColor->RGBColor[1, 0, 0]], 
+            StyleBox["\[IndentingNewLine]",
+              FontColor->RGBColor[1, 0, 0]], 
+            
+            StyleBox[\(For[i = 1, i \[LessEqual] n, \(i++\), 
+                ye[\([i]\)] = \(y\_i\)\_t]\),
+              FontColor->RGBColor[1, 0, 0]], 
+            StyleBox[";",
+              FontColor->RGBColor[1, 0, 0]], 
+            StyleBox["\[IndentingNewLine]",
+              FontColor->RGBColor[1, 0, 0]], 
+            StyleBox[\(ye = BI . ye\),
+              FontColor->RGBColor[1, 0, 0]], 
+            StyleBox[";",
+              FontColor->RGBColor[1, 0, 0]], 
+            StyleBox["\[IndentingNewLine]",
+              FontColor->RGBColor[1, 0, 0]], 
+            
+            StyleBox[\(For[i = 1, i \[LessEqual] 3, \(i++\), 
+                If[ye[\([i]\)] > 0, 
+                  If[i \[Equal] 1 || cosct > xB[\([i]\)]\[Divide]ye[\([i]\)], 
+                    cosct = xB[\([i]\)]\[Divide]ye[\([i]\)]; Print[cosct]; 
+                    s = i]]]\),
+              FontColor->RGBColor[0, 0, 1]], 
+            StyleBox[";",
+              FontColor->RGBColor[0, 0, 1]], 
+            
+            StyleBox[\(Print["\<  EL PIVOTE SE ENCUENTRA EN EL RENGL\
+\[CapitalOAcute]N i= \>", s, "\< CON VALOR \>", cosct]\),
+              FontColor->RGBColor[0, 0, 1]], 
+            StyleBox[";",
+              FontColor->RGBColor[0, 0, 1]], 
+            StyleBox["\[IndentingNewLine]",
+              FontColor->RGBColor[0, 0, 1]], 
+            StyleBox[\(Print["\<   Actualizando variables \>"]\),
+              FontColor->RGBColor[0, 0, 1]], 
+            StyleBox[";",
+              FontColor->RGBColor[0, 0, 1]], 
+            StyleBox[\(cosct = 0\),
+              FontColor->RGBColor[0, 0, 1]], 
+            StyleBox[";",
+              FontColor->RGBColor[1, 0, 0]], 
+            StyleBox["\[IndentingNewLine]",
+              FontColor->RGBColor[1, 0, 0]], 
+            
+            StyleBox[\(For[j = 1, j \[LessEqual] m, \(j++\), 
+                BI[\([s, j]\)] = BI[\([s, j]\)]/ye[\([s]\)]]\),
+              FontColor->RGBColor[1, 0, 0]], 
+            StyleBox[";",
+              FontColor->RGBColor[1, 0, 0]], 
+            StyleBox["\[IndentingNewLine]",
+              FontColor->RGBColor[1, 0, 0]], 
+            StyleBox[\(ye[\([s]\)] = 1\),
+              FontColor->RGBColor[1, 0, 0]], 
+            StyleBox[";",
+              FontColor->RGBColor[1, 0, 0]], 
+            "\[IndentingNewLine]", \(For[i = 1, i \[LessEqual] m, \(i++\), 
+              If[i \[NotEqual] s, 
+                For[j = 1, j \[LessEqual] n, \(j++\), 
+                  BI[\([i, j]\)] = 
+                    BI[\([i, j]\)] - BI[\([s, j]\)]*ye[\([i]\)]]]; 
+              ye[\([i]\)] = 0]\), ";", 
+            StyleBox["\[IndentingNewLine]",
+              FontColor->RGBColor[1, 0, 0]], 
+            StyleBox[\(Print["\<    MATRIZ  BI \>", BI]\),
+              FontColor->RGBColor[1, 0, 0]], 
+            StyleBox[";",
+              FontColor->RGBColor[1, 0, 0]], 
+            StyleBox["\[IndentingNewLine]",
+              FontColor->RGBColor[1, 0, 0]], 
+            StyleBox[\(xB = BI . b\),
+              FontColor->RGBColor[1, 0, 0]], 
+            StyleBox[";",
+              FontColor->RGBColor[1, 0, 0]], 
+            
+            StyleBox[\(Print["\<EL VECTOR FACTIBLE B\[CapitalAAcute]SICO xB : \
+\>", xB]\),
+              FontColor->RGBColor[1, 0, 0]], 
+            StyleBox[";",
+              FontColor->RGBColor[1, 0, 0]], 
+            StyleBox["\[IndentingNewLine]",
+              FontColor->RGBColor[1, 0, 0]], 
+            StyleBox[\(CBt[\([s]\)] = CDt[\([t]\)]\),
+              FontColor->RGBColor[1, 0, 0]], 
+            StyleBox[";",
+              FontColor->RGBColor[1, 0, 0]], 
+            StyleBox[\(CDt[\([t]\)] = 0\),
+              FontColor->RGBColor[1, 0, 0]], 
+            StyleBox[";",
+              FontColor->RGBColor[1, 0, 0]], 
+            StyleBox["\[IndentingNewLine]",
+              FontColor->RGBColor[1, 0, 0]], \(For[i = 1, 
+              i \[LessEqual] m, \(i++\), MD[\([i, t]\)] = B[\([i, s]\)]]\), 
+            ";", 
+            StyleBox["\[IndentingNewLine]",
+              FontColor->RGBColor[1, 0, 0]], 
+            StyleBox[\(rd = CDt - CBt . BI . MD\),
+              FontColor->RGBColor[1, 0, 0]], 
+            StyleBox[";",
+              FontColor->RGBColor[1, 0, 0]], 
+            StyleBox["\[IndentingNewLine]",
+              FontColor->RGBColor[1, 0, 0]], 
+            StyleBox[\(Print["\<    VECTOR  r= \>", rd]\),
+              FontColor->RGBColor[1, 0, 0]], 
+            StyleBox[";",
+              FontColor->RGBColor[1, 0, 0]], 
+            StyleBox["\[IndentingNewLine]",
+              FontColor->RGBColor[1, 0, 0]], 
+            StyleBox[\(r = 0\),
+              FontColor->RGBColor[1, 0, 0]]}]}], 
+        StyleBox["]",
+          FontColor->RGBColor[1, 0, 0]]}], 
+      "\[IndentingNewLine]"}], "\[IndentingNewLine]", "Null"}], "Input",
+  FontSize->16],
+
+Cell[BoxData[
+    TagBox[
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+            {"2", "1", "1"},
+            {"1", "1", "3"},
+            {"2", "2", "1"}
+            },
+          RowSpacings->1,
+          ColumnSpacings->1,
+          ColumnAlignments->{Left}], "\[NoBreak]", ")"}],
+      Function[ BoxForm`e$, 
+        MatrixForm[ BoxForm`e$]]]], "Output"],
+
+Cell[BoxData[
+    TagBox[
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+            {"1", "0", "0"},
+            {"0", "1", "0"},
+            {"0", "0", "1"}
+            },
+          RowSpacings->1,
+          ColumnSpacings->1,
+          ColumnAlignments->{Left}], "\[NoBreak]", ")"}],
+      Function[ BoxForm`e$, 
+        MatrixForm[ BoxForm`e$]]]], "Output"],
+
+Cell[BoxData[
+    \({{1, 0, 0}, {0, 1, 0}, {0, 0, 1}}\)], "Output"],
+
+Cell[BoxData[
+    \({2, 5, 6}\)], "Output"],
+
+Cell[BoxData[
+    \({0, 0, 0}\)], "Output"],
+
+Cell[BoxData[
+    \({\(-3\), \(-1\), \(-3\)}\)], "Output"],
+
+Cell[BoxData[
+    \({0, 0, 0}\)], "Output"],
+
+Cell[BoxData[
+    \({\(-3\), \(-1\), \(-3\)}\)], "Output"],
+
+Cell[BoxData[
+    \({2, 5, 6}\)], "Output"],
+
+Cell[BoxData[
+    \(0\)], "Output"],
+
+Cell[BoxData[
+    InterpretationBox[\(" EL VALOR M\[CapitalAAcute]S NEGATIVO DE r ES : "\
+\[InvisibleSpace]\(-3\)\[InvisibleSpace]" EN LA COLUMNA a "\[InvisibleSpace]3\
+\),
+      SequenceForm[ 
+      " EL VALOR M\[CapitalAAcute]S NEGATIVO DE r ES : ", -3, 
+        " EN LA COLUMNA a ", 3],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("  Entra a la Base:   a"\[InvisibleSpace]3\),
+      SequenceForm[ "  Entra a la Base:   a", 3],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    \(2\)], "Print"],
+
+Cell[BoxData[
+    \(5\/3\)], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("  EL PIVOTE SE ENCUENTRA EN EL \
+RENGL\[CapitalOAcute]N i= "\[InvisibleSpace]2\[InvisibleSpace]" CON VALOR "\
+\[InvisibleSpace]5\/3\),
+      SequenceForm[ 
+      "  EL PIVOTE SE ENCUENTRA EN EL RENGL\[CapitalOAcute]N i= ", 2, 
+        " CON VALOR ", 
+        Rational[ 5, 3]],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    \("   Actualizando variables "\)], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("    MATRIZ  BI "\[InvisibleSpace]{{1, \(-\(1\/3\)\), 
+            0}, {0, 1\/3, 0}, {0, \(-\(1\/3\)\), 1}}\),
+      SequenceForm[ "    MATRIZ  BI ", {{1, 
+        Rational[ -1, 3], 0}, {0, 
+        Rational[ 1, 3], 0}, {0, 
+        Rational[ -1, 3], 1}}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("EL VECTOR FACTIBLE B\[CapitalAAcute]SICO xB : "\
+\[InvisibleSpace]{1\/3, 5\/3, 13\/3}\),
+      SequenceForm[ "EL VECTOR FACTIBLE B\[CapitalAAcute]SICO xB : ", {
+        Rational[ 1, 3], 
+        Rational[ 5, 3], 
+        Rational[ 13, 3]}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("    VECTOR  r= "\[InvisibleSpace]{\(-2\), 0, 1}\),
+      SequenceForm[ "    VECTOR  r= ", {-2, 0, 1}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\(" EL VALOR M\[CapitalAAcute]S NEGATIVO DE r ES : "\
+\[InvisibleSpace]\(-2\)\[InvisibleSpace]" EN LA COLUMNA a "\[InvisibleSpace]1\
+\),
+      SequenceForm[ 
+      " EL VALOR M\[CapitalAAcute]S NEGATIVO DE r ES : ", -2, 
+        " EN LA COLUMNA a ", 1],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("  Entra a la Base:   a"\[InvisibleSpace]1\),
+      SequenceForm[ "  Entra a la Base:   a", 1],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    \(1\/5\)], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("  EL PIVOTE SE ENCUENTRA EN EL \
+RENGL\[CapitalOAcute]N i= "\[InvisibleSpace]1\[InvisibleSpace]" CON VALOR "\
+\[InvisibleSpace]1\/5\),
+      SequenceForm[ 
+      "  EL PIVOTE SE ENCUENTRA EN EL RENGL\[CapitalOAcute]N i= ", 1, 
+        " CON VALOR ", 
+        Rational[ 1, 5]],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    \("   Actualizando variables "\)], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("    MATRIZ  BI "\[InvisibleSpace]{{3\/5, \(-\(1\/5\)\
+\), 0}, {\(-\(1\/5\)\), 2\/5, 0}, {\(-1\), 0, 1}}\),
+      SequenceForm[ "    MATRIZ  BI ", {{
+        Rational[ 3, 5], 
+        Rational[ -1, 5], 0}, {
+        Rational[ -1, 5], 
+        Rational[ 2, 5], 0}, {-1, 0, 1}}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("EL VECTOR FACTIBLE B\[CapitalAAcute]SICO xB : "\
+\[InvisibleSpace]{1\/5, 8\/5, 4}\),
+      SequenceForm[ "EL VECTOR FACTIBLE B\[CapitalAAcute]SICO xB : ", {
+        Rational[ 1, 5], 
+        Rational[ 8, 5], 4}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("    VECTOR  r= "\[InvisibleSpace]{6\/5, 4\/5, 
+          3\/5}\),
+      SequenceForm[ "    VECTOR  r= ", {
+        Rational[ 6, 5], 
+        Rational[ 4, 5], 
+        Rational[ 3, 5]}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    \(" DADO QUE TODOS LOS r SON POSITIVOS, POR TANTO xB ES OPTIMAL"\)], \
+"Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("  EL VALOR DEL OPTIMO ES : "\[InvisibleSpace]27\/5\),
+      
+      SequenceForm[ "  EL VALOR DEL OPTIMO ES : ", 
+        Rational[ 27, 5]],
+      Editable->False]], "Print"]
+}, Open  ]]
+},
+FrontEndVersion->"5.2 for Microsoft Windows",
+ScreenRectangle->{{0, 1024}, {0, 685}},
+WindowSize->{903, 651},
+WindowMargins->{{0, Automatic}, {Automatic, 0}}
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[1776, 53, 9000, 213, 952, "Input"],
+Cell[10779, 268, 357, 11, 57, "Output"],
+Cell[11139, 281, 357, 11, 57, "Output"],
+Cell[11499, 294, 67, 1, 29, "Output"],
+Cell[11569, 297, 43, 1, 29, "Output"],
+Cell[11615, 300, 43, 1, 29, "Output"],
+Cell[11661, 303, 58, 1, 29, "Output"],
+Cell[11722, 306, 43, 1, 29, "Output"],
+Cell[11768, 309, 58, 1, 29, "Output"],
+Cell[11829, 312, 43, 1, 29, "Output"],
+Cell[11875, 315, 35, 1, 29, "Output"],
+Cell[11913, 318, 323, 7, 25, "Print"],
+Cell[12239, 327, 167, 3, 25, "Print"],
+Cell[12409, 332, 34, 1, 25, "Print"],
+Cell[12446, 335, 37, 1, 38, "Print"],
+Cell[12486, 338, 349, 8, 38, "Print"],
+Cell[12838, 348, 61, 1, 25, "Print"],
+Cell[12902, 351, 328, 7, 38, "Print"],
+Cell[13233, 360, 313, 7, 38, "Print"],
+Cell[13549, 369, 175, 3, 25, "Print"],
+Cell[13727, 374, 323, 7, 25, "Print"],
+Cell[14053, 383, 167, 3, 25, "Print"],
+Cell[14223, 388, 37, 1, 38, "Print"],
+Cell[14263, 391, 349, 8, 38, "Print"],
+Cell[14615, 401, 61, 1, 25, "Print"],
+Cell[14679, 404, 349, 8, 38, "Print"],
+Cell[15031, 414, 285, 6, 38, "Print"],
+Cell[15319, 422, 258, 7, 38, "Print"],
+Cell[15580, 431, 97, 2, 25, "Print"],
+Cell[15680, 435, 212, 5, 38, "Print"]
+}, Open  ]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

@@ -1,0 +1,418 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     15273,        408]
+NotebookOptionsPosition[     14381,        376]
+NotebookOutlinePosition[     14723,        391]
+CellTagsIndexPosition[     14680,        388]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"F", "[", "x_", "]"}], "=", 
+   RowBox[{"Input", "[", "\"\<Introduce la funcion f(x)\>\"", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"o", "=", 
+   RowBox[{
+   "Input", "[", "\"\<Desea aproximar un minimo(m) o un maximo(M)\>\"", 
+    "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"If", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"o", "\[NotEqual]", "m"}], "&&", 
+     RowBox[{"o", "\[NotEqual]", "M"}]}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+     "Input", "[", "\"\<Lo sentimos valor no valido reintente\>\"", "]"}], 
+     ";"}], "\[IndentingNewLine]", ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"o", "==", "M"}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"f", "[", "x_", "]"}], "=", 
+         RowBox[{"-", 
+          RowBox[{"F", "[", "x", "]"}]}]}], ";"}]}], "\[IndentingNewLine]", 
+      "]"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"x0", "=", 
+      RowBox[{"Input", "[", "\"\<Introduce el punto inicial Xo\>\"", "]"}]}], 
+     ";", "\[IndentingNewLine]", 
+     RowBox[{"e", "=", 
+      RowBox[{
+      "Input", "[", 
+       "\"\<Introduce el valor de \[Xi]>0(si desea un numero de iteraciones \
+solo presione enter)\>\"", "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"t", "=", 
+      RowBox[{
+      "Input", "[", "\"\<Introduce numero de iteraciones\>\"", "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Print", "[", 
+      RowBox[{
+      "\"\<\\n\\n\\n\\n\\n\\n\\n\\nConsiderando la funcion f(x)=\>\"", ",", 
+       RowBox[{"F", "[", "x", "]"}], ",", "\"\< con \>\"", ",", 
+       RowBox[{"Subscript", "[", 
+        RowBox[{"x", ",", "0"}], "]"}], ",", "\"\<=\>\"", ",", "x0", ",", 
+       " ", "\"\< se aproximara el punto con \[Xi]=\>\"", ",", "e", ",", 
+       "\"\< o \>\"", ",", "t", ",", "\"\<iteraciones\\n\\n\>\""}], "]"}], 
+     ";", "\[IndentingNewLine]", 
+     RowBox[{"Array", "[", 
+      RowBox[{"x", ",", "100", ",", "0"}], "]"}], ";", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"x", "[", "0", "]"}], "=", "x0"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"Print", "[", 
+      RowBox[{
+       RowBox[{"Subscript", "[", 
+        RowBox[{"x", ",", "0"}], "]"}], ",", "\"\<   \>\"", ",", 
+       RowBox[{"x", "[", "0", "]"}]}], "]"}], ";", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"x", "[", "1", "]"}], "=", 
+      RowBox[{"N", "[", 
+       RowBox[{
+        RowBox[{"x", "[", "0", "]"}], "-", 
+        FractionBox[
+         RowBox[{
+          RowBox[{"F", "'"}], "[", 
+          RowBox[{"x", "[", "0", "]"}], "]"}], 
+         RowBox[{
+          RowBox[{"F", "''"}], "[", 
+          RowBox[{"x", "[", "0", "]"}], "]"}]]}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Print", "[", 
+      RowBox[{
+       RowBox[{"Subscript", "[", 
+        RowBox[{"x", ",", "1"}], "]"}], ",", "\"\<   \>\"", ",", 
+       RowBox[{"x", "[", "1", "]"}]}], "]"}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{"For", "[", 
+      RowBox[{
+       RowBox[{"i", "=", "2"}], ",", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Abs", "[", 
+          RowBox[{
+           RowBox[{"x", "[", 
+            RowBox[{"i", "-", "1"}], "]"}], "-", 
+           RowBox[{"x", "[", 
+            RowBox[{"i", "-", "2"}], "]"}]}], "]"}], ">", "e"}], "||", 
+        RowBox[{"i", "\[LessEqual]", " ", "t"}]}], ",", 
+       RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"x", "[", "i", "]"}], "=", 
+         RowBox[{"N", "[", 
+          RowBox[{
+           RowBox[{"x", "[", 
+            RowBox[{"i", "-", "1"}], "]"}], "-", 
+           FractionBox[
+            RowBox[{
+             RowBox[{"F", "'"}], "[", 
+             RowBox[{"x", "[", 
+              RowBox[{"i", "-", "1"}], "]"}], "]"}], 
+            RowBox[{
+             RowBox[{"F", "''"}], "[", 
+             RowBox[{"x", "[", 
+              RowBox[{"i", "-", "1"}], "]"}], "]"}]]}], "]"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"Print", "[", 
+         RowBox[{
+          RowBox[{"Subscript", "[", 
+           RowBox[{"x", ",", "i"}], "]"}], ",", "\"\<   \>\"", ",", 
+          RowBox[{"x", "[", "i", "]"}]}], "]"}], ";"}]}], 
+      "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"o", "\[Equal]", "M"}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"Print", "[", 
+         RowBox[{
+         "\"\<\\n\\n\\n\\n El metodo Newton se detuvo en la \>\"", ",", 
+          RowBox[{"i", "-", "1"}], ",", 
+          "\"\< iteracion por lo tanto consideramos como mejor aproximaci\
+\[OAcute]n al maximo a \>\"", ",", 
+          RowBox[{"Superscript", "[", 
+           RowBox[{"x", ",", "\"\<*\>\""}], "]"}], ",", "\"\<=\>\"", ",", 
+          RowBox[{"x", "[", 
+           RowBox[{"i", "-", "1"}], "]"}], ",", "\"\< con f(\>\"", ",", 
+          RowBox[{"x", "[", 
+           RowBox[{"i", "-", "1"}], "]"}], ",", "\"\<)=\>\"", ",", 
+          RowBox[{"F", "[", 
+           RowBox[{"x", "[", 
+            RowBox[{"i", "-", "1"}], "]"}], "]"}]}], "]"}], ";"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"Print", "[", 
+         RowBox[{
+         "\"\<\\n\\n\\n\\n El metodo Newton se detuvo en la \>\"", ",", 
+          RowBox[{"i", "-", "1"}], ",", 
+          "\"\< iteracion por lo tanto consideramos como mejor aproximaci\
+\[OAcute]n al minimo a \>\"", ",", 
+          RowBox[{"Superscript", "[", 
+           RowBox[{"x", ",", "\"\<*\>\""}], "]"}], ",", "\"\<=\>\"", ",", 
+          RowBox[{"x", "[", 
+           RowBox[{"i", "-", "1"}], "]"}], ",", "\"\< con f(\>\"", ",", 
+          RowBox[{"x", "[", 
+           RowBox[{"i", "-", "1"}], "]"}], ",", "\"\<)=\>\"", ",", 
+          RowBox[{"F", "[", 
+           RowBox[{"x", "[", 
+            RowBox[{"i", "-", "1"}], "]"}], "]"}]}], "]"}], ";"}]}], 
+      "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", "]"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.6307134454419546`*^9, 3.630713554408146*^9}, {
+   3.6307136053258543`*^9, 3.6307136136250687`*^9}, {3.6307136486315303`*^9, 
+   3.6307136585375476`*^9}, {3.6307137638533325`*^9, 
+   3.6307138036022024`*^9}, {3.6307138348646574`*^9, 
+   3.6307138632879076`*^9}, {3.6307138974987674`*^9, 3.630713936498836*^9}, {
+   3.6307139811461143`*^9, 3.630713987932126*^9}, {3.6307140237185893`*^9, 
+   3.630714070815072*^9}, {3.630714209548916*^9, 3.6307142149309254`*^9}, {
+   3.6307142914490595`*^9, 3.6307143582795773`*^9}, 3.6307143950176415`*^9, {
+   3.6307144373873158`*^9, 3.630714462986961*^9}, {3.63071450791504*^9, 
+   3.6307145149974523`*^9}, {3.63071455343592*^9, 3.6307145754007587`*^9}, {
+   3.6307165466471825`*^9, 3.6307165848023653`*^9}, {3.6307166229437385`*^9, 
+   3.630716636905763*^9}, {3.6307167299131265`*^9, 3.6307167919700356`*^9}, {
+   3.630716916536254*^9, 3.630717009668418*^9}, {3.6307170698689237`*^9, 
+   3.6307170948757677`*^9}, 3.6307171482278614`*^9, {3.630717202531556*^9, 
+   3.6307172612656593`*^9}, {3.630717304774136*^9, 3.6307174927076664`*^9}, {
+   3.6307175680557985`*^9, 3.630717611439475*^9}, {3.6307176489107404`*^9, 
+   3.630717694540821*^9}, {3.6307177735237594`*^9, 3.6307178480918903`*^9}, {
+   3.6307178901495647`*^9, 3.6307178934879704`*^9}, {3.6307179614416895`*^9, 
+   3.6307180003013573`*^9}, {3.6313248412125053`*^9, 
+   3.6313249600223136`*^9}, {3.6313251236914034`*^9, 
+   3.6313251240502043`*^9}, {3.631325207931552*^9, 3.631325214904764*^9}, {
+   3.6313252516740284`*^9, 3.631325355554611*^9}, {3.6313254418695626`*^9, 
+   3.6313255071556773`*^9}, {3.6313255665761814`*^9, 3.6313256178378716`*^9}, 
+   3.6314676666721563`*^9, 3.631467705812625*^9, {3.631467922825407*^9, 
+   3.6314679648830805`*^9}, {3.6314680464712243`*^9, 3.6314680476568265`*^9}, 
+   3.631468467141563*^9, {3.631468500010821*^9, 3.6314686020973997`*^9}, {
+   3.6314687837565193`*^9, 3.6314687844429207`*^9}, {3.631468975340456*^9, 
+   3.631468976229657*^9}, {3.631585061806074*^9, 3.6315850642612143`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"\\n\\n\\n\\n\\n\\n\\n\\nConsiderando la funcion f(x)=\"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"-", "5"}], "+", 
+    RowBox[{"3", " ", "x"}], "+", 
+    RowBox[{"3", " ", 
+     SuperscriptBox["x", "4"]}]}], "\[InvisibleSpace]", "\<\" con \"\>", 
+   "\[InvisibleSpace]", 
+   SubscriptBox["x", "0"], "\[InvisibleSpace]", "\<\"=\"\>", 
+   "\[InvisibleSpace]", "2", 
+   "\[InvisibleSpace]", "\<\" se aproximara el punto con \[Xi]=\"\>", 
+   "\[InvisibleSpace]", "0.01`", "\[InvisibleSpace]", "\<\" o \"\>", 
+   "\[InvisibleSpace]", "Null", 
+   "\[InvisibleSpace]", "\<\"iteraciones\\n\\n\"\>"}],
+  SequenceForm[
+  "\n\n\n\n\n\n\n\nConsiderando la funcion f(x)=", -5 + 3 $CellContext`x + 
+   3 $CellContext`x^4, " con ", 
+   Subscript[$CellContext`x, 0], "=", 2, " se aproximara el punto con \[Xi]=",
+    0.01, " o ", Null, "iteraciones\n\n"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.631469097894271*^9, 3.6314692870758033`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   SubscriptBox["x", "0"], "\[InvisibleSpace]", "\<\"   \"\>", 
+   "\[InvisibleSpace]", "2"}],
+  SequenceForm[
+   Subscript[$CellContext`x, 0], "   ", 2],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.631469097894271*^9, 3.6314692870758033`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   SubscriptBox["x", "1"], "\[InvisibleSpace]", "\<\"   \"\>", 
+   "\[InvisibleSpace]", "1.3125`"}],
+  SequenceForm[
+   Subscript[$CellContext`x, 1], "   ", 1.3125],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.631469097894271*^9, 3.6314692870914035`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   SubscriptBox["x", "2"], "\[InvisibleSpace]", "\<\"   \"\>", 
+   "\[InvisibleSpace]", "0.8266250944822373`"}],
+  SequenceForm[
+   Subscript[$CellContext`x, 2], "   ", 0.8266250944822373],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.631469097894271*^9, 3.6314692870914035`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   SubscriptBox["x", "3"], "\[InvisibleSpace]", "\<\"   \"\>", 
+   "\[InvisibleSpace]", "0.429127842359189`"}],
+  SequenceForm[
+   Subscript[$CellContext`x, 3], "   ", 0.429127842359189],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.631469097894271*^9, 3.631469287107003*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   SubscriptBox["x", "4"], "\[InvisibleSpace]", "\<\"   \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"-", "0.16644267977793015`"}]}],
+  SequenceForm[
+   Subscript[$CellContext`x, 4], "   ", -0.16644267977793015`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.631469097894271*^9, 3.631469287107003*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   SubscriptBox["x", "5"], "\[InvisibleSpace]", "\<\"   \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"-", "3.119041598810547`"}]}],
+  SequenceForm[
+   Subscript[$CellContext`x, 5], "   ", -3.119041598810547],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.631469097894271*^9, 3.631469287107003*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   SubscriptBox["x", "6"], "\[InvisibleSpace]", "\<\"   \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"-", "2.0879270333270186`"}]}],
+  SequenceForm[
+   Subscript[$CellContext`x, 6], "   ", -2.0879270333270186`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.631469097894271*^9, 3.631469287107003*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   SubscriptBox["x", "7"], "\[InvisibleSpace]", "\<\"   \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"-", "1.4110669636985405`"}]}],
+  SequenceForm[
+   Subscript[$CellContext`x, 7], "   ", -1.4110669636985405`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.631469097894271*^9, 3.6314692871226034`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   SubscriptBox["x", "8"], "\[InvisibleSpace]", "\<\"   \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"-", "0.9825640115626955`"}]}],
+  SequenceForm[
+   Subscript[$CellContext`x, 8], "   ", -0.9825640115626955],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.631469097894271*^9, 3.6314692871226034`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   SubscriptBox["x", "9"], "\[InvisibleSpace]", "\<\"   \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"-", "0.741359815463569`"}]}],
+  SequenceForm[
+   Subscript[$CellContext`x, 9], "   ", -0.741359815463569],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.631469097894271*^9, 3.6314692871226034`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   SubscriptBox["x", "10"], "\[InvisibleSpace]", "\<\"   \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"-", "0.6458613355376561`"}]}],
+  SequenceForm[
+   Subscript[$CellContext`x, 10], "   ", -0.6458613355376561],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.631469097894271*^9, 3.6314692871226034`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   SubscriptBox["x", "11"], "\[InvisibleSpace]", "\<\"   \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"-", "0.6303487830196266`"}]}],
+  SequenceForm[
+   Subscript[$CellContext`x, 11], "   ", -0.6303487830196266],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.631469097894271*^9, 3.6314692871226034`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   SubscriptBox["x", "12"], "\[InvisibleSpace]", "\<\"   \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"-", "0.6299607640426562`"}]}],
+  SequenceForm[
+   Subscript[$CellContext`x, 12], "   ", -0.6299607640426562],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.631469097894271*^9, 3.6314692871382036`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[BoxData["\[IndentingNewLine]"], "Input",
+ CellChangeTimes->{3.6314690088493147`*^9}]
+},
+WindowSize->{1250, 665},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"8.0 for Microsoft Windows (32-bit) (October 6, 2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 8213, 182, 715, "Input"],
+Cell[CellGroupData[{
+Cell[8817, 208, 997, 22, 214, "Print"],
+Cell[9817, 232, 295, 8, 23, "Print"],
+Cell[10115, 242, 306, 8, 23, "Print"],
+Cell[10424, 252, 330, 8, 23, "Print"],
+Cell[10757, 262, 326, 8, 23, "Print"],
+Cell[11086, 272, 351, 9, 23, "Print"],
+Cell[11440, 283, 346, 9, 23, "Print"],
+Cell[11789, 294, 349, 9, 23, "Print"],
+Cell[12141, 305, 351, 9, 23, "Print"],
+Cell[12495, 316, 350, 9, 23, "Print"],
+Cell[12848, 327, 348, 9, 23, "Print"],
+Cell[13199, 338, 352, 9, 23, "Print"],
+Cell[13554, 349, 352, 9, 23, "Print"],
+Cell[13909, 360, 352, 9, 23, "Print"]
+}, Open  ]]
+}, Open  ]],
+Cell[14288, 373, 89, 1, 52, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

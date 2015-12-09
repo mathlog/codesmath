@@ -1,0 +1,247 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      8059,        238]
+NotebookOptionsPosition[      7637,        218]
+NotebookOutlinePosition[      7979,        233]
+CellTagsIndexPosition[      7936,        230]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"F", "=", 
+   RowBox[{"Input", "[", "\"\<Introduzca su funcion\>\"", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Intervalo", " ", "=", 
+   RowBox[{"Input", "[", "\"\<Introduzca su Intervalo {a,b}\>\"", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"tol", " ", "=", " ", 
+    RowBox[{"Input", "[", "\"\<Introduzca tolerancia\>\"", "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Xa", " ", "=", " ", 
+   RowBox[{"Intervalo", "[", 
+    RowBox[{"[", "1", "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Xb", " ", "=", " ", 
+   RowBox[{"Intervalo", "[", 
+    RowBox[{"[", "2", "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"For", "[", 
+   RowBox[{
+    RowBox[{"n", "=", "0"}], ",", 
+    RowBox[{
+     RowBox[{"Fibonacci", "[", "n", "]"}], "<", 
+     RowBox[{"1", "/", "tol"}]}], ",", 
+    RowBox[{"n", "++"}]}], "]"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"i", " ", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"n", " ", "=", " ", 
+   RowBox[{"n", " ", "+", "1"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"L", " ", "=", " ", 
+   RowBox[{"Xb", "-", "Xa"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"v", " ", "=", " ", 
+    RowBox[{"{", "x", "}"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"delta", "[", 
+    RowBox[{"k_", ",", "n_", ",", "L_"}], "]"}], ":=", " ", 
+   RowBox[{"L", "*", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"Fibonacci", "[", 
+       RowBox[{"n", "-", 
+        RowBox[{"(", 
+         RowBox[{"k", "+", "1"}], ")"}]}], "]"}], "/", 
+      RowBox[{"Fibonacci", "[", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"n", "+", "1"}], ")"}], "-", "k"}], "]"}]}], ")"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"evaluaFuncion", "[", 
+     RowBox[{"variable_", ",", "Funcion_", ",", "punto_"}], "]"}], ":=", " ", 
+    RowBox[{
+     RowBox[{"Function", "[", 
+      RowBox[{"variable", ",", "Funcion"}], "]"}], "[", "punto", "]"}]}], 
+   ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Xo", " ", "=", " ", 
+   RowBox[{"Xa", "+", 
+    RowBox[{"delta", "[", 
+     RowBox[{"i", ",", "n", ",", "L"}], "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Xt", " ", "=", " ", 
+    RowBox[{"Xb", "-", 
+     RowBox[{"delta", "[", 
+      RowBox[{"i", ",", "n", ",", "L"}], "]"}]}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"While", "[", 
+    RowBox[{
+     RowBox[{"i", "!=", "n"}], ",", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"evaluaFuncion", "[", 
+           RowBox[{"v", ",", "F", ",", "Xo"}], "]"}], "\[GreaterEqual]", 
+          RowBox[{"evaluaFuncion", "[", 
+           RowBox[{"v", ",", "F", ",", "Xt"}], "]"}]}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"Xa", " ", "=", " ", "Xo"}], ";", "\[IndentingNewLine]", 
+          RowBox[{"Xo", " ", "=", " ", "Xt"}], ";", "\[IndentingNewLine]", 
+          RowBox[{"L", " ", "=", " ", 
+           RowBox[{"L", " ", "-", " ", 
+            RowBox[{"delta", "[", 
+             RowBox[{"i", ",", "n", ",", "L"}], "]"}]}]}], ";", 
+          "\[IndentingNewLine]", " ", 
+          RowBox[{"Xt", " ", "=", " ", 
+           RowBox[{"Xb", " ", "-", " ", 
+            RowBox[{"delta", "[", 
+             RowBox[{
+              RowBox[{"i", "+", "1"}], ",", "n", ",", "L"}], "]"}]}]}], 
+          ";"}]}], "]"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"evaluaFuncion", "[", 
+           RowBox[{"v", ",", "F", ",", "Xt"}], "]"}], "\[GreaterEqual]", 
+          RowBox[{"evaluaFuncion", "[", 
+           RowBox[{"v", ",", "F", ",", "Xo"}], "]"}]}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"Xb", " ", "=", " ", "Xt"}], ";", "\[IndentingNewLine]", 
+          RowBox[{"Xt", " ", "=", " ", "Xo"}], ";", "\[IndentingNewLine]", 
+          RowBox[{"L", " ", "=", " ", 
+           RowBox[{"L", " ", "-", " ", 
+            RowBox[{"delta", "[", 
+             RowBox[{"i", ",", "n", ",", "L"}], "]"}]}]}], ";", 
+          "\[IndentingNewLine]", " ", 
+          RowBox[{"Xo", " ", "=", " ", 
+           RowBox[{"Xa", " ", "+", " ", 
+            RowBox[{"delta", "[", 
+             RowBox[{
+              RowBox[{"i", "+", "1"}], ",", "n", ",", "L"}], "]"}]}]}], 
+          ";"}]}], "]"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"i", "++"}]}], ";"}]}], "\[IndentingNewLine]", "]"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<La Funci\[OAcute]n a Minimizar es:\>\"", ",", "F"}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<Valor minimimo en el intervalo dado: \>\"", ",", 
+    RowBox[{"N", "[", 
+     RowBox[{"Min", "[", 
+      RowBox[{
+       RowBox[{"evaluaFuncion", "[", 
+        RowBox[{"v", ",", "F", ",", "Xo"}], "]"}], ",", 
+       RowBox[{"evaluaFuncion", "[", 
+        RowBox[{"v", ",", "F", ",", "Xt"}], "]"}], ",", "5"}], "]"}], "]"}]}],
+    "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<No Interaciones:\>\"", " ", ",", " ", "n"}], "]"}], 
+  ";"}]}], "Input",
+ CellChangeTimes->CompressedData["
+1:eJwdzU8oQwEAx/HX8uSw/ItZqacJY4fXSiFNebUyDotptpZSK0ZsRKaURgtr
+ScpbCSmKpTbbwZa4SURimYPbq2nKbKxNs5piv3f49jl+JcZJzbCAIAgqH2yw
+r2n7uBjTsvCogz0EaYHEU9gKDSKli3f4bR866SY3FOorvVBFFp9Da7iKg8Ft
+exTeq3Z4n0vc79DxkSA1eT29Y8Uwkvkug3RaJoKnXKkErscpKRylfDSU2w3N
+sII8U8C6k08VfDFWq+HvpFYHyUCRCe6xxDg8loWmYOpQPsv74OGtNf/Ow1La
+ZoP+rgsn/921sNB4OLADL5eDbni2XuiH6o6VAAwsBm/hSnf0Dm4wW68wR4QS
+8Ihis3Bw1ZyDX1yc6M9b7nUVwPb5kSLYxoiFsHUoq4Q3oqQGbkondNBx0KaH
+2b+SESheqjfB5FxsGoZTGd4aVpmCis76NLya4QS+SIxpvP4phP9i8wOK
+  "]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"La Funci\[OAcute]n a Minimizar es:\"\>", "\[InvisibleSpace]", 
+   RowBox[{"x", "+", 
+    SuperscriptBox["x", "2"]}]}],
+  SequenceForm[
+  "La Funci\[OAcute]n a Minimizar es:", $CellContext`x + $CellContext`x^2],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.608508577308324*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Valor minimimo en el intervalo dado: \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"-", "0.2499999999999966`"}]}],
+  SequenceForm["Valor minimimo en el intervalo dado: ", -0.2499999999999966],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.608508577308324*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"No Interaciones:\"\>", "\[InvisibleSpace]", "22"}],
+  SequenceForm["No Interaciones:", 22],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.608508577323924*^9}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1350, 633},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"8.0 for Microsoft Windows (64-bit) (October 6, 2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 6145, 164, 792, "Input"],
+Cell[CellGroupData[{
+Cell[6749, 190, 331, 8, 23, "Print"],
+Cell[7083, 200, 311, 7, 23, "Print"],
+Cell[7397, 209, 212, 5, 23, "Print"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

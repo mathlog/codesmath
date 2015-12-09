@@ -1,0 +1,205 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      7078,        196]
+NotebookOptionsPosition[      6684,        178]
+NotebookOutlinePosition[      7027,        193]
+CellTagsIndexPosition[      6984,        190]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{"\"\<'INTEGRACION DE ROMBERG'\>\"", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"RTC", "[", 
+      RowBox[{"f_", ",", "a_", ",", "b_", ",", "n_"}], " ", "]"}], ":=", 
+     RowBox[{
+      RowBox[{"(", 
+       FractionBox[
+        RowBox[{"b", "-", "a"}], 
+        RowBox[{"2", "n"}]], ")"}], "*", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"f", "[", "a", "]"}], "+", 
+        RowBox[{"2", "*", 
+         RowBox[{
+          UnderoverscriptBox["\[Sum]", 
+           RowBox[{"i", "=", "1"}], 
+           RowBox[{" ", "\[IndentingNewLine]", 
+            RowBox[{"n", "-", "1"}]}]], 
+          RowBox[{"f", "[", 
+           RowBox[{"a", "+", 
+            RowBox[{"i", 
+             RowBox[{"(", 
+              FractionBox[
+               RowBox[{"b", "-", "a"}], "n"], ")"}]}]}], "]"}]}]}], "+", 
+        RowBox[{"f", "[", "b", "]"}]}], ")"}]}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"a1", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"b1", "=", "3"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"n", "=", "4"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"g", "[", "x_", "]"}], ":=", 
+     FractionBox[
+      SuperscriptBox["\[ExponentialE]", "x"], "x"]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"\"\<CREANDO UNA MATRIZ CON ELEMENTOS 0\>\"", ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"R", "=", 
+     RowBox[{"Table", "[", 
+      RowBox[{"0", ",", 
+       RowBox[{"{", 
+        RowBox[{"i", ",", "n"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"j", ",", "n"}], "}"}]}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"\"\<CALCULANDO LOS R (k,1) DEL ESQUEMA DE ROMBERG\>\"", ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"For", "[", 
+     RowBox[{
+      RowBox[{"i", "=", "1"}], ",", 
+      RowBox[{"i", "\[LessEqual]", "n"}], ",", 
+      RowBox[{"i", "++"}], ",", 
+      RowBox[{
+       RowBox[{"R", "[", 
+        RowBox[{"[", 
+         RowBox[{"i", ",", "1"}], "]"}], "]"}], "=", 
+       RowBox[{"N", "[", 
+        RowBox[{"RTC", "[", 
+         RowBox[{"g", ",", "a1", ",", "b1", ",", 
+          SuperscriptBox["2", 
+           RowBox[{"i", "-", "1"}]]}], "]"}], "]"}]}]}], "]"}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"\"\<CALCULANDO LOS R (k,j) DEL ESQUEMA DE ROMBERG\>\"", ";"}], 
+   "\[IndentingNewLine]", "For", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"[", 
+     RowBox[{
+      RowBox[{"i", "=", "2"}], ",", 
+      RowBox[{"i", "\[LessEqual]", "n"}], ",", 
+      RowBox[{"i", "++"}], ",", 
+      RowBox[{"For", "[", 
+       RowBox[{
+        RowBox[{"j", "=", "2"}], ",", 
+        RowBox[{"j", "\[LessEqual]", "i"}], ",", 
+        RowBox[{"j", "++"}], ",", 
+        RowBox[{
+         RowBox[{"R", "[", 
+          RowBox[{"[", 
+           RowBox[{"i", ",", "j"}], "]"}], "]"}], "=", 
+         RowBox[{
+          RowBox[{"R", "[", 
+           RowBox[{"[", 
+            RowBox[{"i", ",", 
+             RowBox[{"j", "-", "1"}]}], "]"}], "]"}], "+", " ", 
+          RowBox[{"(", 
+           FractionBox[
+            RowBox[{
+             RowBox[{"R", "[", 
+              RowBox[{"[", 
+               RowBox[{"i", ",", 
+                RowBox[{"j", "-", "1"}]}], "]"}], "]"}], "-", 
+             RowBox[{"R", "[", 
+              RowBox[{"[", 
+               RowBox[{
+                RowBox[{"i", "-", "1"}], ",", 
+                RowBox[{"j", "-", "1"}]}], "]"}], "]"}]}], 
+            RowBox[{
+             SuperscriptBox["4", 
+              RowBox[{"j", "-", "1"}]], "-", "1"}]], ")"}]}]}]}], "]"}]}], 
+     "]"}], ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   "\"\<VALORES DE ENCONTRADOS DE R[i,j]\>\"", "\[IndentingNewLine]", 
+   RowBox[{"MatrixForm", "[", "R", "]"}], "\[IndentingNewLine]"}]}]], "Input",
+ CellChangeTimes->{{3.511700648945593*^9, 3.511700703857689*^9}, {
+   3.511700770501006*^9, 3.5117007808750243`*^9}, {3.511700836925923*^9, 
+   3.511700897680276*^9}, {3.5117009616559877`*^9, 3.511700980578821*^9}, {
+   3.511701030264909*^9, 3.5117010313413105`*^9}, {3.5121526950953956`*^9, 
+   3.5121527274295225`*^9}, {3.5121534832625866`*^9, 
+   3.5121535944150553`*^9}, {3.5121540496210775`*^9, 3.5121541306703935`*^9}, 
+   3.512154166611478*^9, 3.5121542039147573`*^9, {3.512154237395916*^9, 
+   3.5121542864531283`*^9}, {3.5124114154694047`*^9, 
+   3.5124114241294165`*^9}, {3.512411475783494*^9, 3.512411501065533*^9}, {
+   3.512411559229618*^9, 3.512411610943701*^9}, {3.512411694825844*^9, 
+   3.5124116982558484`*^9}, {3.515756423928718*^9, 3.515756475705209*^9}, {
+   3.515756517934483*^9, 3.515756562878162*^9}, 3.515757630122836*^9, {
+   3.5157582187274704`*^9, 3.5157582416439104`*^9}, {3.515758436191852*^9, 
+   3.5157584465814705`*^9}, 3.515758717289648*^9, 3.515759835647462*^9, {
+   3.5157598885556183`*^9, 3.515759891020423*^9}, 3.515761423339259*^9}],
+
+Cell[BoxData["\<\"'INTEGRACION DE ROMBERG'\"\>"], "Output",
+ CellChangeTimes->{3.515758259006741*^9}],
+
+Cell[BoxData["\<\"VALORES DE ENCONTRADOS DE R[i,j]\"\>"], "Output",
+ CellChangeTimes->{3.515758259006741*^9}],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"9.413460802854933`", "0", "0", "0"},
+     {"8.401258450892792`", "8.063857666905411`", "0", "0"},
+     {"8.131024374366445`", "8.040946348857663`", "8.039418927654479`", "0"},
+     {"8.061917189971448`", "8.038881461839782`", "8.038743802705257`", 
+      "8.038733086436222`"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.515758259022341*^9}]
+}, Open  ]]
+},
+WindowSize->{1008, 465},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"8.0 for Microsoft Windows (32-bit) (November 7, 2010)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 4992, 124, 544, "Input"],
+Cell[5574, 148, 101, 1, 30, "Output"],
+Cell[5678, 151, 109, 1, 30, "Output"],
+Cell[5790, 154, 878, 21, 72, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

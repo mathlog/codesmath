@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     49105,       1031]
-NotebookOptionsPosition[     47355,        978]
-NotebookOutlinePosition[     47697,        993]
-CellTagsIndexPosition[     47654,        990]
+NotebookDataLength[     49132,       1031]
+NotebookOptionsPosition[     47380,        978]
+NotebookOutlinePosition[     47724,        993]
+CellTagsIndexPosition[     47681,        990]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -207,7 +207,7 @@ Cell[BoxData[
     ";"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"Print", "[", 
-     RowBox[{"\"\<X donde alcana f(x) su minimo:\>\"", ",", 
+     RowBox[{"\"\<X donde alcanza f(x) su minimo:\>\"", ",", 
       RowBox[{"N", "[", 
        RowBox[{"p", ",", "9"}], "]"}]}], "]"}], ";"}], "\[IndentingNewLine]", 
    RowBox[{
@@ -319,7 +319,7 @@ Cell[BoxData[
    3.608482628899917*^9, 3.6084827377129087`*^9}, {3.608503256186121*^9, 
    3.6085032918481846`*^9}, {3.608503329991251*^9, 3.608503355169696*^9}, {
    3.6085039177325387`*^9, 3.6085039193393416`*^9}, {3.6085065323303323`*^9, 
-   3.608506589239232*^9}}],
+   3.608506589239232*^9}, 3.6589544733222656`*^9}],
 
 Cell[CellGroupData[{
 
@@ -978,7 +978,7 @@ Cell[BoxData[
 },
 WindowSize->{1350, 633},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
-FrontEndVersion->"8.0 for Microsoft Windows (64-bit) (October 6, 2011)",
+FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (November 20, 2012)",
 StyleDefinitions->"Default.nb"
 ]
 (* End of Notebook Content *)
@@ -993,44 +993,44 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[579, 22, 14995, 299, 912, "Input"],
+Cell[579, 22, 15020, 299, 932, "Input"],
 Cell[CellGroupData[{
-Cell[15599, 325, 798, 15, 23, "Print"],
-Cell[16400, 342, 845, 16, 23, "Print"],
-Cell[17248, 360, 906, 16, 23, "Print"],
-Cell[18157, 378, 844, 16, 23, "Print"],
-Cell[19004, 396, 905, 16, 23, "Print"],
-Cell[19912, 414, 844, 16, 23, "Print"],
-Cell[20759, 432, 908, 16, 23, "Print"],
-Cell[21670, 450, 842, 16, 23, "Print"],
-Cell[22515, 468, 906, 16, 23, "Print"],
-Cell[23424, 486, 844, 16, 23, "Print"],
-Cell[24271, 504, 910, 16, 23, "Print"],
-Cell[25184, 522, 842, 16, 23, "Print"],
-Cell[26029, 540, 910, 16, 23, "Print"],
-Cell[26942, 558, 845, 16, 23, "Print"],
-Cell[27790, 576, 914, 16, 23, "Print"],
-Cell[28707, 594, 842, 16, 23, "Print"],
-Cell[29552, 612, 911, 16, 23, "Print"],
-Cell[30466, 630, 844, 16, 23, "Print"],
-Cell[31313, 648, 914, 16, 23, "Print"],
-Cell[32230, 666, 842, 16, 23, "Print"],
-Cell[33075, 684, 913, 16, 23, "Print"],
-Cell[33991, 702, 844, 16, 23, "Print"],
-Cell[34838, 720, 913, 16, 23, "Print"],
-Cell[35754, 738, 843, 16, 23, "Print"],
-Cell[36600, 756, 912, 16, 23, "Print"],
-Cell[37515, 774, 847, 16, 26, "Print"],
-Cell[38365, 792, 916, 16, 23, "Print"],
-Cell[39284, 810, 841, 16, 23, "Print"],
-Cell[40128, 828, 909, 16, 23, "Print"],
-Cell[41040, 846, 846, 16, 26, "Print"],
-Cell[41889, 864, 911, 16, 26, "Print"],
-Cell[42803, 882, 841, 16, 23, "Print"],
-Cell[43647, 900, 1059, 22, 23, "Print"],
-Cell[44709, 924, 964, 18, 23, "Print"],
-Cell[45676, 944, 871, 15, 23, "Print"],
-Cell[46550, 961, 777, 13, 23, "Print"]
+Cell[15624, 325, 798, 15, 23, "Print"],
+Cell[16425, 342, 845, 16, 23, "Print"],
+Cell[17273, 360, 906, 16, 23, "Print"],
+Cell[18182, 378, 844, 16, 23, "Print"],
+Cell[19029, 396, 905, 16, 23, "Print"],
+Cell[19937, 414, 844, 16, 23, "Print"],
+Cell[20784, 432, 908, 16, 23, "Print"],
+Cell[21695, 450, 842, 16, 23, "Print"],
+Cell[22540, 468, 906, 16, 23, "Print"],
+Cell[23449, 486, 844, 16, 23, "Print"],
+Cell[24296, 504, 910, 16, 23, "Print"],
+Cell[25209, 522, 842, 16, 23, "Print"],
+Cell[26054, 540, 910, 16, 23, "Print"],
+Cell[26967, 558, 845, 16, 23, "Print"],
+Cell[27815, 576, 914, 16, 23, "Print"],
+Cell[28732, 594, 842, 16, 23, "Print"],
+Cell[29577, 612, 911, 16, 23, "Print"],
+Cell[30491, 630, 844, 16, 23, "Print"],
+Cell[31338, 648, 914, 16, 23, "Print"],
+Cell[32255, 666, 842, 16, 23, "Print"],
+Cell[33100, 684, 913, 16, 23, "Print"],
+Cell[34016, 702, 844, 16, 23, "Print"],
+Cell[34863, 720, 913, 16, 23, "Print"],
+Cell[35779, 738, 843, 16, 23, "Print"],
+Cell[36625, 756, 912, 16, 23, "Print"],
+Cell[37540, 774, 847, 16, 26, "Print"],
+Cell[38390, 792, 916, 16, 23, "Print"],
+Cell[39309, 810, 841, 16, 23, "Print"],
+Cell[40153, 828, 909, 16, 23, "Print"],
+Cell[41065, 846, 846, 16, 26, "Print"],
+Cell[41914, 864, 911, 16, 26, "Print"],
+Cell[42828, 882, 841, 16, 23, "Print"],
+Cell[43672, 900, 1059, 22, 23, "Print"],
+Cell[44734, 924, 964, 18, 23, "Print"],
+Cell[45701, 944, 871, 15, 23, "Print"],
+Cell[46575, 961, 777, 13, 23, "Print"]
 }, Open  ]]
 }, Open  ]]
 }

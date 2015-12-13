@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     19853,        576]
-NotebookOptionsPosition[     18749,        535]
-NotebookOutlinePosition[     19125,        551]
-CellTagsIndexPosition[     19082,        548]
+NotebookDataLength[     19768,        571]
+NotebookOptionsPosition[     18715,        532]
+NotebookOutlinePosition[     19093,        548]
+CellTagsIndexPosition[     19050,        545]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -176,8 +176,6 @@ Cell[BoxData["0.69314718055994530937448036556070007919`14."], "Output",
    3.587083599951172*^9}]
 }, Open  ]],
 
-Cell[CellGroupData[{
-
 Cell[BoxData[{
  RowBox[{
   SubsuperscriptBox["\[Integral]", 
@@ -235,8 +233,7 @@ Cell[BoxData[
 
 Cell[BoxData["116.05953305110460056538284744964037455635`14."], "Output",
  CellChangeTimes->{
-  3.5870835238535156`*^9, {3.58708357896875*^9, 3.587083584001953*^9}}]
-}, Open  ]],
+  3.5870835238535156`*^9, {3.58708357896875*^9, 3.587083584001953*^9}}],
 
 Cell[BoxData[""], "Input",
  CellChangeTimes->{{3.587083365120117*^9, 3.587083365149414*^9}}],
@@ -536,7 +533,7 @@ Cell[BoxData["\<\"FORMULAS DE NEWTON-COTES CERRADAS\"\>"], "Output",
 WindowSize->{1582, 718},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
 Magnification->2.200000047683716,
-FrontEndVersion->"8.0 for Microsoft Windows (64-bit) (October 6, 2011)",
+FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (November 20, 2012)",
 StyleDefinitions->"Default.nb"
 ]
 (* End of Notebook Content *)
@@ -551,32 +548,30 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[579, 22, 6003, 138, 1068, "Input"],
-Cell[6585, 162, 296, 8, 124, "Output"],
-Cell[6884, 172, 194, 3, 90, "Output"]
+Cell[579, 22, 6003, 138, 1223, "Input"],
+Cell[6585, 162, 296, 8, 103, "Output"],
+Cell[6884, 172, 194, 3, 65, "Output"]
+}, Open  ]],
+Cell[7093, 178, 1473, 43, 486, "Input"],
+Cell[8569, 223, 292, 8, 103, "Output"],
+Cell[8864, 233, 165, 2, 198, "Output"],
+Cell[9032, 237, 92, 1, 138, "Input"],
+Cell[9127, 240, 141, 2, 224, "Input"],
+Cell[CellGroupData[{
+Cell[9293, 246, 2785, 76, 1295, "Input"],
+Cell[12081, 324, 277, 4, 136, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[7115, 180, 1473, 43, 469, InheritFromParent],
-Cell[8591, 225, 292, 8, 125, "Output"],
-Cell[8886, 235, 165, 2, 90, "Output"]
-}, Open  ]],
-Cell[9066, 240, 92, 1, 63, InheritFromParent],
-Cell[9161, 243, 141, 2, 102, InheritFromParent],
-Cell[CellGroupData[{
-Cell[9327, 249, 2785, 76, 589, "Input"],
-Cell[12115, 327, 277, 4, 62, "Output"]
+Cell[12395, 333, 2808, 84, 1370, "Input"],
+Cell[15206, 419, 129, 2, 136, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[12429, 336, 2808, 84, 623, "Input"],
-Cell[15240, 422, 129, 2, 62, "Output"]
+Cell[15372, 426, 2880, 89, 1425, "Input"],
+Cell[18255, 517, 157, 3, 136, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[15406, 429, 2880, 89, 648, "Input"],
-Cell[18289, 520, 157, 3, 62, "Output"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[18483, 528, 135, 1, 63, "Input"],
-Cell[18621, 531, 112, 1, 90, "Output"]
+Cell[18449, 525, 135, 1, 138, "Input"],
+Cell[18587, 528, 112, 1, 198, "Output"]
 }, Open  ]]
 }
 ]

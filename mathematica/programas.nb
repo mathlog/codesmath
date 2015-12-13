@@ -10,171 +10,163 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[    640315,      16168]
-NotebookOptionsPosition[    636404,      16061]
-NotebookOutlinePosition[    636747,      16076]
-CellTagsIndexPosition[    636704,      16073]
+NotebookDataLength[    639420,      16134]
+NotebookOptionsPosition[    635516,      16027]
+NotebookOutlinePosition[    635860,      16042]
+CellTagsIndexPosition[    635817,      16039]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
 
 Cell[CellGroupData[{
-Cell[BoxData[
+Cell[BoxData[{
  RowBox[{
+  RowBox[{"f", "=", 
+   RowBox[{
+    SuperscriptBox["x", "3"], "+", "x"}]}], " ", 
   RowBox[{"(*", 
-   RowBox[{"cecilia", " ", "fernanda", " ", "ruiz", " ", "marrgain"}], "*)"}],
-   "\[IndentingNewLine]", 
+   RowBox[{"Funcion", " ", "a", " ", "integrar"}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"xo", "=", "1"}], " ", 
+  RowBox[{"(*", 
+   RowBox[{"valor", " ", "inicial"}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"h", "=", "0.5"}], " ", 
+  RowBox[{"(*", 
+   RowBox[{"distancia", " ", "entre", " ", "los", " ", "puntos"}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"m", "=", "2"}], 
+  RowBox[{"(*", 
+   RowBox[{"Orden", " ", "de", " ", "Integracion"}], "*)"}], 
+  "\[IndentingNewLine]", 
   RowBox[{"(*", 
    RowBox[{
-   "metodo", " ", "de", " ", "extrapolacion", " ", "de", " ", "richardson"}], 
-   "*)"}], "\[IndentingNewLine]", 
-  RowBox[{"(*", 
+   "matriz", " ", "en", " ", "la", " ", "que", " ", "se", " ", "guardaran", 
+    " ", "los", " ", "datos"}], " ", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{"A", "=", 
+  RowBox[{"{", 
    RowBox[{
-   "este", " ", "metodo", " ", "permite", " ", "construir", " ", "a", " ", 
-    "partir", " ", "de", " ", "una", " ", "secuencia", " ", "convergente", 
-    " ", "otra", " ", "secuencia", " ", "m\[AAcute]s", " ", 
-    "r\[AAcute]pidamente", " ", 
-    RowBox[{"convergente", "."}]}], "*)"}], " ", "\[IndentingNewLine]", 
-  RowBox[{
-   RowBox[{"f", "=", 
-    RowBox[{
-     SuperscriptBox["x", "3"], "+", "x"}]}], " ", 
-   RowBox[{"(*", 
-    RowBox[{"Funcion", " ", "a", " ", "integrar"}], "*)"}], 
-   "\[IndentingNewLine]", 
-   RowBox[{"xo", "=", "1"}], " ", 
-   RowBox[{"(*", 
-    RowBox[{"valor", " ", "inicial"}], "*)"}], "\[IndentingNewLine]", 
-   RowBox[{"h", "=", "0.5"}], " ", 
-   RowBox[{"(*", 
-    RowBox[{"distancia", " ", "entre", " ", "los", " ", "puntos"}], "*)"}], 
-   "\[IndentingNewLine]", 
-   RowBox[{"m", "=", "2"}], 
-   RowBox[{"(*", 
-    RowBox[{"Orden", " ", "de", " ", "Integracion"}], "*)"}], 
-   "\[IndentingNewLine]", 
-   RowBox[{"(*", 
-    RowBox[{
-    "matriz", " ", "en", " ", "la", " ", "que", " ", "se", " ", "guardaran", 
-     " ", "los", " ", "datos"}], " ", "*)"}], "\[IndentingNewLine]", 
-   RowBox[{"A", "=", 
     RowBox[{"{", 
-     RowBox[{
-      RowBox[{"{", 
-       RowBox[{"0", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
-      RowBox[{"{", 
-       RowBox[{"0", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
-      RowBox[{"{", 
-       RowBox[{"0", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
-      RowBox[{"{", 
-       RowBox[{"0", ",", "0", ",", "0", ",", "0"}], "}"}]}], "}"}]}], 
-   "\[IndentingNewLine]", 
-   RowBox[{"MatrixForm", "[", "A", "]"}], "\[IndentingNewLine]", 
-   RowBox[{"(*", 
-    RowBox[{
-    "se", " ", "calcula", " ", "N1", " ", "y", " ", "se", " ", "coloca", " ", 
-     "en", " ", "la", " ", "primera", " ", "columna", " ", "de", " ", "la", 
-     " ", "matriz"}], "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"0", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "0", ",", "0", ",", "0"}], "}"}]}], 
+   "}"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"MatrixForm", "[", "A", "]"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", 
    RowBox[{
-    RowBox[{"A", "[", 
-     RowBox[{"[", 
-      RowBox[{"1", ",", "1"}], "]"}], "]"}], "=", 
+   "se", " ", "calcula", " ", "N1", " ", "y", " ", "se", " ", "coloca", " ", 
+    "en", " ", "la", " ", "primera", " ", "columna", " ", "de", " ", "la", 
+    " ", "matriz"}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A", "[", 
+   RowBox[{"[", 
+    RowBox[{"1", ",", "1"}], "]"}], "]"}], "=", 
+  RowBox[{
+   RowBox[{"(", 
     RowBox[{
-     RowBox[{"(", 
-      RowBox[{
-       RowBox[{"Evaluate", "[", 
-        RowBox[{"f", " ", "/.", 
-         RowBox[{"{", 
-          RowBox[{"x", "\[Equal]", 
-           RowBox[{"xo", "+", "h"}]}], "}"}]}], "]"}], "-", 
-       RowBox[{"Evaluate", "[", 
-        RowBox[{"f", " ", "/.", 
-         RowBox[{"{", 
-          RowBox[{"x", "\[Equal]", 
-           RowBox[{"xo", "-", "h"}]}], "}"}]}], "]"}]}], ")"}], "/", "2"}]}], 
-   "\[IndentingNewLine]", 
-   RowBox[{"For", "[", 
+     RowBox[{"Evaluate", "[", 
+      RowBox[{"f", " ", "/.", 
+       RowBox[{"{", 
+        RowBox[{"x", "\[Equal]", 
+         RowBox[{"xo", "+", "h"}]}], "}"}]}], "]"}], "-", 
+     RowBox[{"Evaluate", "[", 
+      RowBox[{"f", " ", "/.", 
+       RowBox[{"{", 
+        RowBox[{"x", "\[Equal]", 
+         RowBox[{"xo", "-", "h"}]}], "}"}]}], "]"}]}], ")"}], "/", 
+   "2"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"For", "[", 
+   RowBox[{
+    RowBox[{"i", "=", "2"}], ",", 
+    RowBox[{"i", "<", "m"}], ",", 
     RowBox[{
-     RowBox[{"i", "=", "2"}], ",", 
-     RowBox[{"i", "<", "m"}], ",", 
+     RowBox[{"i", "+", "2"}], ";", 
      RowBox[{
-      RowBox[{"i", "+", "2"}], ";", 
+      RowBox[{"A", "[", 
+       RowBox[{"[", 
+        RowBox[{"i", ",", "1"}], "]"}], "]"}], "=", 
       RowBox[{
-       RowBox[{"A", "[", 
-        RowBox[{"[", 
-         RowBox[{"i", ",", "1"}], "]"}], "]"}], "=", 
-       RowBox[{
-        RowBox[{"(", 
-         RowBox[{
-          RowBox[{"Evaluate", "[", 
-           RowBox[{"f", " ", "/.", 
-            RowBox[{"{", 
-             RowBox[{"x", "\[Equal]", 
-              RowBox[{"xo", "+", 
-               RowBox[{"(", 
-                RowBox[{"h", "/", "i"}], ")"}]}]}], "}"}]}], "]"}], "-", 
-          RowBox[{"Evaluate", "[", 
-           RowBox[{"f", " ", "/.", 
-            RowBox[{"{", 
-             RowBox[{"x", "\[Equal]", 
-              RowBox[{"xo", "-", 
-               RowBox[{"(", 
-                RowBox[{"h", "/", "i"}], ")"}]}]}], "}"}]}], "]"}]}], ")"}], 
-        "/", 
-        RowBox[{"(", 
-         RowBox[{"2", "*", 
-          RowBox[{"h", "/", "2"}]}], ")"}]}]}]}]}], "]"}], 
-   "\[IndentingNewLine]", 
-   RowBox[{"(*", 
-    RowBox[{
-    "Se", " ", "realiza", " ", "el", " ", "metodo", " ", "de", " ", 
-     "extrapolacion", " ", "de", " ", "richardson", " ", "y", " ", "se", " ", 
-     "acomodando", " ", "en", " ", "la", " ", "matriz"}], "*)"}], 
-   "\[IndentingNewLine]", 
-   RowBox[{"For", "[", 
-    RowBox[{
-     RowBox[{"j", "=", "0"}], ",", 
-     RowBox[{"j", "<", "m"}], ",", 
-     RowBox[{
-      RowBox[{"j", "++"}], ";", 
-      RowBox[{"For", "[", 
-       RowBox[{
-        RowBox[{"i", "=", "j"}], ",", 
-        RowBox[{"i", "<", "m"}], ",", 
+       RowBox[{"(", 
         RowBox[{
-         RowBox[{"i", "++"}], ";", 
+         RowBox[{"Evaluate", "[", 
+          RowBox[{"f", " ", "/.", 
+           RowBox[{"{", 
+            RowBox[{"x", "\[Equal]", 
+             RowBox[{"xo", "+", 
+              RowBox[{"(", 
+               RowBox[{"h", "/", "i"}], ")"}]}]}], "}"}]}], "]"}], "-", 
+         RowBox[{"Evaluate", "[", 
+          RowBox[{"f", " ", "/.", 
+           RowBox[{"{", 
+            RowBox[{"x", "\[Equal]", 
+             RowBox[{"xo", "-", 
+              RowBox[{"(", 
+               RowBox[{"h", "/", "i"}], ")"}]}]}], "}"}]}], "]"}]}], ")"}], 
+       "/", 
+       RowBox[{"(", 
+        RowBox[{"2", "*", 
+         RowBox[{"h", "/", "2"}]}], ")"}]}]}]}]}], "]"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+   "Se", " ", "realiza", " ", "el", " ", "metodo", " ", "de", " ", 
+    "extrapolacion", " ", "de", " ", "richardson", " ", "y", " ", "se", " ", 
+    "acomodando", " ", "en", " ", "la", " ", "matriz"}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{"For", "[", 
+  RowBox[{
+   RowBox[{"j", "=", "0"}], ",", 
+   RowBox[{"j", "<", "m"}], ",", 
+   RowBox[{
+    RowBox[{"j", "++"}], ";", 
+    RowBox[{"For", "[", 
+     RowBox[{
+      RowBox[{"i", "=", "j"}], ",", 
+      RowBox[{"i", "<", "m"}], ",", 
+      RowBox[{
+       RowBox[{"i", "++"}], ";", 
+       RowBox[{
+        RowBox[{"A", "[", 
+         RowBox[{"[", 
+          RowBox[{"i", ",", 
+           RowBox[{"j", "+", "1"}]}], "]"}], "]"}], "=", 
+        RowBox[{
+         RowBox[{"A", "[", 
+          RowBox[{"[", 
+           RowBox[{"i", ",", "j"}], "]"}], "]"}], "+", 
          RowBox[{
-          RowBox[{"A", "[", 
-           RowBox[{"[", 
-            RowBox[{"i", ",", 
-             RowBox[{"j", "+", "1"}]}], "]"}], "]"}], "=", 
-          RowBox[{
-           RowBox[{"A", "[", 
-            RowBox[{"[", 
-             RowBox[{"i", ",", "j"}], "]"}], "]"}], "+", 
+          RowBox[{"(", 
            RowBox[{
-            RowBox[{"(", 
-             RowBox[{
-              RowBox[{"A", "[", 
-               RowBox[{"[", 
-                RowBox[{"i", ",", "j"}], "]"}], "]"}], "-", 
-              RowBox[{"A", "[", 
-               RowBox[{"[", 
-                RowBox[{
-                 RowBox[{"i", "-", "1"}], ",", "j"}], "]"}], "]"}]}], ")"}], 
-            "/", 
-            RowBox[{"(", 
-             RowBox[{
-              RowBox[{"4", "^", 
-               RowBox[{"(", "j", ")"}]}], "-", "1"}], ")"}]}]}]}]}]}], 
-       "]"}]}]}], "]"}], "\[IndentingNewLine]", 
-   RowBox[{"Print", "[", 
-    RowBox[{"MatrixForm", "[", "A", "]"}], "]"}], "\[IndentingNewLine]", 
-   "\[IndentingNewLine]"}]}]], "Input",
+            RowBox[{"A", "[", 
+             RowBox[{"[", 
+              RowBox[{"i", ",", "j"}], "]"}], "]"}], "-", 
+            RowBox[{"A", "[", 
+             RowBox[{"[", 
+              RowBox[{
+               RowBox[{"i", "-", "1"}], ",", "j"}], "]"}], "]"}]}], ")"}], 
+          "/", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"4", "^", 
+             RowBox[{"(", "j", ")"}]}], "-", "1"}], ")"}]}]}]}]}]}], 
+     "]"}]}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"MatrixForm", "[", "A", "]"}], "]"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]"}], "Input",
  CellChangeTimes->{{3.576262453689293*^9, 3.576262466088002*^9}, {
   3.5762625589163113`*^9, 3.57626258423476*^9}, {3.5762627569256372`*^9, 
-  3.5762628584724455`*^9}, {3.5762629095073643`*^9, 3.576262943264295*^9}}],
+  3.5762628584724455`*^9}, {3.5762629095073643`*^9, 3.576262943264295*^9}, {
+  3.6589549691777344`*^9, 3.658954970319336*^9}}],
 
 Cell[BoxData[
  RowBox[{"x", "+", 
@@ -228,27 +220,23 @@ Cell[BoxData[
 Cell[BoxData[
  RowBox[{
   StyleBox[
-   RowBox[{"ReplaceAll", "::", "reps"}], "MessageName"], 
-  RowBox[{
-  ":", " "}], "\<\"\[NoBreak]\\!\\({x \[Equal] 1.5`}\\)\[NoBreak] is neither \
-a list of replacement rules nor a valid dispatch table, and so cannot be used \
-for replacing. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
-ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
-ButtonData:>\\\"paclet:ref/message/ReplaceAll/reps\\\", ButtonNote -> \
-\\\"ReplaceAll::reps\\\"]\\)\"\>"}]], "Message", "MSG",
+   RowBox[{"ReplaceAll", "::", "reps"}], "MessageName"], ":", 
+  " ", "\<\"\[NoBreak]\\!\\({x \[Equal] 1.5`}\\)\[NoBreak] is neither a list \
+of replacement rules nor a valid dispatch table, and so cannot be used for \
+replacing. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\
+\\\", ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/ReplaceAll/reps\\\
+\", ButtonNote -> \\\"ReplaceAll::reps\\\"]\\)\"\>"}]], "Message", "MSG",
  CellChangeTimes->{3.57626462946074*^9}],
 
 Cell[BoxData[
  RowBox[{
   StyleBox[
-   RowBox[{"ReplaceAll", "::", "reps"}], "MessageName"], 
-  RowBox[{
-  ":", " "}], "\<\"\[NoBreak]\\!\\({x \[Equal] 0.5`}\\)\[NoBreak] is neither \
-a list of replacement rules nor a valid dispatch table, and so cannot be used \
-for replacing. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
-ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
-ButtonData:>\\\"paclet:ref/message/ReplaceAll/reps\\\", ButtonNote -> \
-\\\"ReplaceAll::reps\\\"]\\)\"\>"}]], "Message", "MSG",
+   RowBox[{"ReplaceAll", "::", "reps"}], "MessageName"], ":", 
+  " ", "\<\"\[NoBreak]\\!\\({x \[Equal] 0.5`}\\)\[NoBreak] is neither a list \
+of replacement rules nor a valid dispatch table, and so cannot be used for \
+replacing. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\
+\\\", ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/ReplaceAll/reps\\\
+\", ButtonNote -> \\\"ReplaceAll::reps\\\"]\\)\"\>"}]], "Message", "MSG",
  CellChangeTimes->{3.5762646294647408`*^9}],
 
 Cell[BoxData[
@@ -1480,46 +1468,39 @@ Cell[BoxData[
 Cell[BoxData[
  RowBox[{
   StyleBox[
-   RowBox[{"General", "::", "ivar"}], "MessageName"], 
-  RowBox[{
-  ":", " "}], "\<\"\[NoBreak]\\!\\(1333\\/96\\)\[NoBreak] is not a valid \
-variable. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
-ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
-ButtonData:>\\\"paclet:ref/message/General/ivar\\\", ButtonNote -> \
-\\\"General::ivar\\\"]\\)\"\>"}]], "Message", "MSG",
+   RowBox[{"General", "::", "ivar"}], "MessageName"], ":", 
+  " ", "\<\"\[NoBreak]\\!\\(1333\\/96\\)\[NoBreak] is not a valid variable. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/General/ivar\\\", \
+ButtonNote -> \\\"General::ivar\\\"]\\)\"\>"}]], "Message", "MSG",
  CellChangeTimes->{3.576264678048519*^9}],
 
 Cell[BoxData[
  RowBox[{
   StyleBox[
-   RowBox[{"General", "::", "ivar"}], "MessageName"], 
-  RowBox[{
-  ":", " "}], "\<\"\[NoBreak]\\!\\(1333\\/96\\)\[NoBreak] is not a valid \
-variable. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
-ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
-ButtonData:>\\\"paclet:ref/message/General/ivar\\\", ButtonNote -> \
-\\\"General::ivar\\\"]\\)\"\>"}]], "Message", "MSG",
+   RowBox[{"General", "::", "ivar"}], "MessageName"], ":", 
+  " ", "\<\"\[NoBreak]\\!\\(1333\\/96\\)\[NoBreak] is not a valid variable. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/General/ivar\\\", \
+ButtonNote -> \\\"General::ivar\\\"]\\)\"\>"}]], "Message", "MSG",
  CellChangeTimes->{3.576264678090522*^9}],
 
 Cell[BoxData[
  RowBox[{
   StyleBox[
-   RowBox[{"General", "::", "ivar"}], "MessageName"], 
-  RowBox[{
-  ":", " "}], "\<\"\[NoBreak]\\!\\(1333\\/96\\)\[NoBreak] is not a valid \
-variable. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
-ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
-ButtonData:>\\\"paclet:ref/message/General/ivar\\\", ButtonNote -> \
-\\\"General::ivar\\\"]\\)\"\>"}]], "Message", "MSG",
+   RowBox[{"General", "::", "ivar"}], "MessageName"], ":", 
+  " ", "\<\"\[NoBreak]\\!\\(1333\\/96\\)\[NoBreak] is not a valid variable. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/General/ivar\\\", \
+ButtonNote -> \\\"General::ivar\\\"]\\)\"\>"}]], "Message", "MSG",
  CellChangeTimes->{3.576264678097522*^9}],
 
 Cell[BoxData[
  RowBox[{
   StyleBox[
-   RowBox[{"General", "::", "stop"}], "MessageName"], 
-  RowBox[{
-  ":", " "}], "\<\"Further output of \[NoBreak]\\!\\(\\*StyleBox[\\(General \
-:: ivar\\), \\\"MessageName\\\"]\\)\[NoBreak] will be suppressed during this \
+   RowBox[{"General", "::", "stop"}], "MessageName"], ":", 
+  " ", "\<\"Further output of \[NoBreak]\\!\\(\\*StyleBox[\\(General :: \
+ivar\\), \\\"MessageName\\\"]\\)\[NoBreak] will be suppressed during this \
 calculation. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
 ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
 ButtonData:>\\\"paclet:ref/message/General/stop\\\", ButtonNote -> \
@@ -1804,46 +1785,39 @@ Cell[BoxData["26.`"], "Output",
 Cell[BoxData[
  RowBox[{
   StyleBox[
-   RowBox[{"General", "::", "ivar"}], "MessageName"], 
-  RowBox[{
-  ":", " "}], "\<\"\[NoBreak]\\!\\(1333\\/96\\)\[NoBreak] is not a valid \
-variable. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
-ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
-ButtonData:>\\\"paclet:ref/message/General/ivar\\\", ButtonNote -> \
-\\\"General::ivar\\\"]\\)\"\>"}]], "Message", "MSG",
+   RowBox[{"General", "::", "ivar"}], "MessageName"], ":", 
+  " ", "\<\"\[NoBreak]\\!\\(1333\\/96\\)\[NoBreak] is not a valid variable. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/General/ivar\\\", \
+ButtonNote -> \\\"General::ivar\\\"]\\)\"\>"}]], "Message", "MSG",
  CellChangeTimes->{3.576264678223529*^9}],
 
 Cell[BoxData[
  RowBox[{
   StyleBox[
-   RowBox[{"General", "::", "ivar"}], "MessageName"], 
-  RowBox[{
-  ":", " "}], "\<\"\[NoBreak]\\!\\(1333\\/96\\)\[NoBreak] is not a valid \
-variable. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
-ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
-ButtonData:>\\\"paclet:ref/message/General/ivar\\\", ButtonNote -> \
-\\\"General::ivar\\\"]\\)\"\>"}]], "Message", "MSG",
+   RowBox[{"General", "::", "ivar"}], "MessageName"], ":", 
+  " ", "\<\"\[NoBreak]\\!\\(1333\\/96\\)\[NoBreak] is not a valid variable. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/General/ivar\\\", \
+ButtonNote -> \\\"General::ivar\\\"]\\)\"\>"}]], "Message", "MSG",
  CellChangeTimes->{3.576264678226529*^9}],
 
 Cell[BoxData[
  RowBox[{
   StyleBox[
-   RowBox[{"General", "::", "ivar"}], "MessageName"], 
-  RowBox[{
-  ":", " "}], "\<\"\[NoBreak]\\!\\(1333\\/96\\)\[NoBreak] is not a valid \
-variable. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
-ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
-ButtonData:>\\\"paclet:ref/message/General/ivar\\\", ButtonNote -> \
-\\\"General::ivar\\\"]\\)\"\>"}]], "Message", "MSG",
+   RowBox[{"General", "::", "ivar"}], "MessageName"], ":", 
+  " ", "\<\"\[NoBreak]\\!\\(1333\\/96\\)\[NoBreak] is not a valid variable. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/General/ivar\\\", \
+ButtonNote -> \\\"General::ivar\\\"]\\)\"\>"}]], "Message", "MSG",
  CellChangeTimes->{3.5762646782295294`*^9}],
 
 Cell[BoxData[
  RowBox[{
   StyleBox[
-   RowBox[{"General", "::", "stop"}], "MessageName"], 
-  RowBox[{
-  ":", " "}], "\<\"Further output of \[NoBreak]\\!\\(\\*StyleBox[\\(General \
-:: ivar\\), \\\"MessageName\\\"]\\)\[NoBreak] will be suppressed during this \
+   RowBox[{"General", "::", "stop"}], "MessageName"], ":", 
+  " ", "\<\"Further output of \[NoBreak]\\!\\(\\*StyleBox[\\(General :: \
+ivar\\), \\\"MessageName\\\"]\\)\[NoBreak] will be suppressed during this \
 calculation. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
 ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
 ButtonData:>\\\"paclet:ref/message/General/stop\\\", ButtonNote -> \
@@ -1886,12 +1860,11 @@ Cell[BoxData[
 Cell[BoxData[
  RowBox[{
   StyleBox[
-   RowBox[{"Normalize", "::", "nlnmt2"}], "MessageName"], 
-  RowBox[{
-  ":", " "}], "\<\"The first argument is not a number or a vector, or the \
-second argument is not a norm function that always returns a non-negative \
-real number for any numeric argument. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\
-\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+   RowBox[{"Normalize", "::", "nlnmt2"}], "MessageName"], ":", 
+  " ", "\<\"The first argument is not a number or a vector, or the second \
+argument is not a norm function that always returns a non-negative real \
+number for any numeric argument. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
 ButtonData:>\\\"paclet:ref/Normalize\\\", ButtonNote -> \\\"Normalize::nlnmt2\
 \\\"]\\)\"\>"}]], "Message", "MSG",
  CellChangeTimes->{3.576264678448542*^9}],
@@ -1936,17 +1909,16 @@ Cell[BoxData["\<\"g3\"\>"], "Output",
 Cell[BoxData[
  RowBox[{
   StyleBox[
-   RowBox[{"Part", "::", "partw"}], "MessageName"], 
-  RowBox[{
-  ":", " "}], "\<\"Part \[NoBreak]\\!\\(2\\)\[NoBreak] of \
-\[NoBreak]\\!\\(Normalize[\\(\\({\\(\\(\\(\\(0.` \[VeryThinSpace]\\)\\) - \\(\
-\\(2.`\\\\ \\(\\(\\(\[PartialD]\\_\\(0\\)\\) \
-\\(\\({\\({\\(\\(-193.80479600694446`\\)\\), \\(\\(-54.16840277777778`\\)\\)}\
-\\)}\\)\\)\\)\\)\\)\\) - \\(\\(10\\\\ \\(\\(\\(\[PartialD]\\_\\(0\\)\\) \
-\\(\\({\\({853\\/96, \\(\\(-\\(\\(295\\/24\\)\\)\\)\\)}\\)}\\)\\)\\)\\)\\)\\)\
-\\)\\), \\(\\({\\({\\(\\(-0.02`\\)\\), \\(\\(-0.02`\\)\\)}\\)}\\)\\), \\(\\({\
-\\({\\(\\(-2.`\\)\\), \\(\\(-2.`\\)\\)}\\)}\\)\\)}\\)\\)]\\)\\n\[NoBreak] \
-does not exist. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+   RowBox[{"Part", "::", "partw"}], "MessageName"], ":", 
+  " ", "\<\"Part \[NoBreak]\\!\\(2\\)\[NoBreak] of \[NoBreak]\\!\\(Normalize[\
+\\(\\({\\(\\(\\(\\(0.` \[VeryThinSpace]\\)\\) - \\(\\(2.`\\\\ \\(\\(\\(\
+\[PartialD]\\_\\(0\\)\\) \\(\\({\\({\\(\\(-193.80479600694446`\\)\\), \
+\\(\\(-54.16840277777778`\\)\\)}\\)}\\)\\)\\)\\)\\)\\) - \\(\\(10\\\\ \
+\\(\\(\\(\[PartialD]\\_\\(0\\)\\) \\(\\({\\({853\\/96, \
+\\(\\(-\\(\\(295\\/24\\)\\)\\)\\)}\\)}\\)\\)\\)\\)\\)\\)\\)\\), \
+\\(\\({\\({\\(\\(-0.02`\\)\\), \\(\\(-0.02`\\)\\)}\\)}\\)\\), \
+\\(\\({\\({\\(\\(-2.`\\)\\), \\(\\(-2.`\\)\\)}\\)}\\)\\)}\\)\\)]\\)\\n\
+\[NoBreak] does not exist. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
 ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
 ButtonData:>\\\"paclet:ref/message/General/partw\\\", ButtonNote -> \
 \\\"Part::partw\\\"]\\)\"\>"}]], "Message", "MSG",
@@ -1955,17 +1927,16 @@ ButtonData:>\\\"paclet:ref/message/General/partw\\\", ButtonNote -> \
 Cell[BoxData[
  RowBox[{
   StyleBox[
-   RowBox[{"Part", "::", "partw"}], "MessageName"], 
-  RowBox[{
-  ":", " "}], "\<\"Part \[NoBreak]\\!\\(3\\)\[NoBreak] of \
-\[NoBreak]\\!\\(Normalize[\\(\\({\\(\\(\\(\\(0.` \[VeryThinSpace]\\)\\) - \\(\
-\\(2.`\\\\ \\(\\(\\(\[PartialD]\\_\\(0\\)\\) \
-\\(\\({\\({\\(\\(-193.80479600694446`\\)\\), \\(\\(-54.16840277777778`\\)\\)}\
-\\)}\\)\\)\\)\\)\\)\\) - \\(\\(10\\\\ \\(\\(\\(\[PartialD]\\_\\(0\\)\\) \
-\\(\\({\\({853\\/96, \\(\\(-\\(\\(295\\/24\\)\\)\\)\\)}\\)}\\)\\)\\)\\)\\)\\)\
-\\)\\), \\(\\({\\({\\(\\(-0.02`\\)\\), \\(\\(-0.02`\\)\\)}\\)}\\)\\), \\(\\({\
-\\({\\(\\(-2.`\\)\\), \\(\\(-2.`\\)\\)}\\)}\\)\\)}\\)\\)]\\)\\n\[NoBreak] \
-does not exist. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+   RowBox[{"Part", "::", "partw"}], "MessageName"], ":", 
+  " ", "\<\"Part \[NoBreak]\\!\\(3\\)\[NoBreak] of \[NoBreak]\\!\\(Normalize[\
+\\(\\({\\(\\(\\(\\(0.` \[VeryThinSpace]\\)\\) - \\(\\(2.`\\\\ \\(\\(\\(\
+\[PartialD]\\_\\(0\\)\\) \\(\\({\\({\\(\\(-193.80479600694446`\\)\\), \
+\\(\\(-54.16840277777778`\\)\\)}\\)}\\)\\)\\)\\)\\)\\) - \\(\\(10\\\\ \
+\\(\\(\\(\[PartialD]\\_\\(0\\)\\) \\(\\({\\({853\\/96, \
+\\(\\(-\\(\\(295\\/24\\)\\)\\)\\)}\\)}\\)\\)\\)\\)\\)\\)\\)\\), \
+\\(\\({\\({\\(\\(-0.02`\\)\\), \\(\\(-0.02`\\)\\)}\\)}\\)\\), \
+\\(\\({\\({\\(\\(-2.`\\)\\), \\(\\(-2.`\\)\\)}\\)}\\)\\)}\\)\\)]\\)\\n\
+\[NoBreak] does not exist. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
 ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
 ButtonData:>\\\"paclet:ref/message/General/partw\\\", ButtonNote -> \
 \\\"Part::partw\\\"]\\)\"\>"}]], "Message", "MSG",
@@ -3561,17 +3532,16 @@ Cell[BoxData["\<\"g2\"\>"], "Output",
 Cell[BoxData[
  RowBox[{
   StyleBox[
-   RowBox[{"Part", "::", "partw"}], "MessageName"], 
-  RowBox[{
-  ":", " "}], "\<\"Part \[NoBreak]\\!\\(2\\)\[NoBreak] of \
-\[NoBreak]\\!\\(Normalize[\\(\\({\\(\\(\\(\\(0.` \[VeryThinSpace]\\)\\) - \\(\
-\\(2.`\\\\ \\(\\(\\(\[PartialD]\\_\\(0\\)\\) \
-\\(\\({\\({\\(\\(-193.80479600694446`\\)\\), \\(\\(-54.16840277777778`\\)\\)}\
-\\)}\\)\\)\\)\\)\\)\\) - \\(\\(10\\\\ \\(\\(\\(\[PartialD]\\_\\(0\\)\\) \
-\\(\\({\\({853\\/96, \\(\\(-\\(\\(295\\/24\\)\\)\\)\\)}\\)}\\)\\)\\)\\)\\)\\)\
-\\)\\), \\(\\({\\({\\(\\(-0.02`\\)\\), \\(\\(-0.02`\\)\\)}\\)}\\)\\), \\(\\({\
-\\({\\(\\(-2.`\\)\\), \\(\\(-2.`\\)\\)}\\)}\\)\\)}\\)\\)]\\)\\n\[NoBreak] \
-does not exist. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+   RowBox[{"Part", "::", "partw"}], "MessageName"], ":", 
+  " ", "\<\"Part \[NoBreak]\\!\\(2\\)\[NoBreak] of \[NoBreak]\\!\\(Normalize[\
+\\(\\({\\(\\(\\(\\(0.` \[VeryThinSpace]\\)\\) - \\(\\(2.`\\\\ \\(\\(\\(\
+\[PartialD]\\_\\(0\\)\\) \\(\\({\\({\\(\\(-193.80479600694446`\\)\\), \
+\\(\\(-54.16840277777778`\\)\\)}\\)}\\)\\)\\)\\)\\)\\) - \\(\\(10\\\\ \
+\\(\\(\\(\[PartialD]\\_\\(0\\)\\) \\(\\({\\({853\\/96, \
+\\(\\(-\\(\\(295\\/24\\)\\)\\)\\)}\\)}\\)\\)\\)\\)\\)\\)\\)\\), \
+\\(\\({\\({\\(\\(-0.02`\\)\\), \\(\\(-0.02`\\)\\)}\\)}\\)\\), \
+\\(\\({\\({\\(\\(-2.`\\)\\), \\(\\(-2.`\\)\\)}\\)}\\)\\)}\\)\\)]\\)\\n\
+\[NoBreak] does not exist. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
 ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
 ButtonData:>\\\"paclet:ref/message/General/partw\\\", ButtonNote -> \
 \\\"Part::partw\\\"]\\)\"\>"}]], "Message", "MSG",
@@ -3580,17 +3550,16 @@ ButtonData:>\\\"paclet:ref/message/General/partw\\\", ButtonNote -> \
 Cell[BoxData[
  RowBox[{
   StyleBox[
-   RowBox[{"Part", "::", "partw"}], "MessageName"], 
-  RowBox[{
-  ":", " "}], "\<\"Part \[NoBreak]\\!\\(3\\)\[NoBreak] of \
-\[NoBreak]\\!\\(Normalize[\\(\\({\\(\\(\\(\\(0.` \[VeryThinSpace]\\)\\) - \\(\
-\\(2.`\\\\ \\(\\(\\(\[PartialD]\\_\\(0\\)\\) \
-\\(\\({\\({\\(\\(-193.80479600694446`\\)\\), \\(\\(-54.16840277777778`\\)\\)}\
-\\)}\\)\\)\\)\\)\\)\\) - \\(\\(10\\\\ \\(\\(\\(\[PartialD]\\_\\(0\\)\\) \
-\\(\\({\\({853\\/96, \\(\\(-\\(\\(295\\/24\\)\\)\\)\\)}\\)}\\)\\)\\)\\)\\)\\)\
-\\)\\), \\(\\({\\({\\(\\(-0.02`\\)\\), \\(\\(-0.02`\\)\\)}\\)}\\)\\), \\(\\({\
-\\({\\(\\(-2.`\\)\\), \\(\\(-2.`\\)\\)}\\)}\\)\\)}\\)\\)]\\)\\n\[NoBreak] \
-does not exist. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+   RowBox[{"Part", "::", "partw"}], "MessageName"], ":", 
+  " ", "\<\"Part \[NoBreak]\\!\\(3\\)\[NoBreak] of \[NoBreak]\\!\\(Normalize[\
+\\(\\({\\(\\(\\(\\(0.` \[VeryThinSpace]\\)\\) - \\(\\(2.`\\\\ \\(\\(\\(\
+\[PartialD]\\_\\(0\\)\\) \\(\\({\\({\\(\\(-193.80479600694446`\\)\\), \
+\\(\\(-54.16840277777778`\\)\\)}\\)}\\)\\)\\)\\)\\)\\) - \\(\\(10\\\\ \
+\\(\\(\\(\[PartialD]\\_\\(0\\)\\) \\(\\({\\({853\\/96, \
+\\(\\(-\\(\\(295\\/24\\)\\)\\)\\)}\\)}\\)\\)\\)\\)\\)\\)\\)\\), \
+\\(\\({\\({\\(\\(-0.02`\\)\\), \\(\\(-0.02`\\)\\)}\\)}\\)\\), \
+\\(\\({\\({\\(\\(-2.`\\)\\), \\(\\(-2.`\\)\\)}\\)}\\)\\)}\\)\\)]\\)\\n\
+\[NoBreak] does not exist. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
 ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
 ButtonData:>\\\"paclet:ref/message/General/partw\\\", ButtonNote -> \
 \\\"Part::partw\\\"]\\)\"\>"}]], "Message", "MSG",
@@ -6839,17 +6808,16 @@ Cell[BoxData["\<\"h2\"\>"], "Output",
 Cell[BoxData[
  RowBox[{
   StyleBox[
-   RowBox[{"Part", "::", "partw"}], "MessageName"], 
-  RowBox[{
-  ":", " "}], "\<\"Part \[NoBreak]\\!\\(2\\)\[NoBreak] of \
-\[NoBreak]\\!\\(Normalize[\\(\\({\\(\\(\\(\\(0.` \[VeryThinSpace]\\)\\) - \\(\
-\\(2.`\\\\ \\(\\(\\(\[PartialD]\\_\\(0\\)\\) \
-\\(\\({\\({\\(\\(-193.80479600694446`\\)\\), \\(\\(-54.16840277777778`\\)\\)}\
-\\)}\\)\\)\\)\\)\\)\\) - \\(\\(10\\\\ \\(\\(\\(\[PartialD]\\_\\(0\\)\\) \
-\\(\\({\\({853\\/96, \\(\\(-\\(\\(295\\/24\\)\\)\\)\\)}\\)}\\)\\)\\)\\)\\)\\)\
-\\)\\), \\(\\({\\({\\(\\(-0.02`\\)\\), \\(\\(-0.02`\\)\\)}\\)}\\)\\), \\(\\({\
-\\({\\(\\(-2.`\\)\\), \\(\\(-2.`\\)\\)}\\)}\\)\\)}\\)\\)]\\)\\n\[NoBreak] \
-does not exist. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+   RowBox[{"Part", "::", "partw"}], "MessageName"], ":", 
+  " ", "\<\"Part \[NoBreak]\\!\\(2\\)\[NoBreak] of \[NoBreak]\\!\\(Normalize[\
+\\(\\({\\(\\(\\(\\(0.` \[VeryThinSpace]\\)\\) - \\(\\(2.`\\\\ \\(\\(\\(\
+\[PartialD]\\_\\(0\\)\\) \\(\\({\\({\\(\\(-193.80479600694446`\\)\\), \
+\\(\\(-54.16840277777778`\\)\\)}\\)}\\)\\)\\)\\)\\)\\) - \\(\\(10\\\\ \
+\\(\\(\\(\[PartialD]\\_\\(0\\)\\) \\(\\({\\({853\\/96, \
+\\(\\(-\\(\\(295\\/24\\)\\)\\)\\)}\\)}\\)\\)\\)\\)\\)\\)\\)\\), \
+\\(\\({\\({\\(\\(-0.02`\\)\\), \\(\\(-0.02`\\)\\)}\\)}\\)\\), \
+\\(\\({\\({\\(\\(-2.`\\)\\), \\(\\(-2.`\\)\\)}\\)}\\)\\)}\\)\\)]\\)\\n\
+\[NoBreak] does not exist. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
 ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
 ButtonData:>\\\"paclet:ref/message/General/partw\\\", ButtonNote -> \
 \\\"Part::partw\\\"]\\)\"\>"}]], "Message", "MSG",
@@ -6858,17 +6826,16 @@ ButtonData:>\\\"paclet:ref/message/General/partw\\\", ButtonNote -> \
 Cell[BoxData[
  RowBox[{
   StyleBox[
-   RowBox[{"Part", "::", "partw"}], "MessageName"], 
-  RowBox[{
-  ":", " "}], "\<\"Part \[NoBreak]\\!\\(3\\)\[NoBreak] of \
-\[NoBreak]\\!\\(Normalize[\\(\\({\\(\\(\\(\\(0.` \[VeryThinSpace]\\)\\) - \\(\
-\\(2.`\\\\ \\(\\(\\(\[PartialD]\\_\\(0\\)\\) \
-\\(\\({\\({\\(\\(-193.80479600694446`\\)\\), \\(\\(-54.16840277777778`\\)\\)}\
-\\)}\\)\\)\\)\\)\\)\\) - \\(\\(10\\\\ \\(\\(\\(\[PartialD]\\_\\(0\\)\\) \
-\\(\\({\\({853\\/96, \\(\\(-\\(\\(295\\/24\\)\\)\\)\\)}\\)}\\)\\)\\)\\)\\)\\)\
-\\)\\), \\(\\({\\({\\(\\(-0.02`\\)\\), \\(\\(-0.02`\\)\\)}\\)}\\)\\), \\(\\({\
-\\({\\(\\(-2.`\\)\\), \\(\\(-2.`\\)\\)}\\)}\\)\\)}\\)\\)]\\)\\n\[NoBreak] \
-does not exist. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+   RowBox[{"Part", "::", "partw"}], "MessageName"], ":", 
+  " ", "\<\"Part \[NoBreak]\\!\\(3\\)\[NoBreak] of \[NoBreak]\\!\\(Normalize[\
+\\(\\({\\(\\(\\(\\(0.` \[VeryThinSpace]\\)\\) - \\(\\(2.`\\\\ \\(\\(\\(\
+\[PartialD]\\_\\(0\\)\\) \\(\\({\\({\\(\\(-193.80479600694446`\\)\\), \
+\\(\\(-54.16840277777778`\\)\\)}\\)}\\)\\)\\)\\)\\)\\) - \\(\\(10\\\\ \
+\\(\\(\\(\[PartialD]\\_\\(0\\)\\) \\(\\({\\({853\\/96, \
+\\(\\(-\\(\\(295\\/24\\)\\)\\)\\)}\\)}\\)\\)\\)\\)\\)\\)\\)\\), \
+\\(\\({\\({\\(\\(-0.02`\\)\\), \\(\\(-0.02`\\)\\)}\\)}\\)\\), \
+\\(\\({\\({\\(\\(-2.`\\)\\), \\(\\(-2.`\\)\\)}\\)}\\)\\)}\\)\\)]\\)\\n\
+\[NoBreak] does not exist. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
 ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
 ButtonData:>\\\"paclet:ref/message/General/partw\\\", ButtonNote -> \
 \\\"Part::partw\\\"]\\)\"\>"}]], "Message", "MSG",
@@ -15312,17 +15279,16 @@ Cell[BoxData["\<\"g0\"\>"], "Output",
 Cell[BoxData[
  RowBox[{
   StyleBox[
-   RowBox[{"Part", "::", "partw"}], "MessageName"], 
-  RowBox[{
-  ":", " "}], "\<\"Part \[NoBreak]\\!\\(2\\)\[NoBreak] of \
-\[NoBreak]\\!\\(Normalize[\\(\\({\\(\\(\\(\\(0.` \[VeryThinSpace]\\)\\) - \\(\
-\\(2.`\\\\ \\(\\(\\(\[PartialD]\\_\\(0\\)\\) \
-\\(\\({\\({\\(\\(-193.80479600694446`\\)\\), \\(\\(-54.16840277777778`\\)\\)}\
-\\)}\\)\\)\\)\\)\\)\\) - \\(\\(10\\\\ \\(\\(\\(\[PartialD]\\_\\(0\\)\\) \
-\\(\\({\\({853\\/96, \\(\\(-\\(\\(295\\/24\\)\\)\\)\\)}\\)}\\)\\)\\)\\)\\)\\)\
-\\)\\), \\(\\({\\({\\(\\(-0.02`\\)\\), \\(\\(-0.02`\\)\\)}\\)}\\)\\), \\(\\({\
-\\({\\(\\(-2.`\\)\\), \\(\\(-2.`\\)\\)}\\)}\\)\\)}\\)\\)]\\)\\n\[NoBreak] \
-does not exist. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+   RowBox[{"Part", "::", "partw"}], "MessageName"], ":", 
+  " ", "\<\"Part \[NoBreak]\\!\\(2\\)\[NoBreak] of \[NoBreak]\\!\\(Normalize[\
+\\(\\({\\(\\(\\(\\(0.` \[VeryThinSpace]\\)\\) - \\(\\(2.`\\\\ \\(\\(\\(\
+\[PartialD]\\_\\(0\\)\\) \\(\\({\\({\\(\\(-193.80479600694446`\\)\\), \
+\\(\\(-54.16840277777778`\\)\\)}\\)}\\)\\)\\)\\)\\)\\) - \\(\\(10\\\\ \
+\\(\\(\\(\[PartialD]\\_\\(0\\)\\) \\(\\({\\({853\\/96, \
+\\(\\(-\\(\\(295\\/24\\)\\)\\)\\)}\\)}\\)\\)\\)\\)\\)\\)\\)\\), \
+\\(\\({\\({\\(\\(-0.02`\\)\\), \\(\\(-0.02`\\)\\)}\\)}\\)\\), \
+\\(\\({\\({\\(\\(-2.`\\)\\), \\(\\(-2.`\\)\\)}\\)}\\)\\)}\\)\\)]\\)\\n\
+\[NoBreak] does not exist. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
 ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
 ButtonData:>\\\"paclet:ref/message/General/partw\\\", ButtonNote -> \
 \\\"Part::partw\\\"]\\)\"\>"}]], "Message", "MSG",
@@ -15331,17 +15297,16 @@ ButtonData:>\\\"paclet:ref/message/General/partw\\\", ButtonNote -> \
 Cell[BoxData[
  RowBox[{
   StyleBox[
-   RowBox[{"Part", "::", "partw"}], "MessageName"], 
-  RowBox[{
-  ":", " "}], "\<\"Part \[NoBreak]\\!\\(3\\)\[NoBreak] of \
-\[NoBreak]\\!\\(Normalize[\\(\\({\\(\\(\\(\\(0.` \[VeryThinSpace]\\)\\) - \\(\
-\\(2.`\\\\ \\(\\(\\(\[PartialD]\\_\\(0\\)\\) \
-\\(\\({\\({\\(\\(-193.80479600694446`\\)\\), \\(\\(-54.16840277777778`\\)\\)}\
-\\)}\\)\\)\\)\\)\\)\\) - \\(\\(10\\\\ \\(\\(\\(\[PartialD]\\_\\(0\\)\\) \
-\\(\\({\\({853\\/96, \\(\\(-\\(\\(295\\/24\\)\\)\\)\\)}\\)}\\)\\)\\)\\)\\)\\)\
-\\)\\), \\(\\({\\({\\(\\(-0.02`\\)\\), \\(\\(-0.02`\\)\\)}\\)}\\)\\), \\(\\({\
-\\({\\(\\(-2.`\\)\\), \\(\\(-2.`\\)\\)}\\)}\\)\\)}\\)\\)]\\)\\n\[NoBreak] \
-does not exist. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+   RowBox[{"Part", "::", "partw"}], "MessageName"], ":", 
+  " ", "\<\"Part \[NoBreak]\\!\\(3\\)\[NoBreak] of \[NoBreak]\\!\\(Normalize[\
+\\(\\({\\(\\(\\(\\(0.` \[VeryThinSpace]\\)\\) - \\(\\(2.`\\\\ \\(\\(\\(\
+\[PartialD]\\_\\(0\\)\\) \\(\\({\\({\\(\\(-193.80479600694446`\\)\\), \
+\\(\\(-54.16840277777778`\\)\\)}\\)}\\)\\)\\)\\)\\)\\) - \\(\\(10\\\\ \
+\\(\\(\\(\[PartialD]\\_\\(0\\)\\) \\(\\({\\({853\\/96, \
+\\(\\(-\\(\\(295\\/24\\)\\)\\)\\)}\\)}\\)\\)\\)\\)\\)\\)\\)\\), \
+\\(\\({\\({\\(\\(-0.02`\\)\\), \\(\\(-0.02`\\)\\)}\\)}\\)\\), \
+\\(\\({\\({\\(\\(-2.`\\)\\), \\(\\(-2.`\\)\\)}\\)}\\)\\)}\\)\\)]\\)\\n\
+\[NoBreak] does not exist. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
 ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
 ButtonData:>\\\"paclet:ref/message/General/partw\\\", ButtonNote -> \
 \\\"Part::partw\\\"]\\)\"\>"}]], "Message", "MSG",
@@ -15403,8 +15368,9 @@ Cell[BoxData[
                 RowBox[{"(", 
                  RowBox[{
                   FractionBox["1", "2"], "-", 
-                  FractionBox[
-                   RowBox[{"2", " ", 
+                  RowBox[{
+                   RowBox[{"(", 
+                    RowBox[{"2", " ", 
                     RowBox[{"(", 
                     RowBox[{
                     RowBox[{"-", "26.`"}], "+", 
@@ -15447,8 +15413,9 @@ Cell[BoxData[
                     RowBox[{"\[LeftSkeleton]", "1", "\[RightSkeleton]"}], 
                     "}"}], "]"}], "\[LeftDoubleBracket]", "3", 
                     "\[RightDoubleBracket]"}], "2"]}]}], ")"}], "2"]}], 
-                    ")"}]}], 
-                   RowBox[{
+                    ")"}]}], ")"}], "/", 
+                   RowBox[{"(", 
+                    RowBox[{
                     RowBox[{
                     RowBox[{"-", "2"}], " ", 
                     RowBox[{"(", 
@@ -15516,7 +15483,8 @@ Cell[BoxData[
                     RowBox[{
                     RowBox[{"-", "1"}], "+", 
                     RowBox[{"\[LeftSkeleton]", "5", "\[RightSkeleton]"}]}], 
-                    ")"}], "2"]}], ")"}]}]}]]}], ")"}]}]}], ")"}], "2"], "+", 
+                    ")"}], "2"]}], ")"}]}]}], ")"}]}]}], ")"}]}]}], ")"}], 
+             "2"], "+", 
             SuperscriptBox[
              RowBox[{"(", 
               RowBox[{
@@ -15947,17 +15915,16 @@ Cell[BoxData[
 Cell[BoxData[
  RowBox[{
   StyleBox[
-   RowBox[{"Part", "::", "partw"}], "MessageName"], 
-  RowBox[{
-  ":", " "}], "\<\"Part \[NoBreak]\\!\\(2\\)\[NoBreak] of \
-\[NoBreak]\\!\\(Normalize[\\(\\({\\(\\(\\(\\(0.` \[VeryThinSpace]\\)\\) - \\(\
-\\(2.`\\\\ \\(\\(\\(\[PartialD]\\_\\(0\\)\\) \
-\\(\\({\\({\\(\\(-193.80479600694446`\\)\\), \\(\\(-54.16840277777778`\\)\\)}\
-\\)}\\)\\)\\)\\)\\)\\) - \\(\\(10\\\\ \\(\\(\\(\[PartialD]\\_\\(0\\)\\) \
-\\(\\({\\({853\\/96, \\(\\(-\\(\\(295\\/24\\)\\)\\)\\)}\\)}\\)\\)\\)\\)\\)\\)\
-\\)\\), \\(\\({\\({\\(\\(-0.02`\\)\\), \\(\\(-0.02`\\)\\)}\\)}\\)\\), \\(\\({\
-\\({\\(\\(-2.`\\)\\), \\(\\(-2.`\\)\\)}\\)}\\)\\)}\\)\\)]\\)\\n\[NoBreak] \
-does not exist. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+   RowBox[{"Part", "::", "partw"}], "MessageName"], ":", 
+  " ", "\<\"Part \[NoBreak]\\!\\(2\\)\[NoBreak] of \[NoBreak]\\!\\(Normalize[\
+\\(\\({\\(\\(\\(\\(0.` \[VeryThinSpace]\\)\\) - \\(\\(2.`\\\\ \\(\\(\\(\
+\[PartialD]\\_\\(0\\)\\) \\(\\({\\({\\(\\(-193.80479600694446`\\)\\), \
+\\(\\(-54.16840277777778`\\)\\)}\\)}\\)\\)\\)\\)\\)\\) - \\(\\(10\\\\ \
+\\(\\(\\(\[PartialD]\\_\\(0\\)\\) \\(\\({\\({853\\/96, \
+\\(\\(-\\(\\(295\\/24\\)\\)\\)\\)}\\)}\\)\\)\\)\\)\\)\\)\\)\\), \
+\\(\\({\\({\\(\\(-0.02`\\)\\), \\(\\(-0.02`\\)\\)}\\)}\\)\\), \
+\\(\\({\\({\\(\\(-2.`\\)\\), \\(\\(-2.`\\)\\)}\\)}\\)\\)}\\)\\)]\\)\\n\
+\[NoBreak] does not exist. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
 ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
 ButtonData:>\\\"paclet:ref/message/General/partw\\\", ButtonNote -> \
 \\\"Part::partw\\\"]\\)\"\>"}]], "Message", "MSG",
@@ -16004,17 +15971,16 @@ Cell[BoxData[
 Cell[BoxData[
  RowBox[{
   StyleBox[
-   RowBox[{"Part", "::", "partw"}], "MessageName"], 
-  RowBox[{
-  ":", " "}], "\<\"Part \[NoBreak]\\!\\(3\\)\[NoBreak] of \
-\[NoBreak]\\!\\(Normalize[\\(\\({\\(\\(\\(\\(0.` \[VeryThinSpace]\\)\\) - \\(\
-\\(2.`\\\\ \\(\\(\\(\[PartialD]\\_\\(0\\)\\) \
-\\(\\({\\({\\(\\(-193.80479600694446`\\)\\), \\(\\(-54.16840277777778`\\)\\)}\
-\\)}\\)\\)\\)\\)\\)\\) - \\(\\(10\\\\ \\(\\(\\(\[PartialD]\\_\\(0\\)\\) \
-\\(\\({\\({853\\/96, \\(\\(-\\(\\(295\\/24\\)\\)\\)\\)}\\)}\\)\\)\\)\\)\\)\\)\
-\\)\\), \\(\\({\\({\\(\\(-0.02`\\)\\), \\(\\(-0.02`\\)\\)}\\)}\\)\\), \\(\\({\
-\\({\\(\\(-2.`\\)\\), \\(\\(-2.`\\)\\)}\\)}\\)\\)}\\)\\)]\\)\\n\[NoBreak] \
-does not exist. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+   RowBox[{"Part", "::", "partw"}], "MessageName"], ":", 
+  " ", "\<\"Part \[NoBreak]\\!\\(3\\)\[NoBreak] of \[NoBreak]\\!\\(Normalize[\
+\\(\\({\\(\\(\\(\\(0.` \[VeryThinSpace]\\)\\) - \\(\\(2.`\\\\ \\(\\(\\(\
+\[PartialD]\\_\\(0\\)\\) \\(\\({\\({\\(\\(-193.80479600694446`\\)\\), \
+\\(\\(-54.16840277777778`\\)\\)}\\)}\\)\\)\\)\\)\\)\\) - \\(\\(10\\\\ \
+\\(\\(\\(\[PartialD]\\_\\(0\\)\\) \\(\\({\\({853\\/96, \
+\\(\\(-\\(\\(295\\/24\\)\\)\\)\\)}\\)}\\)\\)\\)\\)\\)\\)\\)\\), \
+\\(\\({\\({\\(\\(-0.02`\\)\\), \\(\\(-0.02`\\)\\)}\\)}\\)\\), \
+\\(\\({\\({\\(\\(-2.`\\)\\), \\(\\(-2.`\\)\\)}\\)}\\)\\)}\\)\\)]\\)\\n\
+\[NoBreak] does not exist. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
 ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
 ButtonData:>\\\"paclet:ref/message/General/partw\\\", ButtonNote -> \
 \\\"Part::partw\\\"]\\)\"\>"}]], "Message", "MSG",
@@ -16061,7 +16027,7 @@ Cell[BoxData[
 },
 WindowSize->{1350, 643},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
-FrontEndVersion->"8.0 for Microsoft Windows (64-bit) (November 7, 2010)",
+FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (November 20, 2012)",
 StyleDefinitions->"Default.nb"
 ]
 (* End of Notebook Content *)
@@ -16076,99 +16042,99 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[579, 22, 5609, 154, 372, "Input"],
-Cell[6191, 178, 118, 3, 30, "Output"],
-Cell[6312, 183, 70, 1, 30, "Output"],
-Cell[6385, 186, 73, 1, 30, "Output"],
-Cell[6461, 189, 72, 1, 30, "Output"],
-Cell[6536, 192, 411, 11, 30, "Output"],
-Cell[6950, 205, 701, 20, 86, "Output"],
-Cell[7654, 227, 542, 11, 21, "Message"],
-Cell[8199, 240, 545, 11, 21, "Message"],
-Cell[8747, 253, 574, 18, 47, "Output"],
-Cell[9324, 273, 1863, 55, 85, "Print"]
+Cell[579, 22, 4912, 146, 312, "Input"],
+Cell[5494, 170, 118, 3, 31, "Output"],
+Cell[5615, 175, 70, 1, 31, "Output"],
+Cell[5688, 178, 73, 1, 31, "Output"],
+Cell[5764, 181, 72, 1, 31, "Output"],
+Cell[5839, 184, 411, 11, 31, "Output"],
+Cell[6253, 197, 701, 20, 72, "Output"],
+Cell[6957, 219, 527, 9, 21, "Message"],
+Cell[7487, 230, 530, 9, 21, "Message"],
+Cell[8020, 241, 574, 18, 46, "Output"],
+Cell[8597, 261, 1863, 55, 85, "Print"]
 }, Open  ]],
-Cell[11202, 331, 174, 3, 31, "Input"],
+Cell[10475, 319, 174, 3, 31, "Input"],
 Cell[CellGroupData[{
-Cell[11401, 338, 4506, 121, 257, "Input"],
-Cell[15910, 461, 94, 2, 47, "Output"],
-Cell[16007, 465, 73, 1, 30, "Output"],
-Cell[16083, 468, 241, 7, 47, "Output"],
-Cell[16327, 477, 272, 9, 47, "Output"],
+Cell[10674, 326, 4506, 121, 317, "Input"],
+Cell[15183, 449, 94, 2, 47, "Output"],
+Cell[15280, 453, 73, 1, 30, "Output"],
+Cell[15356, 456, 241, 7, 47, "Output"],
+Cell[15600, 465, 272, 9, 47, "Output"],
 Cell[CellGroupData[{
-Cell[16624, 490, 393, 7, 23, "Print"],
-Cell[17020, 499, 446, 10, 23, "Print"],
-Cell[17469, 511, 454, 10, 23, "Print"],
-Cell[17926, 523, 454, 10, 23, "Print"],
-Cell[18383, 535, 456, 10, 23, "Print"],
-Cell[18842, 547, 401, 10, 23, "Print"]
+Cell[15897, 478, 393, 7, 23, "Print"],
+Cell[16293, 487, 446, 10, 23, "Print"],
+Cell[16742, 499, 454, 10, 23, "Print"],
+Cell[17199, 511, 454, 10, 23, "Print"],
+Cell[17656, 523, 456, 10, 23, "Print"],
+Cell[18115, 535, 401, 10, 23, "Print"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[19292, 563, 5827, 158, 376, "Input"],
-Cell[25122, 723, 186, 5, 30, "Output"],
-Cell[25311, 730, 212, 6, 50, "Output"],
-Cell[25526, 738, 213, 7, 30, "Output"],
-Cell[25742, 747, 629, 18, 57, "Output"],
-Cell[26374, 767, 360, 13, 47, "Output"],
-Cell[26737, 782, 184, 6, 40, "Print"],
-Cell[26924, 790, 213, 7, 47, "Output"]
+Cell[18565, 551, 5827, 158, 376, "Input"],
+Cell[24395, 711, 186, 5, 30, "Output"],
+Cell[24584, 718, 212, 6, 50, "Output"],
+Cell[24799, 726, 213, 7, 30, "Output"],
+Cell[25015, 735, 629, 18, 57, "Output"],
+Cell[25647, 755, 360, 13, 47, "Output"],
+Cell[26010, 770, 184, 6, 40, "Print"],
+Cell[26197, 778, 213, 7, 47, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[27174, 802, 9999, 273, 437, "Input"],
-Cell[37176, 1077, 733, 26, 47, "Output"],
-Cell[37912, 1105, 703, 25, 47, "Output"],
-Cell[38618, 1132, 516, 18, 47, "Output"],
-Cell[39137, 1152, 304, 9, 30, "Output"],
-Cell[39444, 1163, 563, 15, 30, "Output"],
-Cell[40010, 1180, 214, 6, 30, "Output"],
-Cell[40227, 1188, 452, 12, 23, "Print"]
+Cell[26447, 790, 9999, 273, 437, "Input"],
+Cell[36449, 1065, 733, 26, 47, "Output"],
+Cell[37185, 1093, 703, 25, 47, "Output"],
+Cell[37891, 1120, 516, 18, 47, "Output"],
+Cell[38410, 1140, 304, 9, 30, "Output"],
+Cell[38717, 1151, 563, 15, 30, "Output"],
+Cell[39283, 1168, 214, 6, 30, "Output"],
+Cell[39500, 1176, 452, 12, 23, "Print"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[40716, 1205, 9620, 272, 901, "Input"],
-Cell[50339, 1479, 445, 10, 40, "Message"],
-Cell[50787, 1491, 445, 10, 40, "Message"],
-Cell[51235, 1503, 445, 10, 40, "Message"],
-Cell[51683, 1515, 532, 11, 21, "Message"],
-Cell[52218, 1528, 9007, 267, 282, "Output"],
-Cell[61228, 1797, 79, 1, 30, "Output"],
-Cell[61310, 1800, 73, 1, 30, "Output"],
-Cell[61386, 1803, 445, 10, 40, "Message"],
-Cell[61834, 1815, 445, 10, 40, "Message"],
-Cell[62282, 1827, 447, 10, 40, "Message"],
-Cell[62732, 1839, 532, 11, 21, "Message"],
-Cell[63267, 1852, 941, 31, 47, "Output"],
-Cell[64211, 1885, 547, 11, 21, "Message"],
-Cell[64761, 1898, 1004, 32, 47, "Output"],
-Cell[65768, 1932, 81, 1, 30, "Output"],
-Cell[65852, 1935, 948, 17, 59, "Message"],
-Cell[66803, 1954, 946, 17, 59, "Message"],
-Cell[67752, 1973, 61613, 1578, 1494, "Output"],
-Cell[129368, 3553, 90, 2, 47, "Output"],
-Cell[129461, 3557, 79, 1, 30, "Output"],
-Cell[129543, 3560, 946, 17, 59, "Message"],
-Cell[130492, 3579, 948, 17, 59, "Message"],
-Cell[131443, 3598, 62772, 1605, 1494, "Output"],
-Cell[194218, 5205, 79, 1, 30, "Output"],
-Cell[194300, 5208, 65786, 1625, 1494, "Output"],
-Cell[260089, 6835, 79, 1, 30, "Output"],
-Cell[260171, 6838, 946, 17, 59, "Message"],
-Cell[261120, 6857, 948, 17, 59, "Message"],
-Cell[262071, 6876, 129679, 3193, 2978, "Output"],
-Cell[391753, 10071, 81, 1, 30, "Output"],
-Cell[391837, 10074, 198372, 4822, 4462, "Output"],
-Cell[590212, 14898, 81, 1, 30, "Output"],
-Cell[590296, 14901, 16508, 405, 276, "Output"],
-Cell[606807, 15308, 81, 1, 30, "Output"],
-Cell[606891, 15311, 948, 17, 59, "Message"],
-Cell[607842, 15330, 948, 17, 59, "Message"],
-Cell[608793, 15349, 18095, 437, 288, "Output"],
-Cell[626891, 15788, 4166, 120, 112, "Output"],
-Cell[631060, 15910, 1064, 34, 47, "Output"],
-Cell[632127, 15946, 948, 17, 59, "Message"],
-Cell[633078, 15965, 1177, 36, 47, "Output"],
-Cell[634258, 16003, 948, 17, 59, "Message"],
-Cell[635209, 16022, 1179, 36, 47, "Output"]
+Cell[39989, 1193, 9620, 272, 901, "Input"],
+Cell[49612, 1467, 430, 8, 40, "Message"],
+Cell[50045, 1477, 430, 8, 40, "Message"],
+Cell[50478, 1487, 430, 8, 40, "Message"],
+Cell[50911, 1497, 519, 10, 21, "Message"],
+Cell[51433, 1509, 9007, 267, 282, "Output"],
+Cell[60443, 1778, 79, 1, 30, "Output"],
+Cell[60525, 1781, 73, 1, 30, "Output"],
+Cell[60601, 1784, 430, 8, 40, "Message"],
+Cell[61034, 1794, 430, 8, 40, "Message"],
+Cell[61467, 1804, 432, 8, 40, "Message"],
+Cell[61902, 1814, 519, 10, 21, "Message"],
+Cell[62424, 1826, 941, 31, 47, "Output"],
+Cell[63368, 1859, 534, 10, 21, "Message"],
+Cell[63905, 1871, 1004, 32, 47, "Output"],
+Cell[64912, 1905, 81, 1, 30, "Output"],
+Cell[64996, 1908, 935, 16, 59, "Message"],
+Cell[65934, 1926, 933, 16, 59, "Message"],
+Cell[66870, 1944, 61613, 1578, 1494, "Output"],
+Cell[128486, 3524, 90, 2, 47, "Output"],
+Cell[128579, 3528, 79, 1, 30, "Output"],
+Cell[128661, 3531, 933, 16, 59, "Message"],
+Cell[129597, 3549, 935, 16, 59, "Message"],
+Cell[130535, 3567, 62772, 1605, 1494, "Output"],
+Cell[193310, 5174, 79, 1, 30, "Output"],
+Cell[193392, 5177, 65786, 1625, 1494, "Output"],
+Cell[259181, 6804, 79, 1, 30, "Output"],
+Cell[259263, 6807, 933, 16, 59, "Message"],
+Cell[260199, 6825, 935, 16, 59, "Message"],
+Cell[261137, 6843, 129679, 3193, 2978, "Output"],
+Cell[390819, 10038, 81, 1, 30, "Output"],
+Cell[390903, 10041, 198372, 4822, 4462, "Output"],
+Cell[589278, 14865, 81, 1, 30, "Output"],
+Cell[589362, 14868, 16508, 405, 276, "Output"],
+Cell[605873, 15275, 81, 1, 30, "Output"],
+Cell[605957, 15278, 935, 16, 59, "Message"],
+Cell[606895, 15296, 935, 16, 59, "Message"],
+Cell[607833, 15314, 18193, 440, 288, "Output"],
+Cell[626029, 15756, 4166, 120, 112, "Output"],
+Cell[630198, 15878, 1064, 34, 47, "Output"],
+Cell[631265, 15914, 935, 16, 59, "Message"],
+Cell[632203, 15932, 1177, 36, 47, "Output"],
+Cell[633383, 15970, 935, 16, 59, "Message"],
+Cell[634321, 15988, 1179, 36, 47, "Output"]
 }, Open  ]]
 }
 ]

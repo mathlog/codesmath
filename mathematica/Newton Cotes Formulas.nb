@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     16470,        485]
-NotebookOptionsPosition[     15634,        453]
-NotebookOutlinePosition[     16075,        470]
-CellTagsIndexPosition[     16032,        467]
+NotebookDataLength[     16300,        480]
+NotebookOptionsPosition[     15462,        448]
+NotebookOutlinePosition[     15905,        465]
+CellTagsIndexPosition[     15862,        462]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -26,14 +26,9 @@ Cell[BoxData[
    RowBox[{
     RowBox[{
     "M\[EAcute]todos", " ", "Num\[EAcute]ricos", " ", "II", " ", 
-     "\[IndentingNewLine]", "    ", "Genaro", " ", "C\[OAcute]rdova", " ", 
-     "Gonz\[AAcute]lez", "\[IndentingNewLine]", "    ", "Numero", " ", "de", 
-     " ", 
-     RowBox[{"lista", ":", " ", 
-      RowBox[{
-      "3", "\[IndentingNewLine]", "\t", "\[IndentingNewLine]", 
-       "\"\<FORMULAS DE NEWTON-COTES\>\"", "\[IndentingNewLine]", "Para", " ",
-        "n"}]}]}], "=", 
+     "\[IndentingNewLine]", "    ", "\[IndentingNewLine]", "\t", 
+     "\[IndentingNewLine]", "\"\<FORMULAS DE NEWTON-COTES\>\"", 
+     "\[IndentingNewLine]", "Para", " ", "n"}], "=", 
     RowBox[{
      RowBox[{
      "1", "  ", "\[IndentingNewLine]", " ", "\"\<Formula del Trapecio\>\"", 
@@ -108,7 +103,7 @@ Cell[BoxData[
    3.5861069517773247`*^9, 3.5861069921256323`*^9}, {3.5861076638920555`*^9, 
    3.5861077124678335`*^9}, {3.58610799039573*^9, 3.5861080118789587`*^9}, {
    3.5861084054014673`*^9, 3.5861085664616795`*^9}, {3.5861107152989416`*^9, 
-   3.586110769358034*^9}}],
+   3.586110769358034*^9}, 3.6589548337871094`*^9}],
 
 Cell[BoxData["0.6523181227078594276`8."], "Output",
  CellChangeTimes->{
@@ -455,7 +450,7 @@ WindowSize->{1262, 638},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
 Magnification:>FEPrivate`If[
   FEPrivate`Equal[FEPrivate`$VersionNumber, 6.], 1.5, 1.5 Inherited],
-FrontEndVersion->"8.0 for Microsoft Windows (32-bit) (October 6, 2011)",
+FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (November 20, 2012)",
 StyleDefinitions->"Default.nb"
 ]
 (* End of Notebook Content *)
@@ -470,22 +465,22 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[579, 22, 3557, 88, 526, "Input"],
-Cell[4139, 112, 142, 2, 42, "Output"]
+Cell[579, 22, 3385, 83, 530, "Input"],
+Cell[3967, 107, 142, 2, 44, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[4318, 119, 2811, 79, 402, "Input"],
-Cell[7132, 200, 284, 4, 42, "Output"]
+Cell[4146, 114, 2811, 79, 423, "Input"],
+Cell[6960, 195, 284, 4, 44, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[7453, 209, 2885, 85, 431, "Input"],
-Cell[10341, 296, 144, 2, 42, "Output"]
+Cell[7281, 204, 2885, 85, 453, "Input"],
+Cell[10169, 291, 144, 2, 44, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[10522, 303, 3089, 91, 474, "Input"],
-Cell[13614, 396, 990, 27, 66, "Output"],
-Cell[14607, 425, 765, 20, 62, "Output"],
-Cell[15375, 447, 243, 3, 42, "Output"]
+Cell[10350, 298, 3089, 91, 502, "Input"],
+Cell[13442, 391, 990, 27, 66, "Output"],
+Cell[14435, 420, 765, 20, 65, "Output"],
+Cell[15203, 442, 243, 3, 44, "Output"]
 }, Open  ]]
 }
 ]

@@ -1,0 +1,255 @@
+\documentclass[12pt,a4paper,scrartcl]{article}
+
+\usepackage{amsmath}
+
+
+
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+
+\title{	
+\normalfont \normalsize 
+\textsc{Instituto Polit\'ecnico Nacional\\
+Escuela Superior de F\'isica y Matem\'aticas} \\ [0pt] 
+}
+
+\author{Adri\'an Mendoza Zamora\\Equipo 12} 
+\begin{document}
+
+\maketitle
+
+
+\section{Ejercicios 1er Parcial  An\'alisis Matem\'atico }
+
+\textbf{Secci\'on 1.1}\\
+
+%seccion 1.1
+1.Desarrollar $(a+b)^n$\\
+
+con n=0\\
+\begin{center}
+$(a+b)^0=1$
+\end{center}
+
+con n=1\\
+\begin{center}
+$(a+b)^1=a+b$
+\end{center}
+
+con n=2\\
+\begin{center}
+$(a+b)^2=a^2+2ab+b^2$
+\end{center}
+
+con n=3\\
+\begin{center}
+$(a+b)^3=a^3+3a^2b+3ab^2+b^3$
+\end{center}
+
+\begin{center}
+$\vdots$
+\end{center}
+
+ahora con n\\
+\begin{center}
+$(a+b)^n=\binom{n}{0}a^nb^0+\binom{n}{1}a^{n-1}b+\binom{n}{2}a^{n-2}b^2+\dots+\binom{n}{r}a^{n-r}b^r+\dots+\binom{n}{n-1}ab^{n-1}+\binom{n}{n}a^0b^n$
+\end{center}
+
+
+
+
+\newpage
+2. Demostrar para a,b n\'umeros reales y n n\'umero natural que:\\
+\begin{center}
+$\bullet a^n-b^n = (a-b)(a^{n-1}+a^{n-2}b+a^{n-3}b^2+\hdots+a^{2}b^{n-3}+ab^{n-2}+b^{n-1}) $,\linebreak\ 
+\linebreak 
+$\bullet a-b = 
+(a^{\frac{1}{n}}-b^{\frac{1}{n}})(a^{\frac{n-1}{n}}+a^{\frac{n-2}{n}}b^{\frac{1}{n}}+a^{\frac{n-3}{n}}b^{\frac{2}{n}}+\hdots+a^{\frac{2}{n}}b^{\frac{n-3}{n}}+a^{\frac{1}{n}}b^{\frac{n-2}{n}}+b^{\frac{n-1}{n}}). \linebreak
+ $
+\end{center}
+
+
+
+
+\newpage
+3.Verificar las siguientes igualdades:\\
+\\
+$
+\displaystyle\bullet
+\sum_{k=1}^{n}k = \dfrac{n(n+1)}{2} \\
+$
+\begin{center}
+$S=1+2+3+\ldots+(n-1)+n$\\$\underline{S=n+(n+1)+\ldots+3+2+1}$\\$2S=(n+1)+(n+1)+\ldots+(n+1)$\\\vspace{1em}
+$2S=n(n+1)$\\\vspace{1em}
+\begin{center}
+$S=\dfrac{n(n+1)}{2}\textbf{.}$
+\end{center}
+\end{center}Por inducci\'on:\\
+\\I. La f\'ormula cumple para n=1, porque:\\
+\begin{center}
+$1=\dfrac{1(1+1)}{2}$
+\end{center}
+II. Hip\'otesis\\Entonces, si la f\'ormula cumple para n=k, tambien debe serlo para k+1 :
+\begin{center}
+$1+2+\ldots+k=\dfrac{k(k+1)}{2}$\\
+\end{center}
+III. Tesis\\
+\begin{center}
+$1+2+\ldots+k+(k+1) = \dfrac{k(k+1)}{2}+(k+1) = \dfrac{k^2+k+2k+2}{2}$\\\vspace{1em}$=\dfrac{(k+1)(k+2)}{2} = \dfrac{(k+1(k+1+1))}{2}$
+\end{center}
+La \'ultima expresi\'on obtenida es equivalente a $\frac{n(n+1)}{2}$  para un n=k+1, entonces se garantiza que la f\'ormula original satisface para todos los enteros positivos n\textbf{.}
+
+
+
+
+\newpage
+\begin{flushleft}
+$\displaystyle\bullet
+\sum_{k=1}^{n}k^{2} = \frac{n(n+1)(2n+1)}{6}$
+\end{flushleft}
+Reescribimos la expresi\'on:
+\begin{center}
+$1^2+2^2+\ldots+k^2=\dfrac{n(n+1)(2n+1)}{6}$\\
+\end{center}
+a) Probamos por inducci\'on con n=1
+\begin{center}
+$1^2=\dfrac{1(1+1)(2+1)}{6}$\\
+\end{center}
+Por lo tanto es verdadero ya que 1=1\\\vspace{1em}
+\\b) Ahora tomamos un valor arbitrario si n=k,suponiendo que es verdadero entonces:\\ 
+\begin{center}
+$\displaystyle
+\sum_{i=1}^{k}i^{2} = \frac{k(k+1)(2k+1)}{6}$ \\
+\end{center}
+\begin{flushleft}
+c) Ahora con k+1\\
+\end{flushleft}
+$\displaystyle
+\sum_{i=1}^{k+1}i^{2} = \frac{k+1((k+1)+1)(2(k+1)+1)}{6}$ \\
+\begin{flushleft}
+Ahora aplicamos la hip\'otesis de inducci\'on:
+\end{flushleft}
+\begin{center}
+$\displaystyle
+\sum_{i=1}^{k+1}i^{2} = \sum_{i=1}^{k}i^{2} + (k+1)^2$ \\
+\end{center}
+\begin{flushleft}
+Ahora reemplazamos la expresi\'on y desarrollamos:
+\end{flushleft}
+
+()
+
+
+\newpage
+\begin{flushleft}
+$\displaystyle\bullet
+\sum_{k=1}^{n}k^{3} = \frac{n^2(n+1)^2}{4}$\\
+\end{flushleft}
+\begin{flushleft}
+Reescribimos la expresi\'on:\\
+\end{flushleft}
+\begin{center}
+$1^3+2^3+\ldots+k^3=\dfrac{n^{2}(n+1)^2}{4}$\\
+\end{center}
+\begin{flushleft}
+a) Probamos por inducci\'on con n=1\\
+\end{flushleft}
+\begin{center}
+$1^3=\dfrac{1^{2}(1+1)^2}{4} = \dfrac{1(4)}{4}$\\
+\end{center}
+\begin{flushleft}
+Por lo tanto es verdadero ya que 1=1\\\vspace{1em}
+\end{flushleft}
+\begin{flushleft}
+b) Ahora tomamos un valor arbitrario si n=k,suponiendo que es verdadero entonces:\\
+\end{flushleft}
+\begin{center}
+$\displaystyle
+\sum_{i=1}^{k}i^{3} = \frac{k^2(k+1)^2}{4}$\\
+\end{center}
+
+c) Ahora con k+1
+\begin{center}
+$\displaystyle
+\sum_{i=1}^{k+1}i^{3} = \frac{(k+1)^2((k+1)+1)^2}{4} = \dfrac{(k+1)^2(k+2)^2}{4}$\\
+\end{center}
+\begin{flushleft}
+Ahora hacemos el supuesto del inciso b)\\
+\end{flushleft}
+
+$\displaystyle
+\sum_{i=1}^{k+1}i^{3} = \sum_{i=1}^{k}i^{3} + (k+1)^3$\\
+\begin{flushleft}
+Ahora reemplazamos la expresi\'on y desarrollamos:
+\end{flushleft}
+$\dfrac{k^2(k+1)^2}{4}+(k+1)^3 = \dfrac{k^2(k+1)^2+4(k+1)^3}{4}
+=\dfrac{(k+1)^2(k^2+4k+4)}{4}=\dfrac{(k+1)^2(k+2)^2}{4}$\\\vspace{1em}
+\begin{flushleft}
+Como llegamos a la misma expresi\'on del inciso b) la propiedad es v\'alida para todo n\'umero natural n\textbf{.}
+\end{flushleft}
+
+
+
+
+
+
+\newpage
+4. Deducir las siguientes igualdades:
+\begin{flushleft}
+$\displaystyle\bullet
+\sum_{k=0}^{n}r^{k} = \dfrac{1-r^{n+1}}{1-r}\vspace{1em}$\\
+Podemos reescribir la expresi\'on como:
+$\displaystyle
+$\begin{center}
+$\sum_{k=0}^{n}r^{k} = Sn =r^n+r^{n-1}+r^{n-2}+\ldots+r+1$
+\end{center}
+Multiplicamos por r:\\\vspace{1em}
+$rSn = rr^n+rr^{n-1}+rr^{n-2}+\ldots+rr+r$\\
+$rSn = r^{n+1}+r^{n}+r^{n-1}+\ldots+r^2+r$\\\vspace{1em}
+Ahora restamos Sn-rSn:\\\vspace{1em}
+$Sn-rSn= r^{n}+r^{n-1}+r^{n-2}+\ldots+r+1-(r^{n+1}+r^n+r^{n-1}+\ldots+r^2+r)$\\
+$Sn-rSn=1-r^{n+1}$\\
+$Sn(1-r)=1-r^{n+1}$\\\vspace{1em}
+$Finalmente:$\\\vspace{1em}
+\begin{center}
+$Sn = \dfrac{1-r^{n+1}}{1-r}$
+\end{center}
+
+
+
+
+
+\newpage
+$\displaystyle\bullet
+\sum_{k=0}^{n}kr^{k-1} = \dfrac{1-(n+1)r^{n}+nr^{n+1}}{1-r^{2}}
+$
+\end{flushleft}
+
+
+
+
+
+\newpage
+\textbf{Secci\'on 1.2}\\
+\\1. Demostrar que $a^2+b^2+c^2\geq ab+ac+bc$ para todo a,b,c n\'umeros reales.\\
+\\Tenemos lo siguiente:\\
+\\$ (a-b)^2 \geq 0 \rightarrow a^2-2ab+b^2$\\
+\\$ (a-c)^2 \geq 0 \rightarrow a^2-2ac+c^2$\\
+\\$ (b-c)^2 \geq 0 \rightarrow b^2-2bc+c^2$\\
+\\Sumando obtenemos:\\
+\\ $2a^2-2ab-2ac+2c^2+2b^2-2bc \geq 0$\\
+\\$\Rightarrow 2a^2+2b^2+2ab-2ac-2bc \geq 0 $\\
+\\$ 2a^2+2b^2+2c^2-2(ab+ac+bc) \geq 0 $\\
+\\$ 2a^2+2b^2+2c^2 \geq 2(ab+ac+bc)$\\
+\\ Finalmente:\\
+\\$ a^2+b^2+c^2 \geq ab+ac+bc$.
+
+
+
+  
+
+
+
+
+
+\end{document}
+ 

@@ -1,0 +1,67 @@
+\documentclass[]{article}
+\usepackage[spanish]{babel}
+    \usepackage{tikz}
+%opening
+\title{Tarea 1 Probabilidad\\}
+\author{Adri\'an Mendoza Zamora
+	\\
+	Prof. Adri\'an Alc\'antar Torres}
+
+\begin{document}
+
+\maketitle
+\begin{center}
+\textbf{	Ley aditiva de la probabilidad}
+\end{center}
+
+Sean A y B dos eventos cualesquiera de un espacio muestral $\Omega$ :\\
+
+\begin{center}
+	\pagestyle{empty}
+
+\def\firstcircle{(0,0) circle (1.5cm)}
+\def\thirdcircle{(0:2cm) circle (1.5cm)}
+
+\begin{tikzpicture}[line width=0.25pt]
+
+\begin{scope}
+
+\fill[white] \firstcircle;
+\fill[white] \thirdcircle;
+\end{scope}
+
+\begin{scope}
+\clip \firstcircle;
+\fill [white] \thirdcircle;
+
+\end{scope}
+
+
+\draw \firstcircle node[text=black, below] {$A$};
+\draw \thirdcircle node [text=black,below] {$B$};
+
+\end{tikzpicture}
+
+\end{center}
+
+Entonces tenemos lo siguiente:\\
+
+\begin{center}
+$A=(A-B) \cup (A \cap B)\hspace{1cm} \Rightarrow\hspace{1cm}P(A)=P(A-B)+P(A \cap B) $\\
+$B=(B-A) \cup (B \cap A) \hspace{1cm} \Rightarrow\hspace{1cm} P(B)=P(B-A)+P(B \cap A)$\\
+\end{center}
+\begin{center}
+	$P(A-B)=P(A)-P(A \cap B)$\\
+$P(B-A)=P(B)-P(B \cap A)$\\
+\end{center}
+
+
+\begin{flushleft}
+	$P(A \cup B)=P(A-B)+ P(A \cap B) + P(B-A)$,  as\'i
+\end{flushleft}
+$P(A \cup B)=P((A)-P(A \cap B)) + P(A \cap B) + (P(B)-P(A \cap B))$, por lo tanto \\\\
+$P(A \cup B)=P(A)+P(B)-P(A \cap B). $
+
+
+
+\end{document}

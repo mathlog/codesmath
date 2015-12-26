@@ -1,0 +1,581 @@
+\documentclass[12pt,a4paper,scrartcl]{article}
+
+\usepackage{amsmath}
+\usepackage[spanish]{babel}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+
+
+\title{	
+\normalfont \normalsize 
+\textsc{Instituto Polit\'ecnico Nacional\\
+Escuela Superior de F\'isica y Matem\'aticas} \\
+}
+
+\author{
+Tania Luna Hern\'andez\\
+Adri\'an Mendoza Zamora\\
+Genaro C\'ordova Gonzalez\\
+Juan Carlos Cervantes Galicia\\
+Equipo 12} 
+\begin{document}
+
+\maketitle
+
+{\textbf{{Ejercicios 2do Parcial  An\'alisis Matem\'atico }}
+
+\textbf{Secci\'on 1.1}\\
+
+%seccion 1.1
+1.Desarrollar $(a+b)^n$\\
+
+con n=0\\
+\begin{center}
+$(a+b)^0=1$
+\end{center}
+
+con n=1\\
+\begin{center}
+$(a+b)^1=a+b$
+\end{center}
+
+con n=2\\
+\begin{center}
+$(a+b)^2=a^2+2ab+b^2$
+\end{center}
+
+con n=3\\
+\begin{center}
+$(a+b)^3=a^3+3a^2b+3ab^2+b^3$
+\end{center}
+
+\begin{center}
+$\vdots$
+\end{center}
+
+\begin{center}
+$(a+b)^n=\binom{n}{0}a^nb^0+\binom{n}{1}a^{n-1}b+\binom{n}{2}a^{n-2}b^2+\dots+\binom{n}{r}a^{n-r}b^r+\dots+\binom{n}{n-1}ab^{n-1}+\binom{n}{n}a^0b^n$.
+\end{center}
+
+
+
+
+
+\newpage
+2. Demostrar para $a,b$ n\'umeros reales y $n$ n\'umero natural que:\\
+
+%inciso a
+a) 
+$a^n-b^n = (a-b)(a^{n-1}+a^{n-2}b+a^{n-3}b^2+ \hdots +a^{2}b^{n-3}+ab^{n-2}+b^{n-1}) $\\
+\begin{center}
+$a^n-b^n=a^n-a^{n-1}b+a^{n-1}b-a^{n-2}b^2+a^{n-2}b^2-a^{n-3}b^3+\ldots+\linebreak+a^3b^{n-3}-a^{2}b^{n-1}+a^2b^{n-2}-ab^{n-1}+ab^{n-1}-b^n$
+\end{center}
+Por lo tanto \\
+\begin{center}
+$a^n-b^n=a^n-b^n$.
+\end{center}
+\vspace{5em}
+
+%inciso b
+b) $a-b = 
+(a^{\frac{1}{n}}-b^{\frac{1}{n}})(a^{\frac{n-1}{n}}+a^{\frac{n-2}{n}}b^{\frac{1}{n}}+a^{\frac{n-3}{n}}b^{\frac{2}{n}}+ \hdots +a^{\frac{2}{n}}b^{\frac{n-3}{n}}+a^{\frac{1}{n}}b^{\frac{n-2}{n}}+b^{\frac{n-1}{n}})$\linebreak
+\begin{center}
+$a-b=
+a^{\frac{1+n-1}{n}}+a^{\frac{1+n-2}{n}}b^{\frac{1}{n}}+a^{\frac{1+n-3}{n}}b^{\frac{2}{n}}+\ldots+a^{\frac{1+2}{n}}b^{\frac{n-3}{n}}+a^{\frac{1+1}{n}}b^{\frac{n-2}{n}}+a^{\frac{1}{n}}b^{\frac{n-1}{n}}-a^{\frac{n-1}{n}}b^{\frac{1}{n}}-a^{\frac{n-2}{n}}b^{\frac{1+1}{n}}-a^{\frac{n-3}{n}}b^{\frac{2+1}{n}}-\ldots-a^{\frac{2}{n}}b^{\frac{n-3+1}{n}}-a^{\frac{1}{n}}b^{\frac{n-2+1}{n}}-b^{\frac{n-1+1}{n}}$
+\end{center}
+
+\begin{center}
+$a-b=a+a^{\frac{n-1}{n}}b^{\frac{1}{n}}+a^{\frac{n-2}{n}}b^{\frac{2}{n}}+\ldots+a^{\frac{3}{n}}b^{\frac{n-3}{n}}+a^{\frac{2}{n}}b^{\frac{n-2}{n}}+a^{\frac{1}{n}}b^{\frac{n-1}{n}}-a^{\frac{n-1}{n}}b^{\frac{1}{n}}-a^{\frac{n-2}{n}}b^{\frac{2}{n}}-a^{\frac{n-3}{n}}b^{\frac{3}{n}}-\ldots-a^{\frac{2}{n}}b^{\frac{n-2}{n}}-a^{\frac{1}{n}}b^{\frac{n-1}{n}}-b$\\
+\end{center}
+\begin{flushleft}
+As\'i 
+\end{flushleft}\
+\begin{center}
+$a-b=a-b$.
+\end{center}
+
+
+
+
+
+\newpage
+3.Verificar las siguientes igualdades:\\
+\\
+$
+\displaystyle
+a)  \sum_{k=1}^{n}k = \dfrac{n(n+1)}{2} \\
+$
+\begin{center}
+$S=1+2+3+\ldots+(n-1)+n$\\$\underline{S=n+(n+1)+\ldots+3+2+1}$\\$2S=(n+1)+(n+1)+\ldots+(n+1)$\\\vspace{1em}
+$2S=n(n+1)$\\\vspace{1em}
+\begin{center}
+$S=\dfrac{n(n+1)}{2}\textbf{.}$
+\end{center}
+\end{center}Por inducci\'on:\\
+\\I. La f\'ormula cumple para n=1, porque:\\
+\begin{center}
+$1=\dfrac{1(1+1)}{2}=1$
+\end{center}
+II. Hip\'otesis\\Entonces, si la f\'ormula cumple para n=k, tambien debe serlo para k+1 :
+\begin{center}
+$1+2+\ldots+k=\dfrac{k(k+1)}{2}$\\
+\end{center}
+III. Tesis\\
+\begin{center}
+$1+2+\ldots+k+(k+1) = \dfrac{k(k+1)}{2}+(k+1) = \dfrac{k^2+k+2k+2}{2}$\\\vspace{1em}$=\dfrac{(k+1)(k+2)}{2} = \dfrac{(k+1(k+1+1))}{2}$
+\end{center}
+La \'ultima expresi\'on obtenida es equivalente a $\frac{n(n+1)}{2}$  para un n=k+1, entonces se garantiza que la f\'ormula original satisface para todos los enteros positivos n\textbf{.}
+
+
+
+
+\newpage
+\begin{flushleft}
+$\displaystyle
+b)  \sum_{k=1}^{n}k^{2} = \frac{n(n+1)(2n+1)}{6}$
+\end{flushleft}
+Reescribimos la expresi\'on:
+\begin{center}
+$\displaystyle
+\sum_{k=1}^{n}(1+k)^3-k^3 = (2^3-1^3)+(3^3-2^3)+(3^3-2^3)+(4^3-3^3)+\ldots+[(n+1)^3-n^3]$
+$=(n+1)^3-1$\\
+$=n^3+3n^2+3n+1-1$\\
+$=n^3+3n^2+3n\ldots\ldots\ldots\ldots\ldots *$
+\end{center}
+$\displaystyle
+\sum_{k=1}^{n}(1+k)^3-k^3 =
+$ \begin{center}
+$\displaystyle
+\sum_{k=1}^{n}1+3k+3k^2k^3-k^3$\\$
+\displaystyle
+\sum_{k=1}^{n}1+3\sum_{k=1}^{n}k+3\sum_{k=1}^{n}k^2$\\\vspace{1em}
+$=n+3(\dfrac{n(n+1)}{2})+3S$\\\vspace{1em}
+$=n+\dfrac{3}{2}n^2+n+3S$\\\vspace{1em}
+$=3S+\dfrac{3}{2}n^2+\dfrac{5}{2}n$\ldots\ldots\ldots\ldots\ldots**
+\end{center}
+Igualando * y **\\
+\begin{center}
+$n^3+3n^2+3n=3S+\dfrac{3}{2}n^2+\dfrac{5}{2}n$\\\vspace{1em}
+$3S=n^3+\dfrac{3}{2}n^2+\dfrac{1}{2}n$\\\vspace{1em}
+$S=\dfrac{n^3+\dfrac{3}{2}n^2+\dfrac{1}{2}n}{3}$\\\vspace{1em}
+$\dfrac{n^3}{3}+3\dfrac{n^2}{6}+\dfrac{1}{6}n$\\\vspace{1em}
+$S=\dfrac{2n^3+3n^2+n}{6}$\\\vspace{1em}
+$=\dfrac{n(2n^2+3n+1)}{6}$\\\vspace{1em}
+$=\dfrac{n(2n+1)(n+1)}{6}$.
+\end{center}
+
+\newpage
+\begin{flushleft}
+$\displaystyle
+c) \sum_{k=1}^{n}k^{3} = \frac{n^2(n+1)^2}{4}$\\
+\end{flushleft}
+\begin{flushleft}
+Reescribimos la expresi\'on:\\
+\end{flushleft}
+\begin{center}
+$1^3+2^3+\ldots+k^3=\dfrac{n^{2}(n+1)^2}{4}$\\
+\end{center}
+\begin{flushleft}
+a) Probamos por inducci\'on con n=1\\
+\end{flushleft}
+\begin{center}
+$1^3=\dfrac{1^{2}(1+1)^2}{4} = \dfrac{1(4)}{4}$\\
+\end{center}
+\begin{flushleft}
+Por lo tanto es verdadero ya que 1=1\\\vspace{1em}
+\end{flushleft}
+\begin{flushleft}
+b) Ahora tomamos un valor arbitrario si n=k,suponiendo que es verdadero entonces:\\
+\end{flushleft}
+\begin{center}
+$\displaystyle
+\sum_{i=1}^{k}i^{3} = \frac{k^2(k+1)^2}{4}$\\
+\end{center}
+
+c) Ahora con k+1
+\begin{center}
+$\displaystyle
+\sum_{i=1}^{k+1}i^{3} = \frac{(k+1)^2((k+1)+1)^2}{4} = \dfrac{(k+1)^2(k+2)^2}{4}$\\
+\end{center}
+\begin{flushleft}
+Ahora hacemos el supuesto del inciso b)\\
+\end{flushleft}
+
+$\displaystyle
+\sum_{i=1}^{k+1}i^{3} = \sum_{i=1}^{k}i^{3} + (k+1)^3$\\
+\begin{flushleft}
+Ahora reemplazamos la expresi\'on y desarrollamos:
+\end{flushleft}
+$\dfrac{k^2(k+1)^2}{4}+(k+1)^3 = \dfrac{k^2(k+1)^2+4(k+1)^3}{4}
+=\dfrac{(k+1)^2(k^2+4k+4)}{4}=\dfrac{(k+1)^2(k+2)^2}{4}$\\\vspace{1em}
+\begin{flushleft}
+Como llegamos a la misma expresi\'on del inciso b) la propiedad es v\'alida para todo n\'umero natural n\textbf{.}
+\end{flushleft}
+
+\newpage
+4. Deducir las siguientes igualdades:
+\begin{flushleft}
+$\displaystyle a) 
+\sum_{k=0}^{n}r^{k} = \dfrac{1-r^{n+1}}{1-r}\vspace{1em}$\\
+Podemos reescribir la expresi\'on como:
+$\displaystyle
+$\begin{center}
+$\displaystyle
+\sum_{k=0}^{n}r^{k} = Sn =r^n+r^{n-1}+r^{n-2}+\ldots+r+1$
+\end{center}
+Multiplicamos por r\\\vspace{1em}
+\begin{center}
+$rSn = rr^n+rr^{n-1}+rr^{n-2}+\ldots+rr+r$\\
+$rSn = r^{n+1}+r^{n}+r^{n-1}+\ldots+r^2+r$\\\vspace{1em}
+\end{center}
+Ahora restamos Sn-rSn\\\vspace{1em}
+\begin{center}
+$Sn-rSn= r^{n}+r^{n-1}+r^{n-2}+\ldots+r+1-(r^{n+1}+r^n+r^{n-1}+\ldots+r^2+r)$\\
+$Sn-rSn=1-r^{n+1}$\\
+$Sn(1-r)=1-r^{n+1}$\\\vspace{1em}
+\end{center}
+Finalmente:\\\vspace{1em}
+\begin{center}
+$Sn = \dfrac{1-r^{n+1}}{1-r}$.
+\end{center}
+
+
+%inciso b
+\newpage
+$\displaystyle b )
+\sum_{k=0}^{n}kr^{k-1} = \dfrac{1-(n+1)r^{n}+nr^{n+1}}{1-r^{2}}
+$
+\end{flushleft}
+Desarrollando la suma\\
+
+$\displaystyle
+\sum_{k=0}^{n}kr^{k-1} = 1+2r+3r^2+\ldots+nr^{k-1}$\\
+\begin{center}
+$=1+r+r+r^2+r^2+r^2+\ldots+r^{n-1}+r^{n-1}+\ldots+r^{n-1}$\\\vspace{1em}
+$=(1+r+r^2+\ldots+r^{n-1})+(r+r^2+\ldots+r^{n-1})+(r^2+\ldots+r^{n-1})+\ldots+r^{n-1}$\\\vspace{1em}
+$\displaystyle
+=\sum_{k=0}^{n-1}r^{k}+\sum_{k=1}^{n-1}r^{k}+\sum_{k=2}^{n-1}r^{k}+\ldots+\sum_{k=n-1}^{n-1}r^{k}$\\\vspace{1em}
+$\displaystyle
+\sum_{j=0}^{n-1}\sum_{k=j}^{n-1}r^{k}$\\\vspace{1em}
+$\displaystyle
+\sum_{j=0}^{n-1}\dfrac{r^j-r^n}{1-r}\vspace{1em}
+=\dfrac{1}{1-r}(\sum_{j=0}^{n-1}r^j-\sum_{j=0}^{n-1}r^{n})$\\
+$=\dfrac{1}{1-r}(\dfrac{1-r^n}{1-r}-nr^n)$\\\vspace{1em}
+$=\dfrac{1-r^n(n+1)+nr^{n+1}}{(1-r)^2}$.
+\end{center}
+
+
+\newpage
+5. Calcular las siguientes sumas:\\
+\\$\displaystyle a)\dfrac{1}{1*2}+\dfrac{1}{2*3}+\dfrac{1}{3*4}+\ldots+\dfrac{1}{n(n+1)} =\sum_{k=1}^{n}\dfrac{1}{k(k+1)}$\\
+
+Tenemos que \\\vspace{1em}
+\begin{center}
+$\dfrac{1}{k(k+1)}=\dfrac{k+1-k}{k(k+1)}$\\\vspace{1em}
+$=\dfrac{k+1}{k(k+1)}-\dfrac{k}{k(k+1)}= \dfrac{1}{k}-\dfrac{1}{k+1}$\\
+\end{center}
+Entonces
+\begin{center}
+$\displaystyle
+\sum_{k=1}^{n}\dfrac{1}{k(k+1)}=(\dfrac{1}{2}-\dfrac{1}{2})+(\dfrac{1}{2}-\dfrac{1}{3})+(\dfrac{1}{3}-\dfrac{1}{4})+\ldots+(\dfrac{1}{n}-\dfrac{1}{n+1})$\\\vspace{1em}
+$=(1+\dfrac{1}{2})+(\dfrac{1}{2}-\dfrac{1}{3})+(\dfrac{1}{3}-\dfrac{1}{4})+\ldots+(\dfrac{1}{n}-\dfrac{1}{n+1})$\\\vspace{1em}
+$=1-\dfrac{1}{n+1} \Rightarrow \dfrac{n+1}{n+1}-\dfrac{1}{n+1}=\dfrac{n}{n+1}$
+\end{center}
+As\'i
+\begin{center}
+$\displaystyle
+\sum_{k=1}^{n}\dfrac{n}{n(n+1)}=(\dfrac{1}{2},\dfrac{1}{6},\dfrac{1}{12},\dfrac{1}{20},\ldots) = \sum_{k=1}^{n}\dfrac{1}{k(k+1).}$
+\end{center}
+
+\vspace{1em}
+$\displaystyle b)\dfrac{1}{1*3}+\dfrac{1}{3*5}+\dfrac{1}{5*7}+\ldots+\dfrac{1}{(2n-1)(2n+1)} =\sum_{k=1}^{n}\dfrac{1}{(2k-1)(2k+1)}$\\
+\\
+Desarrollando por fracciones parciales\\\vspace{1em}
+\begin{center}
+$\dfrac{1}{(2k+1)(2k-1)}=\dfrac{A}{2k-1}+\dfrac{B}{2k+1}\Leftrightarrow 1$\\\vspace{1em}
+$=A(2k+1)+B(2k-1)$\\\vspace{1em}
+\end{center}
+Tenemos que \\
+\begin{center}
+$k=\dfrac{1}{2}\Rightarrow A=\dfrac{1}{2}$;\hspace{1em} $k=-\dfrac{1}{2}\Rightarrow B=-\dfrac{1}{2}$\\\vspace{1em}
+\end{center}
+As\'i
+\begin{center}
+$\displaystyle
+\sum_{k=1}^{n}\dfrac{1}{2}[\dfrac{1}{2k-1}-\dfrac{1}{2k+1}]$\\\vspace{1em}
+$=\dfrac{1}{2}[\dfrac{1}{2*1-1}-\dfrac{1}{2n+1}]$\\\vspace{1em}
+$=\dfrac{1}{2n+1}$.
+\end{center}
+
+
+
+
+
+\newpage
+\textbf{Secci\'on 1.2}\\
+\\1. Demostrar que $a^2+b^2+c^2\geq ab+ac+bc$ para todo a,b,c n\'umeros reales.\\
+\\Tenemos lo siguiente\\
+\begin{center}
+$ (a-b)^2 \geq 0 \rightarrow a^2-2ab+b^2$\\
+$ (a-c)^2 \geq 0 \rightarrow a^2-2ac+c^2$\\
+$ (b-c)^2 \geq 0 \rightarrow b^2-2bc+c^2$\\
+\end{center}
+Sumando obtenemos\\
+\begin{center}
+$2a^2-2ab-2ac+2c^2+2b^2-2bc \geq 0$\\
+$2a^2+2b^2+2ab-2ac-2bc \geq 0 $\\
+$2a^2+2b^2+2c^2-2(ab+ac+bc) \geq 0 $\\
+$2a^2+2b^2+2c^2 \geq 2(ab+ac+bc)$\\
+\end{center}
+Finalmente\\
+\begin{center}
+$ a^2+b^2+c^2 \geq ab+ac+bc$.
+\end{center}
+
+
+
+
+\newpage
+2. Demostrar que si $0 < a < b$ entonces:\\
+\begin{center}
+$a < \sqrt{ab} < \dfrac{a+b}{2} < b.$
+\end{center}
+Demostraci\'on.\\
+Tenemos que\\
+\begin{center}
+$(a-b)^2 \geq 0$\\\vspace{1em}
+$(a+b)^2 - 4 ab \geq 0$\\\vspace{1em}
+$(a+b)^2 \geq 4ab$\\\vspace{1em}
+$(a+b)\geq2\sqrt{ab}$\\\vspace{1em}
+$2\sqrt{ab}\leq a+b$\\\vspace{1em}
+\end{center}
+Finalmente 
+\begin{center}
+$\sqrt{ab}\leq \dfrac{a+b}{2}$.
+\end{center}
+
+\newpage
+4. a) Demostrar que si $0<a<b$ entonces, $a^n<b^n$ para $n$ n\'umero natural.
+\begin{center}
+Si $0<a<b$ entonces $b>0$\\
+Si $0<a<b$ entonces $b>0$\\
+Si $a<b$ entonces\\ $a*a*a*a*\ldots*a<b*b*b*b*\ldots*b$\\
+Para $a$ un n\'umero real y $n$ n\'umero natural $a^n$
+abrevia la multiplicaci\'on\\ $a*a*a*a*\ldots*an$ veces, por lo cual $a^n<b^n$.
+\end{center}\vspace{4em}
+
+
+b) Demostrar que si $a<b<0$ entonces,$a^n>b^n$ para $n$ n\'umero natural par.\\
+\\Tenemos las desigualdades \\
+\begin{center}
+$a<b<0\hspace{2em}a<b<0\hspace{2em}a^2<b^2<0\hspace{2em}a^{n-1}<b^{n-1}<0$
+\end{center}
+Entonces\\
+\begin{center}
+$a^{n-1}<b^{n-1}<0$
++$ a < b < 0 $\\
+$\Rightarrow a^n>b^n>0$
+\end{center}
+
+\newpage
+7. Demostrar que si $a<b$ y $c<d$, entonces $ad+bc<bd+ac$.\\
+\\Demostraci\'on\\
+\\Tenemos lo siguiente:
+\begin{center}
+$(b-a)>0 \hspace{1em},\hspace{1em} (d-c)>0$ 
+\end{center}
+si multiplicamos los correspondientes mayores y los menores , se obtiene:
+\begin{center}
+$(b-a)(d-c)>0 \Rightarrow bd-ad-bc+ac>0$
+\end{center}
+ahora sumamos a ambos lados $ad+bc$\\
+\begin{center}
+$bd+ac>ad+bc$\\
+\end{center}
+Finalmente
+\begin{center}
+$ad+bc<bd+ac$.
+\end{center}
+
+\vspace{3em}
+8. Demostrar que si $a,b>0$ y $p,q$ son n\'umeros naturales, entonces\\
+\begin{center}
+$a^{p+q}+b^{p+q}>a^qb^q+a^q+a^qb^p$
+\end{center}
+Tenemos que\\
+\begin{center}
+$a^{p+q}+b^{p+q}>a^pb^p+a^qb^q$\\
+$a^pa^q+b^pb^q>a^pb^q+a^qb^p$\\
+$a^pa^q-a^pb^q>a^qb^p-b^pb^q$\\
+$a^p(a^q-b^q)>b^p(a^q-b^q)$\\\vspace{1em}
+$\Rightarrow a^{p+q}+b^{p+q}>a^qb^q+a^q+a^qb^p$.
+\end{center}
+
+
+
+
+\pagebreak
+13. Demostrar que si $a,b>0$ tales que $a+b=1$, entonces\\ 
+\begin{center}
+$(a+\dfrac{1}{a})^2+(b+\dfrac{1}{a})^2\geq \dfrac{25}{2}$\\\vspace{1em}
+\end{center}
+Demostraci\'on:\\
+Asumiendo que $a,b > 0$, tenemos la siguiente desigualdad:\\
+\begin{center}
+$A^2+B^2\geq\dfrac{(A+B)^2}{2}$, con $A=a+\dfrac{1}{a},B=b+\dfrac{1}{b}$\\\vspace{1em}
+\end{center}
+Por lo tanto hay que demostrar que\\\vspace{1em}
+\begin{center}
+$\dfrac{(a+\dfrac{1}{a}+b+\dfrac{1}{b})^2}{2}\geq \dfrac{25}{2}$\\\vspace{1em}
+\end{center}
+entonces\\\vspace{1em}
+\begin{center}
+$a+b+\dfrac{1}{a}+\dfrac{1}{b} \geq 5$, \\
+\end{center}
+considerando $a+b=1$\\
+\begin{center}
+
+$\dfrac{a+b}{ab}=\dfrac{1}{ab}\geq4$\\\vspace{1em}
+$\dfrac{A+B}{2}\geq \sqrt{ab}$\\\vspace{1em}
+$\dfrac{1}{2}\geq \sqrt{ab} \Rightarrow$ 
+$\dfrac{1}{4}\geq ab $\\
+$\dfrac{1}{ab}\geq 4 $\\
+\end{center}
+Por lo tanto 
+\begin{center}
+$(a+\dfrac{1}{a}+b+\dfrac{1}{b})^2\geq \dfrac{(a+\dfrac{1}{a}+b+\dfrac{1}{b})^2}{2}\geq \dfrac{5^2}{2}=\dfrac{25}{2}$.
+\end{center}
+
+
+
+\newpage
+14. Comprobar\\
+
+
+%inciso b
+$\bullet\displaystyle
+\sum_{k=1}^{n}\dfrac{1}{\sqrt{k}}> \sqrt{n}$\\
+\\
+Reescribimos la expresi\'on:
+\begin{center}
+$\dfrac{1}{\sqrt{1}} + \dfrac{1}{\sqrt{2}}+\dfrac{1}{\sqrt{3}}+\ldots+\dfrac{1}{\sqrt{n}}$
+\end{center}
+Sea $k\in N$ entonces,\\
+\begin{center}
+$\sqrt{k} \leq k \Rightarrow k\leq k^2 \Rightarrow 0\leq k^2-k$ \\
+$\Rightarrow 0 \leq k(k-1)$
+\\$\Rightarrow \dfrac{1}{\sqrt{k}} \geq \dfrac{1}{k}$
+\end{center}
+y por lo que \\
+
+\begin{center}
+$\dfrac{1}{\sqrt{1}} + \dfrac{1}{\sqrt{2}}+\dfrac{1}{\sqrt{3}}+\ldots+\dfrac{1}{\sqrt{n}} \geq \dfrac{1}{\sqrt{n}} + \dfrac{1}{\sqrt{n}}+\dfrac{1}{\sqrt{n}}+\ldots+\dfrac{1}{\sqrt{n}}$
+\end{center}
+
+\begin{center}
+$\dfrac{1}{\sqrt{1}} + \dfrac{1}{\sqrt{2}}+\dfrac{1}{\sqrt{3}}+\ldots+\dfrac{1}{\sqrt{n}} \geq \dfrac{1}{\sqrt{n}} + \dfrac{1}{\sqrt{n}}+\dfrac{1}{\sqrt{n}}+\ldots+\dfrac{1}{\sqrt{n}}= n(\dfrac{1}{n})=\dfrac{n}{\sqrt{n}}=\sqrt{n}$
+\end{center}
+
+\begin{center}
+$\displaystyle
+\sum_{k=1}^{n}\dfrac{1}{\sqrt{k}} \geq \sqrt{n}$  \\ $\dfrac{1}{\sqrt{k}}>\dfrac{1}{\sqrt{n}}$ con $n>k$.
+\end{center}
+
+
+
+
+%Seccion 1.3
+\newpage
+\textbf{Secci\'on 1.3}\\
+\\Teorema:\\
+\\a) Si A tiene supremo entonces es \'unico.\\
+\\Demostraci\'on\\
+Suponemos que $\eta$ y $\theta$ son supremos de A, con	 $\eta  \neq  \theta $.\hspace{1em}Asi que por tricotom\'ia se tiene\\
+\begin{center}
+$\eta<\theta$ \'o $\eta>\theta$.
+\end{center}
+Caso $\eta < \theta$,\\entonces $\theta-\eta>0$ y como $\eta$ = SupA, entonces\\
+\\i) $\eta \geq$ x para toda x $\in$ A.\\
+\\ii) para toda $\epsilon < 0$ existe x $\in$ A,  tal que $\eta-\epsilon<x\leq\eta$. \\
+\\Sea $\theta$= SupA, entonces\\
+\\
+i) $\theta\geq$ x para toda x $\in$ A.\\
+ii) para toda $\epsilon > 0$ existe x $\in$ A tal que $\theta-\epsilon<x\leq\theta$\\
+\\Sea $\epsilon=\theta-\eta$, entonces \\
+\\
+$\theta-(\theta-\eta)<x$\\
+$\eta<x$ "contradicci\'on"\\
+por lo tanto $\theta=\eta $ es \'unico.
+
+\newpage
+Teorema. El conjunto de los n\'umeros naturales no est\'a acotado superiormente.\\
+\\Demostraci\'on\\
+\\Sea N conjunto de los n\'umeros naturales y suponiendo que est\'a acotado superiormente, siendo N no vac\'io ya que 1 $\in N$, entonces por la propiedad del supremo.\\
+\\Como $\zeta = SupN$ se tiene:\\
+\\i) $\zeta\geq n$ para todo n $\in N$ ya que $\zeta$ es cota superior;\\
+\\ii) para todo $\epsilon>0$ existe m $\in N$ tal que 
+\begin{center}
+$ \zeta-\epsilon<m$
+\end{center}
+Si $\epsilon=1>0$ existe k $\in N$ tal que\\
+\begin{center}
+$\zeta-1<k$\\
+$\zeta<k+1 \in N$
+\end{center}
+lo que contradice el hecho i).
+
+\newpage
+Teorema (Propiedad Arquimediana). Para x,y n\'umeros reales con $x>0$, existe \textit{n} entero positivo tal que
+\begin{center}
+$nx>y$
+\end{center}
+Demostraci\'on\\
+Por tricotom\'ia para $x,y \in R$ se tiene
+\begin{center}
+ $ x < y $ , $x = y $ \'o $ x > y $
+\end{center}
+Caso $x>y$,\hspace{1em}sea $n\geq 1$, $nx > y$.\\
+Caso $x=y$,\hspace{1em}sea $n\geq 2$ y se tiene $nx>y$.\\
+Caso $x<y$,\hspace{1em}$0<x<y$.\\
+\\Sea A=\{$nx \lvert$ $n\in N\}$. A $\neq$ $\emptyset$
+ya que $1x\in A$ y suponer que para toda $n\in N$ $nx\leq y$, con lo que se tiene que A est\'a acotado superiormente. Por la propiedad del supremo A tiene supremo, sea $\zeta=SupA.$\\
+\\Siendo $\zeta=SupA$\\
+\\
+i) $\zeta\geq nx$ para todo $ n \in N$.\\
+ii) para todo $\epsilon>0$ existe $mx \in A$ tal que $\zeta-\epsilon<mx$.\\
+\\Sea $\epsilon=x>0$ entonces existe $kx \in A$ tal que
+\begin{center}
+$\zeta-x<kx$\\
+$\zeta<kx+x$
+$\zeta<(k+1)x \in A$\\
+\end{center}
+lo que contradice i).
+
+\newpage
+\textbf{Secci\'on 1.4}\\
+1. Determine en cada caso el conjunto de $x's$ que cumple la relacion indicada\\
+\\ $a) d(2x+3,4)<10$\\
+\begin{center}
+$(2x+3,4)<10$\\\vspace{1em}
+$\rvert 2x+3-4\rvert<10$\\\vspace{1em}
+$\rvert2x-1\rvert<10$\\\vspace{1em}
+$-10<2x-1<10$\\\vspace{1em}
+$-9<2x<11$\\\vspace{1em}
+$-\dfrac{9}{2}<x<\dfrac{11}{2}$
+\end{center}
+Por lo tanto el conjunto es\\\vspace{1em}
+\begin{center}
+$x\in (-\dfrac{9}{2},\dfrac{11}{2})$
+\end{center}
+
+\newpage
+2. Determinar en cada caso el conjunto de los $x's$ que cumple la relaci\'on indicada\\
+\\c) $d ( \dfrac{1+2x}{x},0)>M$\\
+\\Tenemos que $x\neq 0$, entonces\\
+$\lvert \dfrac{1+2x}{x}-0\lvert > M$\\
+$\dfrac{1+2x}{x}>M$
+
+
+
+
+\end{document}
+ 

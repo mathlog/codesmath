@@ -1,0 +1,43 @@
+\documentclass[]{report}
+
+
+
+
+
+\begin{document}
+\thispagestyle{empty} 
+11. Determinar la funci\'on $g(x)$ a la que converge la sucesi\'on de derivadas parciales\\\\ 
+$Pm(f(x)): Pm(x^4),Pm(x^5)$\\\\
+
+$
+\displaystyle
+Pm(x^4)=\sum_{n=1}^{m}(aq^{n-1})^4(aq^{n}-aq^{n-1}) \\\\
+\\=a^5\sum_{n=1}^{m}(q^{5n-4})-(q^{5n-5})\\\\
+\\=a^5\sum_{n=1}^{m}\frac{(q^5)^n}{q^4}-\frac{(q^5)^n}{q^5}\\\\
+\\=a^5\sum_{n=1}^{m}  \frac{(q^5)-(q^5)^{m+1}}{q^4-q^9}-\frac{(q^5-(q^5)^{m+1})}{q^5-q^{10}}\\\\
+\\=a^5 \lgroup\frac{q-(q^5)^mq-1+(q^5)^m}{1-q^5}  \rgroup\\\\
+\\=a^5 \lgroup\frac{(q-1)(1-(q^5)^m)}{1-q^5}  \rgroup\\\\
+\\=\frac{a^5-(1-q^{5m})}{1+q+q^2+q^3+q^4}\\\\
+\\=\frac{a^5(\frac{x}{a})^{5}-a^5}{1+\sqrt[m]{\frac{x}{a}}+\sqrt[m]{\frac{x}{a}}^2+\sqrt[m]{\frac{x}{a}}^3+\sqrt[m]{\frac{x}{a}}^4}\\\\
+\\m\rightarrow\infty \Rightarrow \frac{x^5-a^5}{5} = g(x).
+$
+
+
+\newpage
+\thispagestyle{empty} 
+$
+\displaystyle
+Pm(x^5)=\sum_{n=1}^{m}(aq^{n-1})^5(aq^{n}-aq^{n-1}) \\\\
+\\=a^6\sum_{n=1}^{m}(q^{6n-5})-(q^{6n-6})\\\\
+\\=a^6\sum_{n=1}^{m}\frac{(q^6)^n}{q^5}-\frac{(q^6)^n}{q^6}\\\\
+\\=a^6\sum_{n=1}^{m}  \frac{(q^6)-(q^6)^{m+1}}{q^6-q^11}-\frac{(q^6-(q^6)^{m+1})}{q^6-q^{12}}\\\\
+\\=a^6 \lgroup\frac{q-(q^6)^mq-1+(q^6)^m}{1-q^6}  \rgroup\\\\
+\\=a^6 \lgroup\frac{(q-1)(1-(q^6)^m)}{1-q^6}  \rgroup\\\\
+\\=\frac{-a^6-(1-q^{6m})}{1+q+q^2+q^3+q^4+q^5}\\\\
+\\=\frac{-a^6(1-(\frac{x}{a})^6)}{1+\sqrt[m]{\frac{x}{a}}+\sqrt[m]{\frac{x}{a}}^2+\sqrt[m]{\frac{x}{a}}^3+\sqrt[m]{\frac{x}{a}}^4+\sqrt[m]{\frac{x}{a}}^5}\\\\
+\\m\rightarrow\infty \Rightarrow \frac{x^6-a^6}{6} = g(x).
+$
+
+
+
+\end{document}          

@@ -1,0 +1,50 @@
+    \documentclass{article}
+
+    \usepackage{tikz}
+    %\usetikzlibrary{shapes,backgrounds}
+
+    \begin{document}
+    \pagestyle{empty}
+
+    \def\firstcircle{(0,0) circle (1.5cm)}
+    \def\secondcircle{(55:2cm) circle (1.5cm)}
+    \def\thirdcircle{(0:2cm) circle (1.5cm)}
+
+    \begin{tikzpicture}[line width=0.25pt]
+
+    \begin{scope}
+    \fill[red] \secondcircle;
+    \fill[green] \firstcircle;
+    \fill[blue] \thirdcircle;
+    \end{scope}
+
+    \begin{scope}
+    \clip \firstcircle;
+    \fill  [yellow]
+    \secondcircle;
+    \end{scope}
+
+    \begin{scope}
+    \clip \secondcircle;
+    \fill [magenta] \thirdcircle;
+    \end{scope}
+
+    \begin{scope}
+    \clip \firstcircle;
+    \fill [cyan] \thirdcircle;
+    \end{scope}
+
+    \begin{scope}
+    \clip \firstcircle;
+    \clip \secondcircle;
+    \fill [white] \thirdcircle;
+    \end{scope}
+
+
+        \draw \firstcircle node[text=white, below] {$A$};
+        \draw \secondcircle node [text=white,above] {$B$};
+        \draw \thirdcircle node [text=white,below] {$C$};
+
+    \end{tikzpicture}
+
+    \end{document} 

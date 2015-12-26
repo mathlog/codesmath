@@ -1,0 +1,91 @@
+\documentclass[openany, oneside,]{book}
+% pre\'ambulo
+\textheight = 22.5cm
+\textwidth = 13.5cm
+\topmargin = -1.5cm
+\oddsidemargin = 1.5cm
+
+\newtheorem{teo}{Teorema}[chapter]
+\newtheorem{defi}[teo]{Definici\'on}
+\newtheorem{cor}[teo]{Corolario}
+\newtheorem{pro}[teo]{Proposici\'on}
+\newtheorem{lem}[teo]{Lema}
+\newtheorem{dem}[teo]{Demostraci\'on}
+
+\renewcommand{\contentsname}{Contenido}
+\renewcommand{\partname}{Parte}
+\renewcommand{\appendixname}{Apéndice}
+\renewcommand{\figurename}{Figura}
+\renewcommand{\tablename}{Tabla}
+\renewcommand{\chaptername}{Capítulo} % para ’book’
+\renewcommand{\bibname}{Bibliografía} % para ’book’
+
+\usepackage{lmodern}
+\usepackage[latin1]{inputenc}
+\usepackage[spanish,activeacute]{babel}
+\usepackage{mathtools,amssymb,latexsym,amsmath,amsfonts}
+\usepackage{makeidx}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+
+% encabezados
+\lhead[\rightmark]{\small\leftmark}
+\chead[]{}
+\rhead[]{\thepage}
+\renewcommand{\headrulewidth}{0.5pt}
+
+% pie de pagina
+\lfoot[]{\rm Par Biomagn\'etico (Austin, TX) \\  Derechos Reservados {\copyright} 2014 Biomagnetismo - Goiz (http://www.biomagnetismo.biz)}
+\cfoot[]{}
+\rfoot[]{David Goiz Mart\'inez BMB01EU001}
+\renewcommand{\footrulewidth}{0.5pt}
+
+% primera pagina de un capitulo
+\fancypagestyle{plain}{
+\fancyhead[L]{}
+\fancyhead[C]{}
+\fancyhead[R]{\thepage}
+\fancyfoot[L]{}
+\fancyfoot[C]{}
+\fancyfoot[R]{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}}
+
+
+\pagestyle{fancy}
+
+\begin{document}
+\title {\Huge Par Biomagn\'etico \\ (Austin,TX)}
+\author{\Large Dr. David Goiz Mart\'inez\\}
+
+\date{\Large 29 Julio - 03 Agosto 2014}
+
+% cuerpo del documento
+
+\maketitle
+
+\begin{center}
+\subsection*{Lista de Pares Biomagn'eticos}
+
+\begin{tabular}{|p{5cm}|p{3.5cm}|p{3.5cm}|}\hline
+
+\bf \begin{center}
+Patolog'ia
+\end{center} & \bf\begin{center}
+ Punto de Rastreo
+\end{center} & \bf \begin{center}
+Punto de Impacto
+\end{center} \\\hline
+
+\begin{center}
+1.- Infecci'on Viral
+ \par (VIH)\end{center} & \centering \begin{center}
+ Timo
+ \end{center} & {\centering \begin{center}
+ Recto
+ \end{center}} \\\hline
+
+\end{tabular}
+\end{center}
+
+\end{document}

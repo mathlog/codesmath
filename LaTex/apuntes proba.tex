@@ -1,0 +1,65 @@
+\documentclass[]{article}
+\usepackage[spanish]{babel}
+    \usepackage{tikz}
+
+
+
+%opening
+\title{Apuntes Probabilidad}
+\author{Adr\'ian Mendoza}
+
+\begin{document}
+\maketitle
+
+La probabilidad de un suceso es un n\'umero, comprendido entre 0 y 1, que indica las posibilidades que tiene de verificarse cuando se realiza un experimento aleatorio.\\\\
+Teor\'ia de Probabilidades\\\\
+La teor\'ia de probabilidades se ocupa de asignar un cierto n\'umero a cada posible resultado que pueda ocurrir en un experimento aleatorio, con el fin de cuantificar dichos resultados y saber si un suceso es m\'as probable que otro.Con este fin, introduciremos las siguientes definiciones:\\\\
+Suceso: es cada uno de los resultados posibles de una experiencia aleatoria.\\\\
+Espacio Muestral: es el conjunto de todos los posibles resultados de una experiancia aleatoria. Se denota como "$\Omega$".\\\\
+Suceso Aleatorio: es cualquier subconjunto del espacio muestral.\\\\
+El espacio muestral asociado con un experimento es el conjunto formado por todos los posibles puntos muestrales. Un espacio muestral se denota : S.\\\\
+Un espacio muestral discreto es aquel que esta formado ya sea por un n\'umero finito o uno contable de puntos muestrales distintos.\\
+Un evento en un espacio muestral discreto S es un conjunto de puntos muestrales , es decir, cualquier subconjunto de S.\\\\
+\newpage
+Tenemos que para la probabilidad de A ,P(A) se deben cumplir los siguientes axiomas:\\\\
+Axioma 1.
+\begin{center}
+	 P(A) $\geq 0$ .
+\end{center}
+ Axioma 2.
+\begin{center}
+	 P(S) = 1.
+\end{center}
+ Axioma 3.
+\begin{center}
+	 Si $A_{1}$,$A_{2}$,$A_{3}$...  forman una secuencia de eventos por pares mutuamente excluyentes en S es decir , $A_{i}\cap A_{j} = 0$ si $i \neq j$ entonces:\\
+ $P(A_{1}\cup A_{2}\cup A_{3}\cup...)$ = $\displaystyle
+ \sum_{i=1}^{\infty}P(A_{i})$
+\end{center}
+
+Ejemplo:\\\\
+Una bolsa contiene bolas blancas y negras. Se extraen sucesivamente tres bolas.\\
+Calcular: a) espacio muestral, b) suceso A, c) suceso B, d) suceso C\\\\
+a) el espacio muestral lo obtenemos con el conjunto potencia esto es P(A) o $2^{A}$, entonces siendo A=3 tenemos:\\\\
+$2^{3}=8$\\
+(b,b,b), (b,b,n), (b,n,n), (b,n,b), (n,b,b), (n,n,b), (n,b,n), (n,n,n)\\\\
+b) extraer tres bolas del mismo color \\
+(b,b,b), (n,n,n)\\\\
+c) extraer al menos una bola blanca \\
+(b,b,b), (b,b,n), (b,n,n), (b,n,b), (n,b,b), (n,n,b), (n,b,n)\\\\
+d)extraer una sola bola negra\\
+(b,n,b), (n,b,b), (b,b,n) .
+ 
+ \newpage
+
+Pasos para hallar la probabilidad de un evento:\\\\
+1. Defina el experimento y determine con toda claridad c\'omo describir un evento simple.\\\\
+2. Indique los eventos simples asociados con el experimento y prueb cada uno para asegurarse que no se pueden decomponer. Esto define el espacio muestral S.\\\\
+3. Asigne probabilidades razonables a los puntos muestrales en S, asegur\'andose de que $P(E_{i}) \geq 0$ y $\sum P(E_{i}) = 1$ \\\\
+4. Defina un evento de inter\'es , A, como un conjunto espec\'ifico de puntos muestrales . \\(Un punto muestral est\'a en A si A ocurre cuando se presenta el punto muestral. "Pruebe todos los puntos muestrales en S para indicar que est\'an en A").\\\\
+5.Encuentre P(A) al sumar las posibilidades de los puntos muestrales en A. 
+
+
+
+
+\end{document}
